@@ -19,6 +19,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static Settings.Settings.AUTO_REMOVE_FOCUS;
+import static Settings.Settings.IMAGE_SCALE;
 
 public class AlgCaseElement extends BorderPane implements Initializable {
     @FXML
@@ -34,8 +35,7 @@ public class AlgCaseElement extends BorderPane implements Initializable {
 
     public AlgCaseElement(L2LCase l2LCase, SkewbScreenController co) {
         this.l2LCase = l2LCase;
-        double scale = 1.0;
-
+        double scale = IMAGE_SCALE;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/elements/algCaseElement.fxml"));
             loader.setController(this);

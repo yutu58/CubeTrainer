@@ -23,6 +23,7 @@ public class SkewbScreen {
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(SkewbScreen.class.getResource("/stylesheets/skewbScreen.css").toExternalForm());
 
         primaryStage.setScene(scene);
         primaryStage.show();

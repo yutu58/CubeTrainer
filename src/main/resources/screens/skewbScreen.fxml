@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.Cursor?>
 <BorderPane fx:id="skewbScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SkewbScreenController">
    <center>
       <BorderPane prefHeight="200.0" prefWidth="440.0" BorderPane.alignment="CENTER">
@@ -19,8 +20,8 @@
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
                </columnConstraints>
                <rowConstraints>
-                  <RowConstraints minHeight="30.0" prefHeight="30.0"  vgrow="NEVER" />
-                  <RowConstraints minHeight="30.0" prefHeight="30.0"  vgrow="NEVER" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
                </rowConstraints>
                <children>
                   <Label text="Select sets:" GridPane.columnIndex="1" GridPane.rowIndex="0">
@@ -38,14 +39,14 @@
                <top>
                   <Label fx:id="scramble" text="Select a set" BorderPane.alignment="CENTER">
                      <font>
-                        <Font size="15.0" />
+                        <Font size="30.0" />
                      </font>
                   </Label>
                </top>
                <center>
                   <Label fx:id="timer" text="0.000" BorderPane.alignment="CENTER">
                      <font>
-                        <Font name="System Bold" size="30.0" />
+                        <Font name="System Bold" size="50.0" />
                      </font>
                   </Label>
                </center>
@@ -73,9 +74,6 @@
          </bottom>
       </BorderPane>
    </center>
-   <top>
-      <AnchorPane prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: #90ee00" BorderPane.alignment="CENTER" />
-   </top>
    <right>
       <ScrollPane prefWidth="440.0" BorderPane.alignment="CENTER">
          <content>
@@ -85,4 +83,27 @@
    <left>
 
    </left>
+   <top>
+      <VBox prefHeight="60.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fx:id="menu" alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+               <Label fx:id="algTrainerButton" onMouseClicked="#setupAlgTrainer" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="Alg Trainer" style="-fx-border-color: #000000 ">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Label>
+               <Label fx:id="imageGeneratorButton" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="Image Generator" style="-fx-border-color: #000000">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               </Label>
+               <Label fx:id="algGeneratorButton" alignment="CENTER" prefHeight="30.0" prefWidth="100.0" text="Alg Generator" style="-fx-border-color: #000000">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               </Label>
+            </HBox>
+            <HBox fx:id="subMenu" prefHeight="30.0" prefWidth="900.0" />
+         </children></VBox>
+   </top>
 </BorderPane>

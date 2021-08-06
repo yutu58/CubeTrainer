@@ -340,4 +340,17 @@ public class SkewbState {
         result = 31 * result + Arrays.hashCode(backLeft);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "SkewbState{" +
+                "name='" + name + '\'' +
+                ", top=" + Arrays.toString(top) +
+                ", bottom=" + Arrays.toString(bottom) +
+                ", frontLeft=" + Arrays.toString(frontLeft) +
+                ", frontRight=" + Arrays.toString(frontRight) +
+                ", backRight=" + Arrays.toString(backRight) +
+                ", backLeft=" + Arrays.toString(backLeft) +
+                '}';
+    }
 }

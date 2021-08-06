@@ -14,13 +14,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.RowConstraints;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +32,18 @@ import static Settings.Settings.*;
 
 public class SkewbScreenController {
     @FXML
-    private  Label scramble;
+    private  HBox subMenu;
+    @FXML
+    private HBox menu;
+    @FXML
+    private Label algTrainerButton;
+    @FXML
+    private Label imageGeneratorButton;
+    @FXML
+    private Label algGeneratorButton;
+
+    @FXML
+    private Label scramble;
 
     @FXML
     private BorderPane skewbScreen;
@@ -53,13 +63,25 @@ public class SkewbScreenController {
 
     private List<L2LCase> selectedCases;
 
+    private List<Label> menus;
+
     @FXML
     public void initialize() {
+        menu.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        setupAlgTrainer();
+    }
+
+    @FXML
+    private void setupAlgTrainer() {
+        algTrainerButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+
         selectedCases = new ArrayList<>();
         timerRunning = false;
 
         SkewbReader reader = new SkewbReader();
-        List<L2LSet> sets = null;
+        List<L2LSet> sets;
         try {
             sets = reader.read();
             if (sets == null) {
@@ -117,6 +139,7 @@ public class SkewbScreenController {
         }
     }
 
+
     public void startTimer() {
         timer.setText("Running");
 //        timerRunning = true; //Now changed in the eventListener
@@ -141,7 +164,7 @@ public class SkewbScreenController {
                 }
             }
         }
-        scramble.setText(generateNewScramble());
+        scramble.setText(newScramble);
     }
 
     private String generateNewScramble() {
@@ -153,8 +176,6 @@ public class SkewbScreenController {
         int randomAmount = ThreadLocalRandom.current().nextInt(1, AMOUNT_RANDOM_SCRAMBLES + 1);
         return SkewbScrambler.stateToScrambler(new SkewbState(selectedCases.get(randomIndex).getPattern()), randomAmount);
     }
-
-
 
     private void backToHome() {
         try {
