@@ -8,7 +8,7 @@ Training software that can be used to practice specific steps of solving multipl
 - [ ] Ability to select / add your own algs for cases
 - [ ] On the spot generated scrambles for cases (brute-forcing for smaller cubes)
 - [ ] Timer to train algs
-- [ ] Visualizer for the cubes (Hard, may have to use someone elses code here)
+- [ ] Visualizer for the cubes
 
 ## Smaller things
 - [ ] Save times to get an average idea of how slow you are
