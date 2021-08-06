@@ -51,8 +51,13 @@ public class SkewbScrambler {
         int[] moves = new int[0];
         int foundSolutions = 0;
 
+        SkewbState prunedState = null;
+
         if (state.isSolved()) {
             foundSolutions = successes;
+        }
+        if (pruningTable.containsKey(state)) {
+            prunedState = state.copy();
         }
 
         while (foundSolutions < successes && iterator.getSize() <= (skewbGodsNo - pruningDepth )) {
@@ -60,14 +65,19 @@ public class SkewbScrambler {
             iterator.next();
             moves = iterator.toArr();
             copy.applyMoves(moves);
-            if (pruningTable.containsKey(copy) || copy.isSolved()) {
-                foundSolutions+= 1;
-                state = copy;
+            if (pruningTable.containsKey(copy)) {
+                int[] temp = pruningTable.get(copy);
+                //Make sure the pruned move and the applied move don't cancel out
+                if (temp[temp.length-1] / 2 != moves[moves.length-1] / 2) {
+                    foundSolutions += 1;
+                    prunedState = copy;
+                }
             }
         }
         //Note: state here is most likely a different state than the argument because it changed in the loop
 
-        int[] prunedMoves = pruningTable.get(state);
+        //Nullcheck?
+        int[] prunedMoves = pruningTable.get(prunedState);
 
         moves = reverse(moves);
         StringBuilder res = new StringBuilder();

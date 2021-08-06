@@ -3,8 +3,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SkewbScreenController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.SkewbScreenController">
    <center>
    </center>
+   <top>
+      <AnchorPane prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER" style="-fx-background-color: #90ee00"/>
+   </top>
+   <right>
+      <ScrollPane prefWidth="440.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="algVBox" prefHeight="200.0" prefWidth="440.0" />
+         </content></ScrollPane>
+   </right>
 </BorderPane>

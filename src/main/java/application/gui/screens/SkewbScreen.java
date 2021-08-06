@@ -23,4 +23,6 @@ public class SkewbScreen {
 
         primaryStage.setMaximized(true);
     }
+
+    //Event listeners
 }

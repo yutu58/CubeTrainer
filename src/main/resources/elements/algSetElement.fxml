@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="1000" maxWidth="1000"
+         minHeight="-Infinity" minWidth="-Infinity"
+         prefWidth="440.0" style="-fx-background-color: #ffffff;"
+         type="javafx.scene.control.TitledPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <VBox fx:id="caseContainer" maxHeight="Infinity">
+
+        </VBox>
+    </content>
+</fx:root>
