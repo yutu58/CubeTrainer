@@ -1,5 +1,6 @@
 package application.gui.elements;
 
+import application.controllers.SkewbScreenController;
 import cubes.skewb.data.Alg;
 import cubes.skewb.data.L2LCase;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
@@ -17,6 +18,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static Settings.Settings.AUTO_REMOVE_FOCUS;
+
 public class AlgCaseElement extends BorderPane implements Initializable {
     @FXML
     private Label caseName;
@@ -29,8 +32,9 @@ public class AlgCaseElement extends BorderPane implements Initializable {
 
     L2LCase l2LCase;
 
-    public AlgCaseElement(L2LCase l2LCase) {
+    public AlgCaseElement(L2LCase l2LCase, SkewbScreenController co) {
         this.l2LCase = l2LCase;
+        double scale = 1.0;
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/elements/algCaseElement.fxml"));
@@ -42,9 +46,17 @@ public class AlgCaseElement extends BorderPane implements Initializable {
         }
 
         this.caseName.setText(l2LCase.getId() + ": ");
-        SkewbL2LImageGenerator.drawSkewbImage(this.caseCanvas.getGraphicsContext2D(), l2LCase.getPattern(), false);
+
+        this.caseCanvas.setHeight(Math.ceil(scale * 180));
+        this.caseCanvas.setWidth(Math.ceil(scale * 320));
+        SkewbL2LImageGenerator.drawSkewbImage(this.caseCanvas.getGraphicsContext2D(),
+                l2LCase.getPattern(), scale, false);
+
         for (Alg a : this.l2LCase.getProvidedAlgs()) {
             RadioButton button = new RadioButton();
+            if (AUTO_REMOVE_FOCUS) {
+                button.selectedProperty().addListener((observable -> co.getScreen().requestFocus()));
+            }
             Label algLabel = new Label();
             algLabel.setFont(new Font(14));
             algLabel.setText(a.getAlgorithm());

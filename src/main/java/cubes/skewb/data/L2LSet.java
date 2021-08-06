@@ -14,6 +14,15 @@ public class L2LSet {
         this.cases = new ArrayList<>();
     }
 
+    @Override
+    public String toString() {
+        return "L2LSet{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cases=" + cases +
+                '}';
+    }
+
     public void addCase(L2LCase l2LCase) {
         this.cases.add(l2LCase);
     }

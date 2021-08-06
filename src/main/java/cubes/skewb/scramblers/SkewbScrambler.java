@@ -2,10 +2,7 @@ package cubes.skewb.scramblers;
 
 import cubes.skewb.SkewbState;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class SkewbScrambler {
     private static final Map<SkewbState, int[]> pruningTable = new HashMap<>();
@@ -37,6 +34,7 @@ public class SkewbScrambler {
     }
 
     public static String stateToScrambler(SkewbState state, int successes) {
+        Set<int[]> foundScramblesSet = new HashSet<>();
         //Put in random orientation ??
         boolean randomOrientation = true;
         if (randomOrientation) {
@@ -48,44 +46,43 @@ public class SkewbScrambler {
 
         //If this is too slow, try to go move by move instead of start from a solved cube everytime
         SkewbIterator iterator = new SkewbIterator();
-        int[] moves = new int[0];
         int foundSolutions = 0;
-
+        int[] scrambleArr = new int[0];
         SkewbState prunedState = null;
 
         if (state.isSolved()) {
             foundSolutions = successes;
         }
         if (pruningTable.containsKey(state)) {
-            prunedState = state.copy();
+            foundSolutions += 1;
+            foundScramblesSet.add(pruningTable.get(state));
         }
 
         while (foundSolutions < successes && iterator.getSize() <= (skewbGodsNo - pruningDepth )) {
             SkewbState copy = state.copy();
             iterator.next();
-            moves = iterator.toArr();
+            int[] moves = iterator.toArr();
             copy.applyMoves(moves);
             if (pruningTable.containsKey(copy)) {
-                int[] temp = pruningTable.get(copy);
                 //Make sure the pruned move and the applied move don't cancel out
-                if (temp[temp.length-1] / 2 != moves[moves.length-1] / 2) {
-                    foundSolutions += 1;
-                    prunedState = copy;
+                int[] foundMoves = reverse(moves);
+                int[] prunedMoves = pruningTable.get(copy);
+
+                if (prunedMoves[prunedMoves.length-1] / 2 != foundMoves[0] / 2) {
+                    scrambleArr = new int[moves.length + prunedMoves.length];
+                    System.arraycopy(prunedMoves, 0, scrambleArr, 0, prunedMoves.length);
+                    System.arraycopy(foundMoves, 0, scrambleArr, prunedMoves.length, foundMoves.length);
+                    if (!foundScramblesSet.contains(scrambleArr)) {
+                        foundSolutions += 1;
+                        foundScramblesSet.add(scrambleArr);
+                    }
+
                 }
             }
         }
-        //Note: state here is most likely a different state than the argument because it changed in the loop
-
-        //Nullcheck?
-        int[] prunedMoves = pruningTable.get(prunedState);
-
-        moves = reverse(moves);
         StringBuilder res = new StringBuilder();
 
-        for (int i : prunedMoves) {
-            res.append(moveTable.get(i)).append(" ");
-        }
-        for (int i : moves) {
+        for (int i : scrambleArr) {
             res.append(moveTable.get(i)).append(" ");
         }
 
