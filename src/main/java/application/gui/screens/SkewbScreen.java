@@ -1,12 +1,14 @@
 package application.gui.screens;
 
 import application.controllers.SkewbScreenController;
+import application.gui.subscreens.SkewbAlgTrainer;
 import cubes.skewb.scramblers.SkewbScrambler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,32 +30,42 @@ public class SkewbScreen {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        initEvents(primaryStage.getScene(), loader.getController());
-
         primaryStage.setMaximized(true);
+
+        initEvents(primaryStage.getScene(), loader.getController());
     }
 
     //Event listeners
     private static void initEvents(Scene scene, SkewbScreenController controller) {
-        AtomicBoolean pressed = new AtomicBoolean(false);
+        AtomicBoolean spacePressed = new AtomicBoolean(false);
 
         scene.addEventFilter(KeyEvent.KEY_PRESSED, ke -> {
-            if (ke.getCode() == KeyCode.SPACE && !pressed.get()) {
-                if (controller.isTimerRunning()) {
-                    controller.stopTimer();
+            BorderPane subMenu = controller.getSubMenu();
+
+            if (subMenu instanceof SkewbAlgTrainer) {
+                SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+                if (ke.getCode() == KeyCode.SPACE && !spacePressed.get()) {
+                    if (s.isTimerRunning()) {
+                        s.stopTimer();
+                    }
+                    spacePressed.set(true);
                 }
-                pressed.set(true);
             }
         });
 
         scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
-            pressed.set(false);
-            if (ke.getCode() == KeyCode.SPACE) {
-                if (!controller.isTimerRunning()) {
-                    controller.setTimerRunning(true);
-                    controller.startTimer();
-                } else {
-                    controller.setTimerRunning(false);
+            BorderPane subMenu = controller.getSubMenu();
+
+            if (subMenu instanceof SkewbAlgTrainer) {
+                if (ke.getCode() == KeyCode.SPACE) {
+                    spacePressed.set(false);
+                    SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+                    if (!s.isTimerRunning()) {
+                        s.setTimerRunning(true);
+                        s.startTimer();
+                    } else {
+                        s.setTimerRunning(false);
+                    }
                 }
             }
         });

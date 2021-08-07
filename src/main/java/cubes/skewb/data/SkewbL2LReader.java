@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SkewbReader {
+public class SkewbL2LReader {
     private Map<String, List<Alg>> providedAlgMap = new HashMap<>();
     private Map<String, List<Alg>> addedAlgMap = new HashMap<>();
 
