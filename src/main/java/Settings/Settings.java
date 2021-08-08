@@ -14,7 +14,9 @@ public class Settings {
     public static Color SELECTED_MENU_BUTTON_COLOR = Color.LIGHTBLUE;
     public static Color MENU_COLOR = Color.CORNFLOWERBLUE;
 
-    public static Color SELECTED_SUBMENU_BUTTON_COLOR = Color.LIGHTYELLOW;
-    public static Color SUBMENU_COLOR = Color.CORNSILK;
+    public static Color SELECTED_SUBMENU_BUTTON_COLOR = Color.ORANGE;
+    public static Color SUBMENU_COLOR = Color.DARKORANGE;
+
+    public static String IMAGE_DOWNLOAD_LOCATION = "images/";
 
 }

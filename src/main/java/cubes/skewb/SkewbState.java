@@ -58,7 +58,7 @@ public class SkewbState {
                 this.frontRight.clone(), this.backRight.clone(), this.backLeft.clone());
     }
 
-    public void applyMoves(int[] moves) {
+    public void applyWCAMoves(int[] moves) {
         for (int i : moves) {
             switch (i) {
                 case 0 -> this.applyR();
@@ -69,6 +69,15 @@ public class SkewbState {
                 case 5 -> this.applyUprime();
                 case 6 -> this.applyB();
                 case 7 -> this.applyBprime();
+                case 8 -> this.applyX();
+                case 9 -> this.applyXPrime();
+                case 10 -> this.applyX2();
+                case 11 -> this.applyY();
+                case 12 -> this.applyYprime();
+                case 13 -> this.applyY2();
+                case 14 -> this.applyZ();
+                case 15 -> this.applyZprime();
+                case 16 -> this.applyZ2();
             }
         }
     }
@@ -94,7 +103,82 @@ public class SkewbState {
         this.backLeft = Arrays.stream(this.backLeft).map(colorMap::get).toArray();
     }
 
-    //If working with "colors" like this is too slow, maybe work with positions instead??
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SkewbState)) return false;
+
+        SkewbState that = (SkewbState) o;
+
+        if (!Objects.equals(name, that.name)) return false;
+        if (!Arrays.equals(top, that.top)) return false;
+        if (!Arrays.equals(bottom, that.bottom)) return false;
+        if (!Arrays.equals(frontLeft, that.frontLeft)) return false;
+        if (!Arrays.equals(frontRight, that.frontRight)) return false;
+        if (!Arrays.equals(backRight, that.backRight)) return false;
+        return Arrays.equals(backLeft, that.backLeft);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + Arrays.hashCode(top);
+        result = 31 * result + Arrays.hashCode(bottom);
+        result = 31 * result + Arrays.hashCode(frontLeft);
+        result = 31 * result + Arrays.hashCode(frontRight);
+        result = 31 * result + Arrays.hashCode(backRight);
+        result = 31 * result + Arrays.hashCode(backLeft);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "SkewbState{" +
+                "name='" + name + '\'' +
+                ", top=" + Arrays.toString(top) +
+                ", bottom=" + Arrays.toString(bottom) +
+                ", frontLeft=" + Arrays.toString(frontLeft) +
+                ", frontRight=" + Arrays.toString(frontRight) +
+                ", backRight=" + Arrays.toString(backRight) +
+                ", backLeft=" + Arrays.toString(backLeft) +
+                '}';
+    }
+
+    public String toPattern() {
+        //Maybe generalize to remove duplicate code here
+        StringBuilder res = new StringBuilder();
+        for (int i : top) {
+            res.append(i);
+        }
+        res.append(' ');
+
+        for (int i : bottom) {
+            res.append(i);
+        }
+        res.append(' ');
+
+        for (int i : frontLeft) {
+            res.append(i);
+        }
+        res.append(' ');
+
+        for (int i : frontRight) {
+            res.append(i);
+        }
+        res.append(' ');
+
+        for (int i : backRight) {
+            res.append(i);
+        }
+        res.append(' ');
+
+        for (int i : backLeft) {
+            res.append(i);
+        }
+        return res.toString();
+    }
+
+    //TODO: change this to work with vectors instead of mess like this
 
     private void applyR() {
         int temp = backRight[4];
@@ -313,44 +397,146 @@ public class SkewbState {
         top[0] = temp;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof SkewbState)) return false;
+    private void applyX() {
+        int temp = top[0];
+        top[0] = frontLeft[0];
+        frontLeft[0] = bottom[3];
+        bottom[3] = backRight[2];
+        backRight[2] = temp;
 
-        SkewbState that = (SkewbState) o;
+        temp = top[1];
+        top[1] = frontLeft[1];
+        frontLeft[1] = bottom[0];
+        bottom[0] = backRight[3];
+        backRight[3] = temp;
 
-        if (!Objects.equals(name, that.name)) return false;
-        if (!Arrays.equals(top, that.top)) return false;
-        if (!Arrays.equals(bottom, that.bottom)) return false;
-        if (!Arrays.equals(frontLeft, that.frontLeft)) return false;
-        if (!Arrays.equals(frontRight, that.frontRight)) return false;
-        if (!Arrays.equals(backRight, that.backRight)) return false;
-        return Arrays.equals(backLeft, that.backLeft);
+        temp = top[2];
+        top[2] = frontLeft[2];
+        frontLeft[2] = bottom[1];
+        bottom[1] = backRight[0];
+        backRight[0] = temp;
+
+        temp = top[3];
+        top[3] = frontLeft[3];
+        frontLeft[3] = bottom[2];
+        bottom[2] = backRight[1];
+        backRight[1] = temp;
+
+        temp = top[4];
+        top[4] = frontLeft[4];
+        frontLeft[4] = bottom[4];
+        bottom[4] = backRight[4];
+        backRight[4] = temp;
+
+        temp = frontRight[0];
+        frontRight[0] = frontRight[3];
+        frontRight[3] = frontRight[2];
+        frontRight[2] = frontRight[1];
+        frontRight[1] = temp;
+
+        temp = backLeft[0];
+        backLeft[0] = backLeft[1];
+        backLeft[1] = backLeft[2];
+        backLeft[2] = backLeft[3];
+        backLeft[3] = temp;
     }
 
-    @Override
-    public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + Arrays.hashCode(top);
-        result = 31 * result + Arrays.hashCode(bottom);
-        result = 31 * result + Arrays.hashCode(frontLeft);
-        result = 31 * result + Arrays.hashCode(frontRight);
-        result = 31 * result + Arrays.hashCode(backRight);
-        result = 31 * result + Arrays.hashCode(backLeft);
-        return result;
+    private void applyXPrime() {
+        applyX();
+        applyX();
+        applyX();
     }
 
-    @Override
-    public String toString() {
-        return "SkewbState{" +
-                "name='" + name + '\'' +
-                ", top=" + Arrays.toString(top) +
-                ", bottom=" + Arrays.toString(bottom) +
-                ", frontLeft=" + Arrays.toString(frontLeft) +
-                ", frontRight=" + Arrays.toString(frontRight) +
-                ", backRight=" + Arrays.toString(backRight) +
-                ", backLeft=" + Arrays.toString(backLeft) +
-                '}';
+    private void applyX2() {
+        applyX();
+        applyX();
+    }
+
+    private void applyY() {
+        for (int i = 0; i < 5; i++) {
+            int temp = frontLeft[i];
+            frontLeft[i] = frontRight[i];
+            frontRight[i] = backRight[i];
+            backRight[i] = backLeft[i];
+            backLeft[i] = temp;
+        }
+
+        int temp = top[0];
+        top[0] = top[3];
+        top[3] = top[2];
+        top[2] = top[1];
+        top[1] = temp;
+
+        temp = bottom[0];
+        bottom[0] = bottom[1];
+        bottom[1] = bottom[2];
+        bottom[2] = bottom[3];
+        bottom[3] = temp;
+    }
+
+    private void applyYprime() {
+        applyY();
+        applyY();
+        applyY();
+    }
+
+    private void applyY2() {
+        applyY();
+        applyY();
+    }
+
+    private void applyZ() {
+        int temp = top[0];
+        top[0] = backLeft[3];
+        backLeft[3] = bottom[1];
+        bottom[1] = frontRight[1];
+        frontRight[1] = temp;
+
+        temp = top[1];
+        top[1] = backLeft[0];
+        backLeft[0] = bottom[2];
+        bottom[2] = frontRight[2];
+        frontRight[2] = temp;
+
+        temp = top[2];
+        top[2] = backLeft[1];
+        backLeft[1] = bottom[3];
+        bottom[3] = frontRight[3];
+        frontRight[3] = temp;
+
+        temp = top[3];
+        top[3] = backLeft[2];
+        backLeft[2] = bottom[0];
+        bottom[0] = frontRight[0];
+        frontRight[0] = temp;
+
+        temp = top[4];
+        top[4] = backLeft[4];
+        backLeft[4] = bottom[4];
+        bottom[4] = frontRight[4];
+        frontRight[4] = temp;
+
+        temp = frontLeft[0];
+        frontLeft[0] = frontLeft[3];
+        frontLeft[3] = frontLeft[2];
+        frontLeft[2] = frontLeft[1];
+        frontLeft[1] = temp;
+
+        temp = backRight[0];
+        backRight[0] = backRight[1];
+        backRight[1] = backRight[2];
+        backRight[2] = backRight[3];
+        backRight[3] = temp;
+    }
+
+    private void applyZprime() {
+        applyZ();
+        applyZ();
+        applyZ();
+    }
+
+    private void applyZ2() {
+        applyZ();
+        applyZ();
     }
 }

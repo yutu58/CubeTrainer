@@ -18,13 +18,26 @@ public class SkewbL2LImageGenerator {
         put(3, Color.RED);
         put(4, Color.BLUE);
         put(5, Color.ORANGE);
+        put(6, Color.GRAY);
     }};
 
-    public static void drawSkewbImage(GraphicsContext gc, String pattern, double scale, boolean bottom) {
+    public static void drawSkewbImage(GraphicsContext gc, String pattern, double scale,
+                                      boolean bottom, boolean resizeCanvas) throws RuntimeException {
+        gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
         pattern = pattern.replace(" ", "");
-        gc.scale(scale, scale);
-        int[] colors = Arrays.stream(pattern.split("")).mapToInt(Integer::parseInt).toArray();
 
+        gc.scale(scale, scale);
+        double maxWidth = Math.ceil(scale*320);
+        double maxHeight = Math.ceil(scale*180);
+
+        if (resizeCanvas) {
+            gc.getCanvas().setWidth(maxWidth);
+            gc.getCanvas().setHeight(maxHeight);
+        }
+
+        int[] colors = Arrays.stream(pattern.split("")).mapToInt(Integer::parseInt).toArray(); //Can throw NumberFormatException here
+
+        //Can throw arrayIndexOutOfBoundsException here that should be handled
         drawTriangle(gc, 160, 0, 120, 20, 200, 20, colorMap.get(colors[0]));
         drawTriangle(gc, 200, 20, 240, 40, 200, 60, colorMap.get(colors[1]));
         drawTriangle(gc, 200, 60, 160, 80, 120, 60, colorMap.get(colors[2]));
@@ -33,6 +46,7 @@ public class SkewbL2LImageGenerator {
 
 
 //        if (bottom) {
+//            change Max height
 //            drawTriangle(gc);
 //            drawTriangle(gc);
 //            drawTriangle(gc);
@@ -74,6 +88,9 @@ public class SkewbL2LImageGenerator {
         gc.lineTo(a, b);
         gc.closePath();
 
+        if (color == null) {
+            color = Color.GRAY;
+        }
         gc.setFill(color);
         gc.fill();
 

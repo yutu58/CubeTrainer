@@ -26,7 +26,7 @@ public class SkewbScrambler {
         while (it.getSize() < (pruningDepth + 1)) {
             s = new SkewbState("00000 11111 22222 33333 44444 55555");
             it.next();
-            s.applyMoves(it.toArr());
+            s.applyWCAMoves(it.toArr());
             if (!pruningTable.containsKey(s)) {
                 pruningTable.put(s, it.toArr());
             }
@@ -62,7 +62,7 @@ public class SkewbScrambler {
             SkewbState copy = state.copy();
             iterator.next();
             int[] moves = iterator.toArr();
-            copy.applyMoves(moves);
+            copy.applyWCAMoves(moves);
             if (pruningTable.containsKey(copy)) {
                 //Make sure the pruned move and the applied move don't cancel out
                 int[] foundMoves = reverse(moves);

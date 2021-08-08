@@ -47,10 +47,8 @@ public class AlgCaseElement extends BorderPane implements Initializable {
 
         this.caseName.setText(l2LCase.getId() + ": ");
 
-        this.caseCanvas.setHeight(Math.ceil(scale * 180));
-        this.caseCanvas.setWidth(Math.ceil(scale * 320));
         SkewbL2LImageGenerator.drawSkewbImage(this.caseCanvas.getGraphicsContext2D(),
-                l2LCase.getPattern(), scale, false);
+                l2LCase.getPattern(), scale, false, true);
 
         for (Alg a : this.l2LCase.getProvidedAlgs()) {
             RadioButton button = new RadioButton();

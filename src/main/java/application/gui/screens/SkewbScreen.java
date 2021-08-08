@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class SkewbScreen {
         AtomicBoolean spacePressed = new AtomicBoolean(false);
 
         scene.addEventFilter(KeyEvent.KEY_PRESSED, ke -> {
-            BorderPane subMenu = controller.getSubMenu();
+            Pane subMenu = controller.getSubMenu();
 
             if (subMenu instanceof SkewbAlgTrainer) {
                 SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
@@ -54,7 +55,7 @@ public class SkewbScreen {
         });
 
         scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
-            BorderPane subMenu = controller.getSubMenu();
+            Pane subMenu = controller.getSubMenu();
 
             if (subMenu instanceof SkewbAlgTrainer) {
                 if (ke.getCode() == KeyCode.SPACE) {

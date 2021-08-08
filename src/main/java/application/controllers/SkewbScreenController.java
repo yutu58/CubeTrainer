@@ -26,7 +26,7 @@ public class SkewbScreenController {
     @FXML
     private HBox menu;
 
-    private BorderPane subMenu;
+    private Pane subMenu;
 
     private SkewbAlgGenerator algGenerator;
     private SkewbImageGenerator imageGenerator;
@@ -43,26 +43,36 @@ public class SkewbScreenController {
 
     @FXML
     private void setupAlgTrainer() {
+        algTrainerButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+
         subMenu = algTrainer;
         skewbScreen.setCenter(algTrainer);
     }
 
     @FXML
     private void setupImageGenerator() {
+        algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+
         subMenu = imageGenerator;
         skewbScreen.setCenter(imageGenerator);
     }
 
     @FXML
     private void setupAlgGenerator() {
-//        SkewbAlgGenerator generator = new SkewbAlgGenerator();
+        algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
     }
 
     public BorderPane getScreen() {
         return skewbScreen;
     }
 
-    public BorderPane getSubMenu() {
+    public Pane getSubMenu() {
         return subMenu;
     }
 }
