@@ -21,7 +21,6 @@ import javafx.scene.input.DataFormat;
 import javafx.scene.layout.*;
 
 import javax.imageio.ImageIO;
-import java.awt.image.RenderedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -106,6 +105,8 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
         copyImageButton.setOnMouseClicked((e) -> copyImageToClipboard());
         downloadPNGButton.setOnMouseClicked((e) -> downloadPNG());
         copyLithiumCodeButton.setOnMouseClicked((e) -> copyLithiumCode());
+
+        generateImage();
     }
 
     @FXML

@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 public class SkewbL2LReader {
-    private Map<String, List<Alg>> providedAlgMap = new HashMap<>();
-    private Map<String, List<Alg>> addedAlgMap = new HashMap<>();
+    private final Map<String, List<Alg>> providedAlgMap = new HashMap<>();
+    private final Map<String, List<Alg>> addedAlgMap = new HashMap<>();
 
     public List<L2LSet> read() throws IOException {
         try {
