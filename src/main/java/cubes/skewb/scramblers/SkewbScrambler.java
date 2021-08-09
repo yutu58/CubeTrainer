@@ -65,7 +65,7 @@ public class SkewbScrambler {
             copy.applyWCAMoves(moves);
             if (pruningTable.containsKey(copy)) {
                 //Make sure the pruned move and the applied move don't cancel out
-                int[] foundMoves = reverse(moves);
+                int[] foundMoves = reverseSkewb(moves);
                 int[] prunedMoves = pruningTable.get(copy);
 
                 if (prunedMoves[prunedMoves.length-1] / 2 != foundMoves[0] / 2) {
@@ -89,15 +89,25 @@ public class SkewbScrambler {
         return res.toString().trim();
     }
 
-    private static int[] reverse(int[] a) {
+    public static int[] reverseSkewb(int[] a) {
         int[] b = new int[a.length];
         for (int i = 0; i < a.length; i++) {
             int c = a[a.length-1-i];
 
-            if (c % 2 == 0) {
-                b[i] = c+1;
-            } else {
-                b[i] = c-1;
+            if (c < 8) {                            //Regular moves ||
+                if (c % 2 == 0) {
+                    b[i] = c + 1;
+                } else {
+                    b[i] = c - 1;
+                }
+            } else if (c < 17) {                    //Rotations
+                if (c % 3 == 1) {
+                    b[i] = c;
+                } else if (c % 3 == 0) {
+                    b[i] = c-1;
+                } else {
+                    b[i] = c+1;
+                }
             }
         }
         return b;

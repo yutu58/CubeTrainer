@@ -66,6 +66,9 @@ public class SkewbScreenController {
         algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         algGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+
+        subMenu = algGenerator;
+        skewbScreen.setCenter(algGenerator);
     }
 
     public BorderPane getScreen() {

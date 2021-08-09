@@ -28,9 +28,9 @@
           </Canvas>
       <Label fx:id="imageErrorLabel" alignment="CENTER" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Label>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="300.0" GridPane.columnIndex="2">
          <children>
             <Label text="Notation:">
                <font>
@@ -48,6 +48,32 @@
                <font>
                   <Font size="14.0" />
                </font></RadioButton>
+            <Label text="Scale:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Slider fx:id="scaleSlider" blockIncrement="0.1" majorTickUnit="0.5" max="2.0" maxWidth="150.0" minorTickCount="4" prefWidth="150.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <Label text="Other:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <CheckBox fx:id="reverseBox" mnemonicParsing="false" prefWidth="150.0" text="Reverse setup">
+               <font>
+                  <Font size="14.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="bottomBox" mnemonicParsing="false" prefWidth="150.0" text="Show bottom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
          </children>
       </VBox>
       <TextField fx:id="setupMoves" GridPane.columnIndex="1" GridPane.rowIndex="2">

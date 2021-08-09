@@ -4,6 +4,9 @@ import application.controllers.SkewbScreenController;
 import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
+import cubes.skewb.scramblers.SkewbScrambler;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,12 +22,14 @@ import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -60,6 +65,15 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
 
     @FXML
     private TextField setupMoves;
+
+    @FXML
+    private Slider scaleSlider;
+
+    @FXML
+    private CheckBox reverseBox;
+
+    @FXML
+    private CheckBox bottomBox;
 
     private String pattern;
 
@@ -102,6 +116,9 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
             l.setOnMouseReleased((e) -> l.setBackground(new Background(new BackgroundFill(SUBMENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY))));
             l.setOnMouseExited((e) -> l.setBackground(null));
         }
+
+        scaleSlider.valueChangingProperty().addListener((observable, oldValue, newValue) -> generateImage());
+
         copyImageButton.setOnMouseClicked((e) -> copyImageToClipboard());
         downloadPNGButton.setOnMouseClicked((e) -> downloadPNG());
         copyLithiumCodeButton.setOnMouseClicked((e) -> copyLithiumCode());
@@ -112,12 +129,14 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
     @FXML
     private void generateImage() {
         SkewbState skewbState = new SkewbState("00000 11111 22222 33333 44444 55555");          //Solved cubestate
-        double scale = 2.0;
+        double scale = (scaleSlider.getValue())*2;
         //TODO: Remove duplicate code
 
         RadioButton selected = (RadioButton) notationGroup.getSelectedToggle();
 
+
         if (selected == wcaSkewbButton) {
+            List<Integer> intMoves = new ArrayList<>();
             String[] moves = setupMoves.getText().trim().split(" ");
             for (String m : moves) {
                 if (m.equals("")) {
@@ -125,14 +144,22 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
                 }
                 int[] triedMoves = SkewbNotations.wcaNotation.get(m);
                 if (triedMoves == null) {
-                    imageErrorLabel.setText(m +  " is not a valid move!");
+                    promptError(m + " is not a valid move!");
                     return;
                 }
-                skewbState.applyWCAMoves(triedMoves);
+                for (int i : triedMoves) {
+                    intMoves.add(i);
+                }
             }
+            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
+            if (reverseBox.isSelected()) {
+                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
+            }
+            skewbState.applyWCAMoves(arrIntMoves);
             pattern = skewbState.toPattern();
         }
         else if (selected == rubikSkewbButton) {
+            List<Integer> intMoves = new ArrayList<>();
             String[] moves = setupMoves.getText().trim().split(" ");
             for (String m : moves) {
                 if (m.equals("")) {
@@ -140,11 +167,18 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
                 }
                 int[] triedMoves = SkewbNotations.rubikSkewbNotation.get(m);
                 if (triedMoves == null) {
-                    imageErrorLabel.setText(m +  " is not a valid move!");
+                    promptError(m + " is not a valid move!");
                     return;
                 }
-                skewbState.applyWCAMoves(triedMoves);
+                for (int i : triedMoves) {
+                    intMoves.add(i);
+                }
             }
+            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
+            if (reverseBox.isSelected()) {
+                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
+            }
+            skewbState.applyWCAMoves(arrIntMoves);
             pattern = skewbState.toPattern();
         }
         else if (selected == codeSkewbButton) {
@@ -160,7 +194,7 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
                     pattern, scale, false, true);
             imageErrorLabel.setText("");
         } catch(RuntimeException e) {
-            imageErrorLabel.setText("The provided / generated code was invalid.");
+            promptError("The provided / generated code was invalid.");
         }
         imageCanvas.getGraphicsContext2D().scale(1 / scale, 1 / scale);
     }
@@ -170,6 +204,7 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
         ClipboardContent content = new ClipboardContent();
         content.put(DataFormat.IMAGE, imageCanvas.snapshot(null, null));
         clipboard.setContent(content);
+        promptSuccess("Image copied to clipboard!");
     }
 
     private void downloadPNG() {
@@ -178,7 +213,9 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
         File file = new File(IMAGE_DOWNLOAD_LOCATION + System.currentTimeMillis() + ".png");
         try {
             ImageIO.write(Objects.requireNonNull(SwingFXUtils.fromFXImage(image, null)), "png", file);
+            promptSuccess("Image successfully downloaded!");
         } catch (IOException e) {
+            promptError("Couldn't download image, unknown path!");
             e.printStackTrace();
         }
     }
@@ -188,5 +225,16 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
         ClipboardContent content = new ClipboardContent();
         content.putString(pattern);
         clipboard.setContent(content);
+        promptSuccess("Code copied to clipboard!");
+    }
+
+    private void promptSuccess(String succ) {
+        imageErrorLabel.setText(succ);
+        imageErrorLabel.setTextFill(Color.GREEN);
+    }
+
+    private void promptError(String err) {
+        imageErrorLabel.setText(err);
+        imageErrorLabel.setTextFill(Color.RED);
     }
 }

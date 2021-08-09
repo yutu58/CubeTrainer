@@ -38,6 +38,7 @@ public class SkewbL2LReader {
            }
            providedAlgMap.get(key).add(new Alg(alg, timesTimed, average));
         }
+        reader.close();
     }
 
     private List<L2LSet> readSets() throws IOException{
@@ -56,6 +57,7 @@ public class SkewbL2LReader {
             L2LSet l2LSet = new L2LSet(Integer.parseInt(parts[0]), parts[1]);
             res.add(l2LSet);
         }
+        reader.close();
         return res;
     }
 
@@ -80,5 +82,6 @@ public class SkewbL2LReader {
             }
             sets.get(l2LCase.getSetNumber()-1).addCase(l2LCase);
         }
+        reader.close();
     }
 }
