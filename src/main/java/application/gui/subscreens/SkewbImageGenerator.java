@@ -4,15 +4,14 @@ import application.controllers.SkewbScreenController;
 import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
-import cubes.skewb.scramblers.SkewbScrambler;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import cubes.skewb.solvers.SkewbScrambler;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -128,75 +127,29 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
 
     @FXML
     private void generateImage() {
-        SkewbState skewbState = new SkewbState("00000 11111 22222 33333 44444 55555");          //Solved cubestate
-        double scale = (scaleSlider.getValue())*2;
-        //TODO: Remove duplicate code
-
         RadioButton selected = (RadioButton) notationGroup.getSelectedToggle();
 
+        SkewbNotations.notationEnum n;
 
-        if (selected == wcaSkewbButton) {
-            List<Integer> intMoves = new ArrayList<>();
-            String[] moves = setupMoves.getText().trim().split(" ");
-            for (String m : moves) {
-                if (m.equals("")) {
-                    continue;
-                }
-                int[] triedMoves = SkewbNotations.wcaNotation.get(m);
-                if (triedMoves == null) {
-                    promptError(m + " is not a valid move!");
-                    return;
-                }
-                for (int i : triedMoves) {
-                    intMoves.add(i);
-                }
-            }
-            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
-            if (reverseBox.isSelected()) {
-                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
-            }
-            skewbState.applyWCAMoves(arrIntMoves);
-            pattern = skewbState.toPattern();
+        if (selected == rubikSkewbButton) {
+            n = SkewbNotations.notationEnum.RubikSkewbNotation;
+        } else if (selected == wcaSkewbButton) {
+            n = SkewbNotations.notationEnum.WCASkewbNotation;
+        } else {
+            n = SkewbNotations.notationEnum.LithiumSkewbCode;
         }
-        else if (selected == rubikSkewbButton) {
-            List<Integer> intMoves = new ArrayList<>();
-            String[] moves = setupMoves.getText().trim().split(" ");
-            for (String m : moves) {
-                if (m.equals("")) {
-                    continue;
-                }
-                int[] triedMoves = SkewbNotations.rubikSkewbNotation.get(m);
-                if (triedMoves == null) {
-                    promptError(m + " is not a valid move!");
-                    return;
-                }
-                for (int i : triedMoves) {
-                    intMoves.add(i);
-                }
-            }
-            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
-            if (reverseBox.isSelected()) {
-                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
-            }
-            skewbState.applyWCAMoves(arrIntMoves);
-            pattern = skewbState.toPattern();
-        }
-        else if (selected == codeSkewbButton) {
-            pattern = setupMoves.getText();
-        }
-        else {
-            return;
-        }
+
+        String setup = setupMoves.getText();
+        GraphicsContext gc = imageCanvas.getGraphicsContext2D();
+        double scale = scaleSlider.getValue() * 2;
+        boolean reverse = reverseBox.isSelected();
 
         try {
-            //This method changes the scale, even if an exception is thrown;
-            SkewbL2LImageGenerator.drawSkewbImage(imageCanvas.getGraphicsContext2D(),
-                    pattern, scale, false, true);
-            imageErrorLabel.setText("");
-        } catch(RuntimeException e) {
-            promptError("The provided / generated code was invalid.");
+            pattern = SkewbL2LImageGenerator.drawImageFromSetup(n, setup, gc, scale, reverse);
+        } catch (RuntimeException e) {
+            promptError(e.getMessage());
         }
-        imageCanvas.getGraphicsContext2D().scale(1 / scale, 1 / scale);
+
     }
 
     private void copyImageToClipboard() {

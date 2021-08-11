@@ -1,4 +1,4 @@
-package cubes.skewb.scramblers;
+package cubes.skewb.solvers;
 
 import java.util.Stack;
 

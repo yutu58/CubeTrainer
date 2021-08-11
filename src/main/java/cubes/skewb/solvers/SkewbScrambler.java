@@ -1,46 +1,17 @@
-package cubes.skewb.scramblers;
+package cubes.skewb.solvers;
 
 import cubes.skewb.SkewbState;
 
 import java.util.*;
 
-public class SkewbScrambler {
-    private static final Map<SkewbState, int[]> pruningTable = new HashMap<>();
-    private static final Map<Integer, String> moveTable = new HashMap<>() {{
-        put(0, "R");
-        put(1, "R'");
-        put(2, "L");
-        put(3, "L'");
-        put(4, "U");
-        put(5, "U'");
-        put(6, "B");
-        put(7, "B'");
-    }};
-    private static final int skewbGodsNo = 11;
-    private static final int pruningDepth = 6;
-
-    public static void prune() {
-        SkewbIterator it = new SkewbIterator();
-        SkewbState s = new SkewbState("00000 11111 22222 33333 44444 55555");
-        pruningTable.put(s, new int[]{});
-        while (it.getSize() < (pruningDepth + 1)) {
-            s = new SkewbState("00000 11111 22222 33333 44444 55555");
-            it.next();
-            s.applyWCAMoves(it.toArr());
-            if (!pruningTable.containsKey(s)) {
-                pruningTable.put(s, it.toArr());
-            }
-        }
-    }
-
+public class SkewbScrambler extends SkewbMover{
     public static String stateToScrambler(SkewbState state, int successes) {
         Set<int[]> foundScramblesSet = new HashSet<>();
         //Put in random orientation ??
-        boolean randomOrientation = true;
+        boolean randomOrientation = false;
         if (randomOrientation) {
 
         }
-
         //Convert to white-green orientation
         state.recolorToScrambleOrientation();
 
@@ -48,7 +19,6 @@ public class SkewbScrambler {
         SkewbIterator iterator = new SkewbIterator();
         int foundSolutions = 0;
         int[] scrambleArr = new int[0];
-        SkewbState prunedState = null;
 
         if (state.isSolved()) {
             foundSolutions = successes;
@@ -87,29 +57,5 @@ public class SkewbScrambler {
         }
 
         return res.toString().trim();
-    }
-
-    public static int[] reverseSkewb(int[] a) {
-        int[] b = new int[a.length];
-        for (int i = 0; i < a.length; i++) {
-            int c = a[a.length-1-i];
-
-            if (c < 8) {                            //Regular moves ||
-                if (c % 2 == 0) {
-                    b[i] = c + 1;
-                } else {
-                    b[i] = c - 1;
-                }
-            } else if (c < 17) {                    //Rotations
-                if (c % 3 == 1) {
-                    b[i] = c;
-                } else if (c % 3 == 0) {
-                    b[i] = c-1;
-                } else {
-                    b[i] = c+1;
-                }
-            }
-        }
-        return b;
     }
 }

@@ -1,12 +1,17 @@
 package cubes.skewb.imageGenerators;
 
+import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
+import cubes.skewb.solvers.SkewbScrambler;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.RadioButton;
 import javafx.scene.paint.Color;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
@@ -20,6 +25,73 @@ public class SkewbL2LImageGenerator {
         put(5, Color.ORANGE);
         put(6, Color.GRAY);
     }};
+
+    public static String drawImageFromSetup(SkewbNotations.notationEnum notation, String setup, GraphicsContext gc, double scale, boolean reverse) {
+        SkewbState skewbState = new SkewbState("00000 11111 22222 33333 44444 55555");          //Solved cubestate
+        //TODO: Remove duplicate code and move this to skewb.SkewbState
+        String pattern;
+
+        if (notation == SkewbNotations.notationEnum.WCASkewbNotation) {
+            java.util.List<Integer> intMoves = new ArrayList<>();
+            String[] moves = setup.trim().split(" ");
+            for (String m : moves) {
+                if (m.equals("")) {
+                    continue;
+                }
+                int[] triedMoves = SkewbNotations.wcaNotation.get(m);
+                if (triedMoves == null) {
+                    throw new UnknownMoveException(m + " is not a valid move!");
+                }
+                for (int i : triedMoves) {
+                    intMoves.add(i);
+                }
+            }
+            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
+            if (reverse) {
+                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
+            }
+            skewbState.applyWCAMoves(arrIntMoves);
+            pattern = skewbState.toPattern();
+        }
+        else if (notation == SkewbNotations.notationEnum.RubikSkewbNotation) {
+            List<Integer> intMoves = new ArrayList<>();
+            String[] moves = setup.trim().split(" ");
+            for (String m : moves) {
+                if (m.equals("")) {
+                    continue;
+                }
+                int[] triedMoves = SkewbNotations.rubikSkewbNotation.get(m);
+                if (triedMoves == null) {
+                    throw new UnknownMoveException(m + " is not a valid move!");
+                }
+                for (int i : triedMoves) {
+                    intMoves.add(i);
+                }
+            }
+            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
+            if (reverse) {
+                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
+            }
+            skewbState.applyWCAMoves(arrIntMoves);
+            pattern = skewbState.toPattern();
+        }
+        else if (notation == SkewbNotations.notationEnum.LithiumSkewbCode) {
+            pattern = setup;
+        }
+        else {
+            throw new UnknownMoveException("Unknown notation");
+        }
+
+        try {
+            //This method changes the scale, even if an exception is thrown;
+            SkewbL2LImageGenerator.drawSkewbImage(gc,
+                    pattern, scale, false, true);
+        } catch(RuntimeException e) {
+            throw new InvalidCodeException("The provided / generated code was invalid");
+        }
+        gc.scale(1 / scale, 1 / scale);
+        return pattern;
+    }
 
     public static void drawSkewbImage(GraphicsContext gc, String pattern, double scale,
                                       boolean bottom, boolean resizeCanvas) throws RuntimeException {

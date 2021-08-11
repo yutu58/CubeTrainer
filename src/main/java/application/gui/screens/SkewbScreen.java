@@ -2,13 +2,12 @@ package application.gui.screens;
 
 import application.controllers.SkewbScreenController;
 import application.gui.subscreens.SkewbAlgTrainer;
-import cubes.skewb.scramblers.SkewbScrambler;
+import cubes.skewb.solvers.SkewbScrambler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
