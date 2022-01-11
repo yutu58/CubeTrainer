@@ -4,41 +4,31 @@ import application.controllers.SkewbScreenController;
 import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
-import cubes.skewb.solvers.SkewbScrambler;
 import cubes.skewb.solvers.SkewbSolver;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.WritableImage;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.DataFormat;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 
-import javax.imageio.ImageIO;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import static Settings.Settings.*;
+import java.util.concurrent.Future;
 
 public class SkewbAlgGenerator extends GridPane implements Initializable {
     @FXML
-    private Button applyButton;
+    private Button goButton;
+
+    @FXML
+    private Button stopButton;
 
     @FXML
     private Label imageErrorLabel;
@@ -56,15 +46,6 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
     private RadioButton codeSkewbButton;
 
     @FXML
-    private Label copyImageButton;
-
-    @FXML
-    private Label downloadPNGButton;
-
-    @FXML
-    private Label copyLithiumCodeButton;
-
-    @FXML
     private TextField setupMoves;
 
     @FXML
@@ -76,14 +57,19 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
     @FXML
     private CheckBox bottomBox;
 
-    private String pattern;
-
     private SkewbScreenController controller;
+
+    private final ExecutorService executorService;
+
+    private SkewbSolver skewbSolver;
 
     private ToggleGroup notationGroup;
 
     public SkewbAlgGenerator(SkewbScreenController controller) {
         this.controller = controller;
+        this.skewbSolver = null;
+        this.executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/subscreens/skewbAlgGenerator.fxml"));
             loader.setController(this);
@@ -97,17 +83,27 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        applyButton.setOnAction((e) -> go());
+        goButton.setOnAction((e) -> go());
+        stopButton.setOnAction((e) -> stop());
+
     }
 
     private void go() {
-        pattern = SkewbL2LImageGenerator.drawImageFromSetup(SkewbNotations.notationEnum.RubikSkewbNotation,
+        String pattern = SkewbL2LImageGenerator.drawImageFromSetup(SkewbNotations.notationEnum.RubikSkewbNotation,
                 setupMoves.getText(), imageCanvas.getGraphicsContext2D(), 1, false);
         SkewbState s = new SkewbState(pattern);
-        SkewbSolver solver = new SkewbSolver(s, 15, imageErrorLabel);
+        SkewbSolver solver = new SkewbSolver(s, 14, imageErrorLabel, true);
+        skewbSolver = solver;
+        executorService.submit(solver);
+    }
 
-        ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-        es.submit(solver);
+    private void stop() {
+        try {
+            skewbSolver.setCancelled(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            promptError("Something went wrong when cancelling, please restart the application!");
+        }
     }
 
     private void promptSuccess(String succ) {
