@@ -1,4 +1,4 @@
-package gui.screens;
+package application.gui.screens;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,4 +20,6 @@ public class HomeScreen {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    //Event listeners
 }

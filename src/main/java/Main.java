@@ -1,4 +1,4 @@
-import gui.MainAppWindow;
+import application.gui.MainAppWindow;
 
 public class Main {
     public static void main(String[] args) {

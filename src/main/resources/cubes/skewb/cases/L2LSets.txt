@@ -1,0 +1,37 @@
+1,Pi + Swirl Perm (cat 3)
+2,Pi + Swirl Perm (cat 1)
+3,Pi + Wat Perm (cat 3)
+4,Pi + Wat Perm (cat 1)
+5,Pi + X Perm (cat 3)
+6,Pi + X perm (cat 1)
+7,Pi + Horizontal U Perm (1)
+8,Pi + Horizontal U Perm (2)
+9,Pi + Vertical U Perm (cat 3)
+10,Pi + Vertical U Perm (cat 1)
+11,Pi + O Perm (cat 3)
+12,Pi + O Perm (cat 1)
+13,Pi + Z Perm Conjugates (cat 1)
+14,Pi + Z Perm Conjugates (cat 3)
+15,Pi + Triple Sledge
+16,Pi + H Perm
+17,Pi + Z Perm
+18,Peanut + Swirl Perm
+19,Peanut + Wat Perm
+20,Peanut + X Perm
+21,Peanut + Horizontal U Perm
+22,Peanut + Vertical U Perm
+23,Peanut + O Perm
+24,Peanut + Z Perm Conjugates (1)
+25,Peanut + Z Perm Conjugates (2)
+26,Peanut + Triple Sledge
+27,Pure Peanut
+28,Peanut + H Perm
+29,Peanut + Z Perm
+30,Z Perm Conjugates (L4C)
+31,U Perm / Triple Sledge
+32,Z Perm
+33,H Perm
+34,O Perm
+35,Wat Perm (L5C)
+36,X Perm (L5C)
+37,Swirl Perm (L5C)

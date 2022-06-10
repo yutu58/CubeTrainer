@@ -1,6 +1,6 @@
-package gui;
+package application.gui;
 
-import gui.screens.HomeScreen;
+import application.gui.screens.HomeScreen;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

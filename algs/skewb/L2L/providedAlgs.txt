@@ -1,0 +1,11 @@
+1a,H y S y' H y H,0,0
+1a,y' x r' R r R' z' R r' R r z R r' R' r',0,0
+1a,R r' z' r' z r' R r' R r,0,0
+1b,y' S y' H y S y' S,0,0
+1b,x r' R r R r' R' r z' r' R r R' B',0,0
+1b,y' b' r l r l' r b' l',0,0
+1c,S y S y' S y H,0,0
+1c,y' x R r' R' z' r' R' r B R B' R,0,0
+1d,y' H y' H y H y' S,0,0
+1d,x r' R r z R r R' z' r' R' r R',0,0
+1d,y x R' r' R' r z R r' R' r' R r R',0,0
