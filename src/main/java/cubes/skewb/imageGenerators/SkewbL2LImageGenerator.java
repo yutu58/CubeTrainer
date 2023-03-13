@@ -4,16 +4,9 @@ import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
 import cubes.skewb.solvers.SkewbScrambler;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.RadioButton;
 import javafx.scene.paint.Color;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class SkewbL2LImageGenerator {
     private static final Map<Integer, Color> colorMap = new HashMap<>(){{
@@ -80,6 +73,10 @@ public class SkewbL2LImageGenerator {
         }
         else {
             throw new UnknownMoveException("Unknown notation");
+        }
+
+        if (gc == null) {
+            return pattern;
         }
 
         try {

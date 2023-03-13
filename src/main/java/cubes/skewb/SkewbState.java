@@ -1,9 +1,9 @@
 package cubes.skewb;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import cubes.skewb.imageGenerators.UnknownMoveException;
+import cubes.skewb.solvers.SkewbScrambler;
+
+import java.util.*;
 
 public class SkewbState {
     private static final Map<Integer, Integer> opposites = new HashMap<>() {{
@@ -101,6 +101,57 @@ public class SkewbState {
         this.frontRight = Arrays.stream(this.frontRight).map(colorMap::get).toArray();
         this.backRight = Arrays.stream(this.backRight).map(colorMap::get).toArray();
         this.backLeft = Arrays.stream(this.backLeft).map(colorMap::get).toArray();
+    }
+
+    public static SkewbState setupCase(String setup, SkewbNotations.notationEnum notation, boolean reverse) {
+        SkewbState skewbState = new SkewbState("00000 11111 22222 33333 44444 55555");
+
+        if (notation == SkewbNotations.notationEnum.WCASkewbNotation) {
+            java.util.List<Integer> intMoves = new ArrayList<>();
+            String[] moves = setup.trim().split(" ");
+            for (String m : moves) {
+                if (m.equals("")) {
+                    continue;
+                }
+                int[] triedMoves = SkewbNotations.wcaNotation.get(m);
+                if (triedMoves == null) {
+                    throw new UnknownMoveException(m + " is not a valid move!");
+                }
+                for (int i : triedMoves) {
+                    intMoves.add(i);
+                }
+            }
+            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
+            if (reverse) {
+                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
+            }
+            skewbState.applyWCAMoves(arrIntMoves);
+        }
+        else if (notation == SkewbNotations.notationEnum.RubikSkewbNotation) {
+            List<Integer> intMoves = new ArrayList<>();
+            String[] moves = setup.trim().split(" ");
+            for (String m : moves) {
+                if (m.equals("")) {
+                    continue;
+                }
+                int[] triedMoves = SkewbNotations.rubikSkewbNotation.get(m);
+                if (triedMoves == null) {
+                    throw new UnknownMoveException(m + " is not a valid move!");
+                }
+                for (int i : triedMoves) {
+                    intMoves.add(i);
+                }
+            }
+            int[] arrIntMoves = intMoves.stream().mapToInt(i->i).toArray();
+            if (reverse) {
+                arrIntMoves = SkewbScrambler.reverseSkewb(arrIntMoves);
+            }
+            skewbState.applyWCAMoves(arrIntMoves);
+        }
+        else if (notation == SkewbNotations.notationEnum.LithiumSkewbCode) {
+            skewbState = new SkewbState(setup);
+        }
+        return skewbState;
     }
 
     @Override
