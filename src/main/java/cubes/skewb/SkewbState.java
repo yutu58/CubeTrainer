@@ -59,6 +59,7 @@ public class SkewbState {
     }
 
     public void applyWCAMoves(int[] moves) {
+        if (moves == null) return;
         for (int i : moves) {
             switch (i) {
                 case 0 -> this.applyR();

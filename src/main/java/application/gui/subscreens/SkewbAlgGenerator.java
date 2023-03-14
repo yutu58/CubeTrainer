@@ -92,12 +92,16 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
             return;
         }
 
-        SkewbState s = SkewbState.setupCase(setupMoves.getText(), n, reverseBox.isSelected());
+        try {
+            SkewbState s = SkewbState.setupCase(setupMoves.getText(), n, reverseBox.isSelected());
 
-        SkewbSolver solver = new SkewbSolver(s, (int) depthSlider.getValue(), imageErrorLabel, algList, allAngles.isSelected());
+            SkewbSolver solver = new SkewbSolver(s, (int) depthSlider.getValue(), imageErrorLabel, algList, allAngles.isSelected());
 
-        ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-        es.submit(solver);
+            ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+            es.submit(solver);
+        } catch (RuntimeException e){
+            promptError("Please provide a valid input!");
+        }
     }
 
     private void promptSuccess(String succ) {
