@@ -58,4 +58,16 @@ public class SkewbNotations {
         put("z'", new int[]{15});
         put("z2", new int[]{16});
     }};
+
+    public static String nextInZ(String s) {
+        if (s.startsWith("r")) return s.replace("r", "b");
+        if (s.startsWith("b")) return s.replace("b", "B");
+        if (s.startsWith("B")) return s.replace("B", "R");
+        if (s.startsWith("R")) return s.replace("R", "r");
+        if (s.equals(" - ")) return " z ";
+        if (s.equals(" z ")) return " z2 ";
+        if (s.equals(" z2 ")) return " z' ";
+        if (s.equals(" z' ")) return " - ";
+        else return "";
+    }
 }

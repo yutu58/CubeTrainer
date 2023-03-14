@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -87,5 +88,39 @@
       <ListView fx:id="algList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
 
       </ListView>
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <HBox fx:id="rotationExplorer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label fx:id="copyAlgButton" alignment="CENTER" maxHeight="Infinity" maxWidth="Infinity" text="Copy algorithm">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Label>
+                </children>
+            </GridPane>
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Generated algs can be selected from the list.&#10;&#10;Z-rotations can be added to the selected alg by clicking the -'s." wrapText="true">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </VBox>
     </children>
 </fx:root>

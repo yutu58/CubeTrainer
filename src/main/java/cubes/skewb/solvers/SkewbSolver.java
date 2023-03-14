@@ -181,11 +181,9 @@ public class SkewbSolver extends SkewbMover implements Runnable {
     }
 
     private void updateStatus(String text) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                statusBar.setText(text);
-            }
+        Platform.runLater(() -> {
+            statusBar.setStyle("-fx-text-fill: Black");
+            statusBar.setText(text);
         });
     }
 
@@ -201,22 +199,19 @@ public class SkewbSolver extends SkewbMover implements Runnable {
         Set<String> finalSolutions = solutions;
         Platform.runLater(() -> {
             List<String> list = new ArrayList<>(finalSolutions);
-            list.sort(new Comparator<String>() {
-                @Override
-                public int compare(String o1, String o2) {
-                    int x = 0;
-                    //First condition: Length
-                    if (x == 0) {
-                        x = Integer.compare(o1.length(), o2.length());
-                    }
-
-                    //2nd condition: alg moves;
-                    if (x == 0) {
-                        x = CharSequence.compare(o1, o2);
-                    }
-
-                    return x;
+            list.sort((o1, o2) -> {
+                int x = 0;
+                //First condition: Length
+                if (x == 0) {
+                    x = Integer.compare(o1.length(), o2.length());
                 }
+
+                //2nd condition: alg moves;
+                if (x == 0) {
+                    x = CharSequence.compare(o1, o2);
+                }
+
+                return x;
             });
             ObservableList<String> items = FXCollections.observableList(list);
             algList.setItems(items);

@@ -84,7 +84,7 @@
     </left>
     <top>
         <HBox fx:id="subMenuSAT" maxHeight="30.0" prefHeight="30.0">
-            <Label text="Test Version 0.0.2a" />
+            <Label text="Test Version 0.1.0" />
         </HBox>
     </top>
 </fx:root>
