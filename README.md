@@ -1,5 +1,5 @@
 # Lithium (Speedcubing training software)
-Training software that can be used to practice specific steps of solving multiple variants of the Rubik's cube.
+Training software that can be used to practice specific steps of solving variants of the Rubik's cube.
 
 ## Main to-do List
 - [x] Support for skewb L2L (Main purpose)
@@ -11,7 +11,9 @@ Training software that can be used to practice specific steps of solving multipl
 - [x] Visualizer for the cases
 
 ## Smaller things
+- [x] Why not add an on the spot alg generator as well, if you feel like all algs are bad.
+
+## Perhaps useful
 - [ ] Save times to get an average idea of how slow you are
 - [ ] Save times per alg to see which algs are best / worst for you
 - [ ] Save times per case to see which cases are slowest
-- [ ] Why not add an on the spot alg generator as well, if you feel like all algs are bad.
