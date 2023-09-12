@@ -1,8 +1,8 @@
 package application.gui.elements;
 
-import application.controllers.SkewbScreenController;
-import cubes.skewb.data.Alg;
-import cubes.skewb.data.L2LCase;
+import application.controllers.ScreenController;
+import cubes.Case;
+import cubes.Alg;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,9 +31,9 @@ public class AlgCaseElement extends BorderPane implements Initializable {
     @FXML
     private Canvas caseCanvas;
 
-    L2LCase l2LCase;
+    Case l2LCase;
 
-    public AlgCaseElement(L2LCase l2LCase, SkewbScreenController co) {
+    public AlgCaseElement(Case l2LCase, ScreenController co) {
         this.l2LCase = l2LCase;
         double scale = IMAGE_SCALE;
         try {

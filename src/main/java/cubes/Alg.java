@@ -1,4 +1,4 @@
-package cubes.skewb.data;
+package cubes;
 
 public class Alg {
     private String algorithm;

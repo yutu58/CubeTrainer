@@ -1,10 +1,8 @@
-package application.gui.subscreens;
+package application.gui.subscreens.tx2;
 
-import application.controllers.SkewbScreenController;
+import application.controllers.Tx2ScreenController;
 import cubes.skewb.SkewbNotations;
-import cubes.skewb.SkewbState;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
-import cubes.skewb.solvers.SkewbScrambler;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +11,6 @@ import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
@@ -28,13 +23,12 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static Settings.Settings.*;
 
-public class SkewbImageGenerator extends GridPane implements Initializable {
+public class Tx2ImageGenerator extends GridPane implements Initializable {
     @FXML
     private Button applyButton;
 
@@ -76,14 +70,14 @@ public class SkewbImageGenerator extends GridPane implements Initializable {
 
     private String pattern;
 
-    private SkewbScreenController controller;
+    private Tx2ScreenController controller;
 
     private ToggleGroup notationGroup;
 
-    public SkewbImageGenerator(SkewbScreenController controller) {
+    public Tx2ImageGenerator(Tx2ScreenController controller) {
         this.controller = controller;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/subscreens/skewbImageGenerator.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/subscreens/skewb/skewbImageGenerator.fxml"));
             loader.setController(this);
             loader.setRoot(this);
             loader.load();

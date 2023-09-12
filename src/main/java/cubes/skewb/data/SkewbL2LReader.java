@@ -1,5 +1,7 @@
 package cubes.skewb.data;
 
+import cubes.Alg;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;

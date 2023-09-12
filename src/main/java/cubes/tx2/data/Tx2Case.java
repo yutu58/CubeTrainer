@@ -1,4 +1,4 @@
-package cubes.skewb.data;
+package cubes.tx2.data;
 
 import cubes.Alg;
 import cubes.Case;
@@ -6,13 +6,13 @@ import cubes.Case;
 import java.util.ArrayList;
 import java.util.List;
 
-public class L2LCase implements Case {
+public class Tx2Case implements Case {
     private String id;
     private String pattern;
     private List<Alg> providedAlgs;
     private List<Alg> addedAlgs;
 
-    public L2LCase(String id, String pattern) {
+    public Tx2Case(String id, String pattern) {
         this.id = id;
         this.pattern = pattern;
         this.providedAlgs = new ArrayList<>();
@@ -47,3 +47,4 @@ public class L2LCase implements Case {
         this.addedAlgs = addedAlgs;
     }
 }
+

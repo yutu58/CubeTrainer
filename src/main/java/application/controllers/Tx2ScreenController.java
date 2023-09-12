@@ -1,16 +1,17 @@
 package application.controllers;
 
-
-import application.gui.subscreens.skewb.SkewbAlgGenerator;
-import application.gui.subscreens.skewb.SkewbAlgTrainer;
-import application.gui.subscreens.skewb.SkewbImageGenerator;
+import application.gui.subscreens.tx2.Tx2AlgGenerator;
+import application.gui.subscreens.tx2.Tx2AlgTrainer;
+import application.gui.subscreens.tx2.Tx2ImageGenerator;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-import static Settings.Settings.*;
 
-public class SkewbScreenController implements ScreenController{
+import static Settings.Settings.MENU_COLOR;
+import static Settings.Settings.SELECTED_MENU_BUTTON_COLOR;
+
+public class Tx2ScreenController implements ScreenController{
     @FXML
     private Label algTrainerButton;
 
@@ -21,23 +22,23 @@ public class SkewbScreenController implements ScreenController{
     private Label algGeneratorButton;
 
     @FXML
-    private BorderPane skewbScreen;
+    private BorderPane tx2Screen;
 
     @FXML
     private HBox menu;
 
     private Pane subMenu;
 
-    private SkewbAlgGenerator algGenerator;
-    private SkewbImageGenerator imageGenerator;
-    private SkewbAlgTrainer algTrainer;
+    private Tx2AlgGenerator algGenerator;
+    private Tx2ImageGenerator imageGenerator;
+    private Tx2AlgTrainer algTrainer;
 
     @FXML
     public void initialize() {
         menu.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        algTrainer = new SkewbAlgTrainer(this);
-        imageGenerator = new SkewbImageGenerator(this);
-        algGenerator = new SkewbAlgGenerator(this);
+        algTrainer = new Tx2AlgTrainer(this);
+        imageGenerator = new Tx2ImageGenerator(this);
+        algGenerator = new Tx2AlgGenerator(this);
         setupAlgTrainer();
     }
 
@@ -48,7 +49,7 @@ public class SkewbScreenController implements ScreenController{
         algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = algTrainer;
-        skewbScreen.setCenter(algTrainer);
+        tx2Screen.setCenter(algTrainer);
     }
 
     @FXML
@@ -58,7 +59,7 @@ public class SkewbScreenController implements ScreenController{
         algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = imageGenerator;
-        skewbScreen.setCenter(imageGenerator);
+        tx2Screen.setCenter(imageGenerator);
     }
 
     @FXML
@@ -68,11 +69,11 @@ public class SkewbScreenController implements ScreenController{
         algGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = algGenerator;
-        skewbScreen.setCenter(algGenerator);
+        tx2Screen.setCenter(algGenerator);
     }
 
     public BorderPane getScreen() {
-        return skewbScreen;
+        return tx2Screen;
     }
 
     public Pane getSubMenu() {

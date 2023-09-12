@@ -1,8 +1,8 @@
 package application.gui.elements;
 
-import application.controllers.SkewbScreenController;
-import cubes.skewb.data.L2LCase;
-import cubes.skewb.data.L2LSet;
+import application.controllers.ScreenController;
+import cubes.Case;
+import cubes.Set;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,9 +21,9 @@ public class AlgSetElement extends TitledPane implements Initializable {
     @FXML
     private VBox caseContainer;
 
-    L2LSet algSet;
+    Set algSet;
 
-    public AlgSetElement(L2LSet algSet, SkewbScreenController co) {
+    public AlgSetElement(Set algSet, ScreenController co) {
         this.algSet = algSet;
 
         try {
@@ -45,7 +45,7 @@ public class AlgSetElement extends TitledPane implements Initializable {
         }
 
         this.setText(this.algSet.getId() + ": " + this.algSet.getName());
-        for (L2LCase c : this.algSet.getCases()) {
+        for (Case c : this.algSet.getCases()) {
             this.caseContainer.getChildren().add(new AlgCaseElement(c, co));
         }
     }

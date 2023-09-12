@@ -1,9 +1,9 @@
-package application.gui.subscreens;
+package application.gui.subscreens.tx2;
 
-import application.controllers.SkewbScreenController;
-import cubes.skewb.SkewbNotations;
-import cubes.skewb.SkewbState;
-import cubes.skewb.solvers.SkewbSolver;
+import application.controllers.Tx2ScreenController;
+import cubes.tx2.Tx2Notations;
+import cubes.tx2.Tx2State;
+import cubes.tx2.solvers.Tx2Solver;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,6 @@ import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.DataFormat;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,7 +26,7 @@ import java.util.concurrent.Executors;
 
 import static Settings.Settings.*;
 
-public class SkewbAlgGenerator extends GridPane implements Initializable {
+public class Tx2AlgGenerator extends GridPane implements Initializable {
     @FXML
     private Button applyButton;
 
@@ -47,13 +46,10 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
     private CheckBox allAngles;
 
     @FXML
-    private RadioButton rubikSkewbButton;
+    private RadioButton wca2x2button;
 
     @FXML
-    private RadioButton wcaSkewbButton;
-
-    @FXML
-    private RadioButton codeSkewbButton;
+    private RadioButton code2x2Button;
 
     @FXML
     private ListView<String> algList;
@@ -64,14 +60,14 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
     @FXML
     private Label copyAlgButton;
 
-    private SkewbScreenController controller;
+    private Tx2ScreenController controller;
 
     private ToggleGroup notationGroup;
 
-    public SkewbAlgGenerator(SkewbScreenController controller) {
+    public Tx2AlgGenerator(Tx2ScreenController controller) {
         this.controller = controller;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/subscreens/skewbAlgGenerator.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/subscreens/2x2/2x2AlgGenerator.fxml"));
             loader.setController(this);
             loader.setRoot(this);
             loader.load();
@@ -87,10 +83,8 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
 
         notationGroup = new ToggleGroup();
 
-        rubikSkewbButton.setToggleGroup(notationGroup);
-        rubikSkewbButton.setSelected(true);
-        wcaSkewbButton.setToggleGroup(notationGroup);
-        codeSkewbButton.setToggleGroup(notationGroup);
+        wca2x2button.setToggleGroup(notationGroup);
+        code2x2Button.setToggleGroup(notationGroup);
 
         algList.setOnMousePressed(event -> {
             Optional<String> optional = algList.getSelectionModel().getSelectedItems().stream().findFirst();
@@ -141,54 +135,52 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
 
         String[] moves = alg.split(" ");
         //Create z select element
-        for (int i = 0; i < moves.length; i++) {
-            Label x = new Label(moves[i]);
-            x.setFont(new Font(30));
-            x.setStyle("-fx-font-weight: Bold");
-            children.add(x);
-
-            if (i != moves.length - 1) {
-                Label y = new Label(" - ");
-                int finalI = i;
-                y.setFont(new Font(30));
-                children.add(y);
-                y.setOnMouseClicked(event -> {
-                    ObservableList<Node> childrenLeft = rotationExplorer.getChildren();
-                    //Update moves after
-                    for (int j = (finalI + 1) * 2; j < childrenLeft.size(); j += 2) {
-                        Label l = (Label) childrenLeft.get(j);
-                        l.setText(SkewbNotations.nextInZ(l.getText()));
-
-                    }
-                    //Update rotation move itself
-                    y.setText(SkewbNotations.nextInZ(y.getText()));
-                });
-
-                y.setOnMouseEntered(event -> y.setStyle("-fx-underline: true; -fx-text-fill: blue; -fx-cursor: hand"));
-                y.setOnMouseExited(event -> y.setStyle("-fx-underline: false; -fx-text-fill: black; -fx-cursor: default"));
-            }
-        }
+//        for (int i = 0; i < moves.length; i++) {
+//            Label x = new Label(moves[i]);
+//            x.setFont(new Font(30));
+//            x.setStyle("-fx-font-weight: Bold");
+//            children.add(x);
+//
+//            if (i != moves.length - 1) {
+//                Label y = new Label(" - ");
+//                int finalI = i;
+//                y.setFont(new Font(30));
+//                children.add(y);
+//                y.setOnMouseClicked(event -> {
+//                    ObservableList<Node> childrenLeft = rotationExplorer.getChildren();
+//                    //Update moves after
+//                    for (int j = (finalI + 1) * 2; j < childrenLeft.size(); j += 2) {
+//                        Label l = (Label) childrenLeft.get(j);
+//                        l.setText(Tx2Notations.nextInZ(l.getText()));
+//
+//                    }
+//                    //Update rotation move itself
+//                    y.setText(SkewbNotations.nextInZ(y.getText()));
+//                });
+//
+//                y.setOnMouseEntered(event -> y.setStyle("-fx-underline: true; -fx-text-fill: blue; -fx-cursor: hand"));
+//                y.setOnMouseExited(event -> y.setStyle("-fx-underline: false; -fx-text-fill: black; -fx-cursor: default"));
+//            }
+//        }
     }
 
     private void go() {
         RadioButton selected = (RadioButton) notationGroup.getSelectedToggle();
-        SkewbNotations.notationEnum n;
+        Tx2Notations.notationEnum n;
 
-        if (selected == rubikSkewbButton) {
-            n = SkewbNotations.notationEnum.RubikSkewbNotation;
-        } else if (selected == wcaSkewbButton) {
-            n = SkewbNotations.notationEnum.WCASkewbNotation;
-        } else if (selected == codeSkewbButton) {
-            n = SkewbNotations.notationEnum.LithiumSkewbCode;
+        if (selected == wca2x2button) {
+            n = Tx2Notations.notationEnum.WCA_RUF_NOTATION;
+        } else if (selected == code2x2Button) {
+            n = Tx2Notations.notationEnum.LITHIUM_2x2_CODE;
         } else {
             promptError("Select a valid input notation");
             return;
         }
 
         try {
-            SkewbState s = SkewbState.setupCase(setupMoves.getText(), n, reverseBox.isSelected());
+            Tx2State s = Tx2State.setupCase(setupMoves.getText(), n, reverseBox.isSelected());
 
-            SkewbSolver solver = new SkewbSolver(s, (int) depthSlider.getValue(), imageErrorLabel, algList, allAngles.isSelected());
+            Tx2Solver solver = new Tx2Solver(s, (int) depthSlider.getValue(), imageErrorLabel, algList, allAngles.isSelected());
 
             ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
             es.submit(solver);

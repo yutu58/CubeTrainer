@@ -1,4 +1,4 @@
-package cubes.skewb.data;
+package cubes.tx2.data;
 
 import cubes.Case;
 import cubes.Set;
@@ -6,12 +6,12 @@ import cubes.Set;
 import java.util.ArrayList;
 import java.util.List;
 
-public class L2LSet implements Set {
+public class Tx2Set implements Set {
     private int id;
     private String name;
     private List<Case> cases;
 
-    public L2LSet(int id, String name) {
+    public Tx2Set(int id, String name) {
         this.id = id;
         this.name = name;
         this.cases = new ArrayList<>();
@@ -19,15 +19,15 @@ public class L2LSet implements Set {
 
     @Override
     public String toString() {
-        return "L2LSet{" +
+        return "Tx2Set{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", cases=" + cases +
                 '}';
     }
 
-    public void addCase(L2LCase l2LCase) {
-        this.cases.add(l2LCase);
+    public void addCase(Tx2Case tx2Case) {
+        this.cases.add(tx2Case);
     }
 
     public int getId() {

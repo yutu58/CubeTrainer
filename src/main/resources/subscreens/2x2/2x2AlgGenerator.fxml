@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" type="javafx.scene.layout.GridPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="150.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="150.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="174.0" prefHeight="174.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="100.0" minHeight="27.0" prefHeight="100.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="150.0" minHeight="30.0" prefHeight="150.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="100.0" minHeight="30.0" prefHeight="100.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label fx:id="imageErrorLabel" alignment="CENTER" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Label>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="300.0" GridPane.columnIndex="2">
+            <children>
+                <Label text="Notation:">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font></Label>
+                <RadioButton fx:id="rubikSkewbButton" mnemonicParsing="false" prefWidth="150.0" text="RubikSkewb">
+                    <font>
+                        <Font size="14.0" />
+                    </font></RadioButton>
+                <RadioButton fx:id="wca2x2button" mnemonicParsing="false" prefWidth="150.0" text="WCA">
+                    <font>
+                        <Font size="14.0" />
+                    </font></RadioButton>
+                <RadioButton fx:id="code2x2Button" mnemonicParsing="false" prefWidth="150.0" text="Lithium Code">
+                    <font>
+                        <Font size="14.0" />
+                    </font></RadioButton>
+                <Label text="Max Depth:">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets top="20.0" />
+                    </padding>
+                </Label>
+                <Slider fx:id="depthSlider" blockIncrement="1.0" majorTickUnit="2.0" max="16.0" maxWidth="150.0" min="4.0" minorTickCount="1" prefWidth="150.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="8.0" />
+                <Label text="Other:">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets top="20.0" />
+                    </padding>
+                </Label>
+                <CheckBox fx:id="reverseBox" mnemonicParsing="false" prefWidth="150.0" text="Reverse setup">
+                    <font>
+                        <Font size="14.0" />
+                    </font></CheckBox>
+                <CheckBox fx:id="allAngles" mnemonicParsing="false" prefWidth="150.0" text="All Z-angles">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </CheckBox>
+            </children>
+        </VBox>
+        <TextField fx:id="setupMoves" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font>
+                <Font size="20.0" />
+            </font></TextField>
+        <Label alignment="CENTER_RIGHT" maxWidth="Infinity" text="Setup: " GridPane.rowIndex="2">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Button fx:id="applyButton" mnemonicParsing="false" text="Apply" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+            <GridPane.margin>
+                <Insets left="10.0" />
+            </GridPane.margin>
+        </Button>
+      <ListView fx:id="algList" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+
+      </ListView>
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <HBox fx:id="rotationExplorer" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label fx:id="copyAlgButton" alignment="CENTER" maxHeight="Infinity" maxWidth="Infinity" text="Copy algorithm">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Label>
+                </children>
+            </GridPane>
+         </children></VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Generated algs can be selected from the list.&#10;&#10;Z-rotations can be added to the selected alg by clicking the -'s." wrapText="true">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets left="5.0" />
+         </GridPane.margin>
+      </VBox>
+    </children>
+</fx:root>
