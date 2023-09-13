@@ -8,8 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 
-import static Settings.Settings.MENU_COLOR;
-import static Settings.Settings.SELECTED_MENU_BUTTON_COLOR;
+import static Settings.Settings.*;
 
 public class Tx2ScreenController implements ScreenController{
     @FXML
@@ -35,7 +34,7 @@ public class Tx2ScreenController implements ScreenController{
 
     @FXML
     public void initialize() {
-        menu.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        menu.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         algTrainer = new Tx2AlgTrainer(this);
         imageGenerator = new Tx2ImageGenerator(this);
         algGenerator = new Tx2AlgGenerator(this);
@@ -45,8 +44,8 @@ public class Tx2ScreenController implements ScreenController{
     @FXML
     private void setupAlgTrainer() {
         algTrainerButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = algTrainer;
         tx2Screen.setCenter(algTrainer);
@@ -54,9 +53,9 @@ public class Tx2ScreenController implements ScreenController{
 
     @FXML
     private void setupImageGenerator() {
-        algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algTrainerButton.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         imageGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = imageGenerator;
         tx2Screen.setCenter(imageGenerator);
@@ -64,8 +63,8 @@ public class Tx2ScreenController implements ScreenController{
 
     @FXML
     private void setupAlgGenerator() {
-        algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algTrainerButton.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(TX2_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         algGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = algGenerator;

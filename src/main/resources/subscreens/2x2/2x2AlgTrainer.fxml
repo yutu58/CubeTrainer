@@ -9,6 +9,7 @@
     <center>
         <BorderPane prefHeight="200.0" prefWidth="440.0" BorderPane.alignment="CENTER">
             <top>
+                <ScrollPane fitToWidth="true">
                 <GridPane fx:id="checkBoxPane" prefHeight="500.0" prefWidth="365.0" BorderPane.alignment="CENTER">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
@@ -32,6 +33,7 @@
                         <Insets left="10.0" />
                     </padding>
                 </GridPane>
+                </ScrollPane>
             </top>
             <center>
                 <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">

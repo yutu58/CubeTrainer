@@ -34,7 +34,7 @@ public class SkewbScreenController implements ScreenController{
 
     @FXML
     public void initialize() {
-        menu.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        menu.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         algTrainer = new SkewbAlgTrainer(this);
         imageGenerator = new SkewbImageGenerator(this);
         algGenerator = new SkewbAlgGenerator(this);
@@ -44,8 +44,8 @@ public class SkewbScreenController implements ScreenController{
     @FXML
     private void setupAlgTrainer() {
         algTrainerButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = algTrainer;
         skewbScreen.setCenter(algTrainer);
@@ -53,9 +53,9 @@ public class SkewbScreenController implements ScreenController{
 
     @FXML
     private void setupImageGenerator() {
-        algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algTrainerButton.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         imageGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        algGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algGeneratorButton.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = imageGenerator;
         skewbScreen.setCenter(imageGenerator);
@@ -63,8 +63,8 @@ public class SkewbScreenController implements ScreenController{
 
     @FXML
     private void setupAlgGenerator() {
-        algTrainerButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
-        imageGeneratorButton.setBackground(new Background(new BackgroundFill(MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        algTrainerButton.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
+        imageGeneratorButton.setBackground(new Background(new BackgroundFill(SKEWB_MENU_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
         algGeneratorButton.setBackground(new Background(new BackgroundFill(SELECTED_MENU_BUTTON_COLOR, CornerRadii.EMPTY, Insets.EMPTY)));
 
         subMenu = algGenerator;
