@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.Cursor?>
-<BorderPane fx:id="tx2Screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.Tx2ScreenController">
+<BorderPane fx:id="tx2Screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.Tx2ScreenController">
    <top>
       <HBox fx:id="menu" minHeight="30.0" prefHeight="30.0" prefWidth="-Infinity">
-         <Label fx:id="algTrainerButton" alignment="CENTER" prefHeight="30.0" onMouseClicked="#setupAlgTrainer" minWidth="100.0" prefWidth="100.0" text="L2L trainer" style="-fx-border-color: #000000">
+         <Label fx:id="algTrainerButton" alignment="CENTER" minWidth="100.0" onMouseClicked="#setupAlgTrainer" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: #000000" text="Alg Trainer">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          </Label>
-         <Label fx:id="imageGeneratorButton" alignment="CENTER" prefHeight="30.0" onMouseClicked="#setupImageGenerator" minWidth="100.0" prefWidth="100.0" text="Images" style="-fx-border-color: #000000">
+         <Label fx:id="imageGeneratorButton" alignment="CENTER" minWidth="100.0" onMouseClicked="#setupImageGenerator" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: #000000" text="Images">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
          </Label>
-         <Label fx:id="algGeneratorButton" alignment="CENTER" prefHeight="30.0" onMouseClicked="#setupAlgGenerator" minWidth="100.0" prefWidth="100.0" text="Alg Generator" style="-fx-border-color: #000000">
+         <Label fx:id="algGeneratorButton" alignment="CENTER" minWidth="100.0" onMouseClicked="#setupAlgGenerator" prefHeight="30.0" prefWidth="100.0" style="-fx-border-color: #000000" text="Alg Generator">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

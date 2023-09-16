@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.00" prefWidth="900.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.00" prefWidth="900.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <BorderPane prefHeight="200.0" prefWidth="440.0" BorderPane.alignment="CENTER">
             <top>
@@ -84,7 +84,7 @@
     </left>
     <top>
         <HBox fx:id="subMenuSAT" maxHeight="30.0" prefHeight="30.0">
-            <Label text="Test Version 0.1.0" />
+            <Label text="Test Version 0.1.1" />
         </HBox>
     </top>
 </fx:root>
