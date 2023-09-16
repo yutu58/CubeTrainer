@@ -173,7 +173,8 @@ public class Tx2AlgTrainer extends BorderPane implements Initializable {
         }
         int randomIndex = ThreadLocalRandom.current().nextInt(0, selectedCases.size());
         int randomAmount = ThreadLocalRandom.current().nextInt(1, AMOUNT_RANDOM_SCRAMBLES + 1);
-        return Tx2Scrambler.stateToScrambler(new Tx2State(selectedCases.get(randomIndex).getPattern()), randomAmount);
+        return Tx2Scrambler.stateToScrambler(new Tx2State(selectedCases.get(randomIndex).getPattern()), randomAmount,
+                RANDOM_AUF, RANDOM_PRE_AUF);
     }
 
     public boolean isTimerRunning() {

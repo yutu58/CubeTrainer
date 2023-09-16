@@ -11,6 +11,9 @@ public class Settings {
 //    public static boolean RANDOM_Y_ORIENTATION = true;
 //    public static boolean COMPLETE_RANDOM_ORIENTATION = false;
 
+    public static boolean RANDOM_AUF = true;
+    public static boolean RANDOM_PRE_AUF = true;
+
     public static Color SELECTED_MENU_BUTTON_COLOR = Color.LIGHTBLUE;
     public static Color SKEWB_MENU_COLOR = Color.CORNFLOWERBLUE;
     public static Color TX2_MENU_COLOR = Color.PALEGREEN;

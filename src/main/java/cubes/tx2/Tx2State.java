@@ -58,6 +58,10 @@ public class Tx2State {
                 this.front.clone(), this.right.clone(), this.back.clone());
     }
 
+//    public boolean goesIntoTopLayer(int first, int second, int third) {
+//
+//    }
+
     public void applyWCAMoves(int[] moves) {
         if (moves == null) return;
         for (int i : moves) {
