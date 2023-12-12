@@ -12,7 +12,7 @@
               <Button fx:id="skewbButton" mnemonicParsing="false" onAction="#gotoSkewb" text="Skewb" />
             <Button fx:id="tx2Button" mnemonicParsing="false" onAction="#goto2x2" text="2x2" />
 
-            <Label text="Lithium Test version 0.1.1&#10;&#10;© Mattheo de Wit&#10;2022 - 2023" textAlignment="CENTER">
+            <Label text="Lithium Test version 0.1.2&#10;&#10;© Mattheo de Wit&#10;2022 - 2023" textAlignment="CENTER">
                <font>
                   <Font name="System Italic" size="19.0" />
                </font>

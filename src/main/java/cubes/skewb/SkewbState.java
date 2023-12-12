@@ -104,6 +104,8 @@ public class SkewbState {
         this.backLeft = Arrays.stream(this.backLeft).map(colorMap::get).toArray();
     }
 
+    //TODO: Update this method to a more generalized form so it can be used to apply any kind of moves to any state
+
     public static SkewbState setupCase(String setup, SkewbNotations.notationEnum notation, boolean reverse) {
         SkewbState skewbState = new SkewbState("00000 11111 22222 33333 44444 55555");
 

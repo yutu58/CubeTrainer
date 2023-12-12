@@ -19,8 +19,7 @@ public class SkewbL2LImageGenerator {
         put(6, Color.GRAY);
     }};
 
-    public static String drawImageFromSetup(SkewbNotations.notationEnum notation, String setup, GraphicsContext gc, double scale, boolean reverse) {
-        SkewbState skewbState = new SkewbState("00000 11111 22222 33333 44444 55555");          //Solved cubestate
+    public static String drawImageFromSetup(SkewbNotations.notationEnum notation, String setup, GraphicsContext gc, double scale, boolean reverse, SkewbState skewbState) {
         //TODO: Remove duplicate code and move this to skewb.SkewbState
         String pattern;
 

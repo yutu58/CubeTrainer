@@ -2,6 +2,7 @@ package application.gui.subscreens.tx2;
 
 import application.controllers.Tx2ScreenController;
 import cubes.skewb.SkewbNotations;
+import cubes.skewb.SkewbState;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
@@ -139,7 +140,7 @@ public class Tx2ImageGenerator extends GridPane implements Initializable {
         boolean reverse = reverseBox.isSelected();
 
         try {
-            pattern = SkewbL2LImageGenerator.drawImageFromSetup(n, setup, gc, scale, reverse);
+            pattern = SkewbL2LImageGenerator.drawImageFromSetup(n, setup, gc, scale, reverse, new SkewbState("00000 11111 22222 33333 44444 55555")); //Solved cubestate
         } catch (RuntimeException e) {
             promptError(e.getMessage());
         }

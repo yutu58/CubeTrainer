@@ -10,6 +10,8 @@ public class SkewbNotations {
         LithiumSkewbCode
     }
 
+    public static int N_WCA_MOVES_WITHOUT_ROTATIONS = 8;
+
     public static Map<String, int[]> wcaNotation = new HashMap<>() {{
        put("R", new int[]{0});
        put("R'", new int[]{1});

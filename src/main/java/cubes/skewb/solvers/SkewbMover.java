@@ -2,7 +2,6 @@ package cubes.skewb.solvers;
 
 import cubes.skewb.SkewbState;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

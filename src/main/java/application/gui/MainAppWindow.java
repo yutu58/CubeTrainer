@@ -12,7 +12,7 @@ public class MainAppWindow extends Application {
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
         stage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("pictures/LithiumLogo.png")));
-        stage.setTitle("Lithium version 0.1.1");
+        stage.setTitle("Lithium version 0.1.2");
         HomeScreen.setup(primaryStage);
     }
 

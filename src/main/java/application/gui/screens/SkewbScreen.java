@@ -1,6 +1,7 @@
 package application.gui.screens;
 
 import application.controllers.SkewbScreenController;
+import application.gui.subscreens.skewb.Skewb1lookTrainer;
 import application.gui.subscreens.skewb.SkewbAlgTrainer;
 import cubes.skewb.solvers.SkewbScrambler;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,9 @@ public class SkewbScreen {
                     }
                     spacePressed.set(true);
                 }
+            } else if (subMenu instanceof Skewb1lookTrainer) {
+                Skewb1lookTrainer s = (Skewb1lookTrainer) subMenu;
+                s.updateScramble();
             }
         });
 
