@@ -20,6 +20,4 @@ public class HomeScreen {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
-    //Event listeners
 }
