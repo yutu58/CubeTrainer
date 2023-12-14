@@ -67,6 +67,18 @@
                         <Font size="14.0" />
                     </font>
                 </CheckBox>
+                <Label text="Optimizer:">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font></Label>
+                <RadioButton fx:id="noOptimizer" mnemonicParsing="false" prefWidth="150.0" text="None">
+                    <font>
+                        <Font size="14.0" />
+                    </font></RadioButton>
+                <RadioButton fx:id="emRater" mnemonicParsing="false" prefWidth="150.0" text="EM-rater">
+                    <font>
+                        <Font size="14.0" />
+                    </font></RadioButton>
             </children>
         </VBox>
         <TextField fx:id="setupMoves" GridPane.columnIndex="1" GridPane.rowIndex="2">

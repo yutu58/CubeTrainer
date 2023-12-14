@@ -3,6 +3,9 @@ package application.gui.subscreens.skewb;
 import application.controllers.SkewbScreenController;
 import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
+import cubes.skewb.optimizers.AlgRater;
+import cubes.skewb.optimizers.EMrater;
+import cubes.skewb.optimizers.LengthRater;
 import cubes.skewb.solvers.SkewbSolver;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -64,9 +67,17 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
     @FXML
     private Label copyAlgButton;
 
+    @FXML
+    private RadioButton noOptimizer;
+
+    @FXML
+    private RadioButton emRater;
+
     private SkewbScreenController controller;
 
     private ToggleGroup notationGroup;
+
+    private ToggleGroup optimizerGroup;
 
     public SkewbAlgGenerator(SkewbScreenController controller) {
         this.controller = controller;
@@ -91,6 +102,11 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
         rubikSkewbButton.setSelected(true);
         wcaSkewbButton.setToggleGroup(notationGroup);
         codeSkewbButton.setToggleGroup(notationGroup);
+
+        optimizerGroup = new ToggleGroup();
+        noOptimizer.setToggleGroup(optimizerGroup);
+        noOptimizer.setSelected(true);
+        emRater.setToggleGroup(optimizerGroup);
 
         algList.setOnMousePressed(event -> {
             Optional<String> optional = algList.getSelectionModel().getSelectedItems().stream().findFirst();
@@ -185,10 +201,21 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
             return;
         }
 
+        AlgRater rater;
+        RadioButton optimizer = (RadioButton) optimizerGroup.getSelectedToggle();
+        if (optimizer == noOptimizer) {
+            rater = new LengthRater();
+        } else if (optimizer == emRater) {
+            rater = new EMrater();
+        } else {
+            promptError("Select a valid optimizer");
+            return;
+        }
+
         try {
             SkewbState s = SkewbState.setupCase(setupMoves.getText(), n, reverseBox.isSelected());
 
-            SkewbSolver solver = new SkewbSolver(s, (int) depthSlider.getValue(), imageErrorLabel, algList, allAngles.isSelected());
+            SkewbSolver solver = new SkewbSolver(s, (int) depthSlider.getValue(), imageErrorLabel, algList, allAngles.isSelected(), rater);
 
             ExecutorService es = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
             es.submit(solver);

@@ -2,6 +2,7 @@ package cubes.skewb.solvers;
 
 import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
+import cubes.skewb.optimizers.AlgRater;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,9 +20,13 @@ public class SkewbSolver extends SkewbMover implements Runnable {
     private SkewbIterator skewbIterator;
     private Label statusBar;
     private ListView<String> algList;
+
+    private List<String> finalAlgs;
     private boolean allAngles;
 
-    public SkewbSolver(SkewbState state, int maxDepth, Label statusBar, ListView<String> algList, boolean allAngles) { //Also textfield / scrollpane to add the algs to
+    private AlgRater rater;
+
+    public SkewbSolver(SkewbState state, int maxDepth, Label statusBar, ListView<String> algList, boolean allAngles, AlgRater rater) { //Also textfield / scrollpane to add the algs to
         this.found = 0;
         this.state = state;
         this.maxDepth = maxDepth;
@@ -31,6 +36,7 @@ public class SkewbSolver extends SkewbMover implements Runnable {
         this.statusBar = statusBar;
         this.algList = algList;
         this.allAngles = allAngles;
+        this.rater = rater;
     }
 
     public Set<String> getRightFoundSolutions() {
@@ -98,11 +104,10 @@ public class SkewbSolver extends SkewbMover implements Runnable {
         try {
             solveToWCA();
             convertToRightMoves();
+            optimize();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
 
         updateAlgs();
         updateStatus("Done, " + foundSolutions.size() + " solutions found!");
@@ -167,6 +172,17 @@ public class SkewbSolver extends SkewbMover implements Runnable {
             }
             rightFoundSolutions.add(res.toString().trim());
         }
+
+        //Add all orientations if needed
+        Set<String> solutions = new HashSet<>();
+        if (allAngles) {
+            for (String s : rightFoundSolutions) {
+                solutions.addAll(allZAngles(s));
+            }
+        } else {
+            solutions = rightFoundSolutions;
+        }
+        rightFoundSolutions = solutions;
     }
 
     private boolean fixedCenterMoved(String oldState, String newState) {
@@ -188,32 +204,8 @@ public class SkewbSolver extends SkewbMover implements Runnable {
     }
 
     private void updateAlgs() {
-        Set<String> solutions = new HashSet<>();
-        if (allAngles) {
-            for (String s : rightFoundSolutions) {
-                solutions.addAll(allZAngles(s));
-            }
-        } else {
-            solutions = rightFoundSolutions;
-        }
-        Set<String> finalSolutions = solutions;
         Platform.runLater(() -> {
-            List<String> list = new ArrayList<>(finalSolutions);
-            list.sort((o1, o2) -> {
-                int x = 0;
-                //First condition: Length
-                if (x == 0) {
-                    x = Integer.compare(o1.length(), o2.length());
-                }
-
-                //2nd condition: alg moves;
-                if (x == 0) {
-                    x = CharSequence.compare(o1, o2);
-                }
-
-                return x;
-            });
-            ObservableList<String> items = FXCollections.observableList(list);
+            ObservableList<String> items = FXCollections.observableList(finalAlgs);
             algList.setItems(items);
         });
     }
@@ -231,5 +223,23 @@ public class SkewbSolver extends SkewbMover implements Runnable {
             res.add(s);
         }
         return res;
+    }
+
+    private void optimize() {
+        finalAlgs = removeDuplicates(rater.rate(this.rightFoundSolutions));
+    }
+
+    public static String convertSetToString(Set<String> stringSet) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String element : stringSet) {
+            stringBuilder.append(element);
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+    }
+
+    public static List<String> removeDuplicates(List<String> list) {
+        LinkedHashSet<String> set = new LinkedHashSet<>(list);
+        return new ArrayList<>(set);
     }
 }
