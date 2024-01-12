@@ -5,6 +5,7 @@ import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
 import cubes.skewb.optimizers.AlgRater;
 import cubes.skewb.optimizers.EMrater;
+import cubes.skewb.optimizers.EMraterV2;
 import cubes.skewb.optimizers.LengthRater;
 import cubes.skewb.solvers.SkewbSolver;
 import javafx.collections.ObservableList;
@@ -73,6 +74,9 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
     @FXML
     private RadioButton emRater;
 
+    @FXML
+    private RadioButton emRaterv2;
+
     private SkewbScreenController controller;
 
     private ToggleGroup notationGroup;
@@ -107,6 +111,7 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
         noOptimizer.setToggleGroup(optimizerGroup);
         noOptimizer.setSelected(true);
         emRater.setToggleGroup(optimizerGroup);
+        emRaterv2.setToggleGroup(optimizerGroup);
 
         algList.setOnMousePressed(event -> {
             Optional<String> optional = algList.getSelectionModel().getSelectedItems().stream().findFirst();
@@ -207,6 +212,8 @@ public class SkewbAlgGenerator extends GridPane implements Initializable {
             rater = new LengthRater();
         } else if (optimizer == emRater) {
             rater = new EMrater();
+        } else if (optimizer == emRaterv2) {
+            rater = new EMraterV2();
         } else {
             promptError("Select a valid optimizer");
             return;
