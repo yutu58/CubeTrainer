@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -27,6 +28,11 @@
                <Cursor fx:constant="HAND" />
             </cursor>
          </Label>
+         <Pane maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         <ToggleButton contentDisplay="TOP" mnemonicParsing="false" text="💡" fx:id="darkModeSwitch">
+            <HBox.margin>
+               <Insets right="10.0" />
+            </HBox.margin></ToggleButton>
       </HBox>
    </top>
 </BorderPane>

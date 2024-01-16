@@ -17,6 +17,8 @@ import java.net.URL;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SkewbScreen {
+    static Scene scene;
+
     public static void setup(Stage primaryStage) throws IOException {
         SkewbScrambler.prune();
 
@@ -25,7 +27,7 @@ public class SkewbScreen {
         loader.setLocation(xmlURL);
         Parent root = loader.load();
 
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         scene.getStylesheets().add(SkewbScreen.class.getResource("/stylesheets/skewbScreen.css").toExternalForm());
 
         primaryStage.setScene(scene);
