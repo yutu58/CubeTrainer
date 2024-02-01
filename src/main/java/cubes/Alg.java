@@ -2,19 +2,16 @@ package cubes;
 
 public class Alg {
     private String algorithm;
-    private int timesTimed;
-    private int average;
+    private float rating;
 
     public Alg(String alg){
         this.algorithm = alg;
-        this.timesTimed = 0;
-        this.average = 0;
+        this.rating = 0.0f;
     }
 
-    public Alg(String algorithm, int timesTimed, int average) {
+    public Alg(String algorithm, float rating) {
         this.algorithm = algorithm;
-        this.timesTimed = timesTimed;
-        this.average = average;
+        this.rating = rating;
     }
 
     public String getAlgorithm() {
@@ -25,19 +22,11 @@ public class Alg {
         this.algorithm = algorithm;
     }
 
-    public int getTimesTimed() {
-        return timesTimed;
+    public float getRating() {
+        return rating;
     }
 
-    public void setTimesTimed(int timesTimed) {
-        this.timesTimed = timesTimed;
-    }
-
-    public int getAverage() {
-        return average;
-    }
-
-    public void setAverage(int average) {
-        this.average = average;
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 }

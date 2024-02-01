@@ -25,22 +25,25 @@ public class SkewbL2LReader {
     }
 
     private void readAlgs() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("algs/skewb/L2L/providedAlgs.txt"));
+        InputStream in = getClass().getClassLoader().getResourceAsStream("cubes/skewb/cases/autoratedAlgs.txt");
+        if (in == null) {
+            throw new IOException();
+        }
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
         String line;
 
         while ((line = reader.readLine()) != null){
-           String[] parts = line.split(",");
-           String key = parts[0];
-           String alg = parts[1];
-           int timesTimed = Integer.parseInt(parts[2]);
-           int average = Integer.parseInt(parts[3]);
+            String[] parts = line.split(",");
+            String key = parts[0];
+            float rating = Float.parseFloat(parts[1]);
+            String alg = parts[2];
 
-           if (!providedAlgMap.containsKey(key)) {
+            if (!providedAlgMap.containsKey(key)) {
                providedAlgMap.put(key, new ArrayList<Alg>());
            }
-           providedAlgMap.get(key).add(new Alg(alg, timesTimed, average));
+           providedAlgMap.get(key).add(new Alg(alg, rating));
         }
-        reader.close();
     }
 
     private List<L2LSet> readSets() throws IOException{

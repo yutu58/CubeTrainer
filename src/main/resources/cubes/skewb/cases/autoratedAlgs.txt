@@ -1,0 +1,1335 @@
+1a,6.5,B r' R' B' R r' B r
+1a,5.75,B' R B' R r' b B b' B R' B' R r' R
+1a,5.75,R' r R' r b' B R B' R r' R' r b' r
+1a,5.65,R B' R r' R' r B' R' B R' B R
+1a,5.4,R' r' R' r R' B R B' R r' R r
+1b,6.15,R' B R B R' B' R r' R r R' B'
+1b,5.75,r' B R r R' B r' B'
+1b,5.65,R B R B' R r' R' r R' B R' B'
+1b,5.3,r' B R B' R r R' r R' r'
+1b,5.2,R r' R r R B R B' R' B R' B' R
+1c,6.25,r' R' B R' r' R B R
+1c,6.2,R' B R B' R' B' R B' R r' R' r B'
+1c,5.95,R B' R' B' R B R' B' R r' R' r B'
+1c,5.6,R' r B' b' B R' B' R r' R' B
+1c,5.25,B r' R' B' r' B r R
+1d,6.2,R B' b B' b' B R' B' R r' R' r B'
+1d,6.2,r R' B R' B' R r' R' r b' r' b R'
+1d,6.0,B R' B' R B R' B R B' R r' R' r B'
+1d,5.75,B R r' R B R' r' R'
+1d,5.75,R r' B' r' B R' r B
+2a,6.15,r' R' r R' B R' B' R r' R r R
+2a,5.9,r' R' B R B' R r' R' r R r R'
+2a,5.75,r' B' r R' B R r B'
+2a,5.05,B' R' B R' B R r' R r B'
+2a,5.0,r B R' B' R r' R' r' R r' R' r R r
+2b,7.5,B r B' R r' R' B' r
+2b,5.4,B R B' R r' R r R' B R' B' R'
+2b,5.1,B' r' b B' b' B' R r R' r B'
+2b,5.1,r' B' R r' R' r' b B b' B r'
+2b,5.0,B b' B R' B' R r' R r b' B R' B R'
+2c,6.75,R' B' R' r R B' R r
+2c,6.25,r B R' r B' r' B' R
+2c,5.65,R r R' B' R r' R' r B' r' B r
+2c,5.25,R' r' B' r B R r B'
+2c,5.25,R' B' R r' R' r R' B' R' B' R r' R' r
+2d,7.1,B' R r' R' r B' R r' R' r B'
+2d,6.25,R r R B' R' r R' B'
+2d,5.45,R' B' R B' R r' R' r B' r' R r R'
+2d,5.45,B' R r' R' r B' R B R' B' R B' R'
+2d,5.35,B R' B' R B R B' r' R r R
+3a,6.65,R B R' B' R r' R' r R' r' R r
+3a,5.5,B' R' r R' B' r' R' r'
+3a,5.4,r' R' r R r' R r R' B R B' R'
+3a,5.3,R r R' r B r' B' b B' b'
+3a,5.3,b B b' B r B' r' R r' R'
+3b,6.9,B R B' R' B R' B' R r' R' r R
+3b,5.4,R' r' R r R' B R B' R B R' B'
+3b,5.4,R' r' R r R B R' B' R' B R B'
+3b,5.35,r' R r' R' r B r' B' b B' b'
+3b,5.35,B' b B' b' B r B' r' R r' R'
+3c,5.4,R r' R' r R' r' R r R B R' B'
+3c,5.4,R' r' R r R r' R' r R B R' B'
+3c,5.25,R B' R r' R r R' B R' r b' r' b R'
+3c,5.25,B b' B R' B R B' b B' R r' R' r B'
+3c,5.1,R r R' r B r' B' R' B R B
+3d,5.6,r' R' r B' R' B R' B' R B R'
+3d,5.4,r' R' r R B R B' R' B R' B' R
+3d,5.3,B' R b' B R' r B' r' B b
+3d,5.3,R' r B' R r' b R' b' R B
+3d,5.3,r' b R' r b' B r' B' r R
+4a,6.45,R' B R' B' R B R B' R r' R r R
+4a,5.9,R r' R' B R' B' R r' R r R' r
+4a,5.8,B R' B R' r R' r B r' B'
+4a,5.7,R' B' R B' R r' R' r B' R' B R B'
+4a,5.65,R B' R' r b' r' b B' R B R' B
+4b,6.2,R B R B' R r' R r R r' R' r R'
+4b,5.9,B R' B R B' R r' R' r R' B' R
+4b,5.45,R B R B' R r R' r' R r R r' R'
+4b,5.4,r R' r R r' b B' b' B R' r' R
+4b,5.4,R B' R B R' r b' r' b B' R' B
+4c,6.4,R B' R' B R' r b' r' b B' R B
+4c,6.4,r R' r' R r' b B' b' B R' r R
+4c,6.05,B' R r R' r B r' b B' b'
+4c,6.05,r' b B b' B r B' R r' R'
+4c,5.4,R r' R r R' B' R' B R' B' R B
+4d,6.3,R' B' R B' R r R' r B r'
+4d,6.15,R B R' r b' r' b B' R B' R' B
+4d,6.15,r R r' b B' b' B R' r R' r' R
+4d,5.9,R r R' r B' R r' R' r B' r' B
+4d,5.35,r' R r R r' R' r B R B' R
+5a,6.55,B' R r' R r R' B' R B' R
+5a,6.2,R B R' B' R B R B' R r' R' r R
+5a,6.15,R' r' R r R B R' B' R r' R' r
+5a,5.8,R' r' R r R b B' b' B R'
+5a,5.8,B' R' B R B r b' r' b B'
+5b,5.8,r R' B R' B' R r R' r R'
+5b,5.65,B' R' B R' B' R r' R' r B' R' B'
+5b,5.55,R' B R' r b' r' b B R' B
+5b,5.55,r' R r' b B' b' B R r' R
+5b,5.4,r' R' r' b B' b' B R' B' R' r B'
+5c,6.85,B R B' R B R' B' R r' R r
+5c,6.65,R B' R' B R B R' r b' r' b B'
+5c,6.65,r R' r' R r R r' b B' b' B R'
+5c,6.4,R' B R' B' R' B R B' R r' R r
+5c,5.85,B R B' b' B R' B' R' r b' r'
+5d,5.85,r' R' r R' r' R r R' B R' B'
+5d,5.8,B' r b' r' b B' R' B R B
+5d,5.8,r' B R' B' R r' b' r b r
+5d,5.8,R' b B' b' B R' r' R r R
+5d,5.65,R r' R r R r' R' r R' B R' B'
+6a,6.45,R B R' B' R r' R r R r' R' r R
+6a,6.05,R r' R r' R' B R B' R r'
+6a,5.9,B R' B' R r' R' r R B R B' R'
+6a,5.8,R' r b' r' b R B R B' R'
+6a,5.8,B' R r' R' r B b B b' B'
+6b,5.55,R B' R r b' r' b B' R B'
+6b,5.55,r R' r b B' b' B R' r R'
+6b,5.3,R' B R' B R r' R' r R' B
+6b,5.25,B' R B' R' r' R' r B' R
+6b,5.25,R B' R' B R B' R B R' r b' r' b R'
+6c,6.85,B R B' R r' R' r R r' R r
+6c,6.65,R' r b' r' b B' R B R B' R' B
+6c,6.65,r' b B' b' B R' r R r R' r' R
+6c,6.15,B R B' R r' R r R' r' R' r R'
+6c,5.4,R' r b' r' b B R' B' R B R B'
+6d,6.8,r R r R' r' b B' b' B r'
+6d,6.8,B b B b' B' R r' R' r B'
+6d,6.8,R B R B' R' r b' r' b R'
+6d,5.85,r' R' r R' B R B' R' B R' B'
+6d,5.45,r' R r R' r' R r' R' B R' B' R r'
+7a,8.5,B r' R r' R' r B r'
+7a,5.55,r R' r b' B r' B' r B R'
+7a,5.5,r R' B' R' r' R' r' B'
+7a,5.4,r' R' r R' r' R r R' B R B' R
+7a,5.2,R r' R r R r' R' r R' B R B' R
+7b,8.0,r' B R' B R B' r' B
+7b,6.65,B R B' R B R' B' R r' R' r R'
+7b,6.2,R B R B' R r' R' r R' r' R r R
+7b,6.2,R' B R' B' R' B R B' R r' R' r R'
+7b,6.0,B' R r R B R B r
+7c,8.25,r B' r' R r R' r B'
+7c,6.9,R' B R' B' R r' R' r R r' R r
+7c,6.45,R B R B' R' B R' B' R r' R r R
+7c,6.2,R' B R' B' R r' R r R' r' R' r R'
+7c,6.0,B r R r R B R r'
+7d,7.5,B' r B R' B' R B' r
+7d,5.75,R' B' R' r R' r B r' B'
+7d,5.7,B' R B R' B' R' B R' r b' r' b R'
+7d,5.7,R r' R' r' R r R' r' b B' b' B r'
+7d,5.7,R' r R r' R' r' R r' b B' b' B r'
+8a,6.15,B R' B' R B' R r' R' r R' B R
+8a,5.9,R r R' B R' B' R r' R r' R' r
+8a,5.25,B' R B' b r R' B R'
+8a,5.25,R' r R' B b r' R r'
+8a,5.2,B' R B' R r' R' r B' R' r b' r' b
+8b,6.0,R' r B R' B' r R' r
+8b,6.0,B R' B r' R' r B R'
+8b,5.75,b' R r R' B' b B r'
+8b,5.75,R' b B b' r' R r B'
+8b,5.75,r' B R B' b' r b R'
+8c,8.25,R B' R r' b' B R' B
+8c,8.25,r R' r b' B' R r' R
+8c,7.4,R' B R B' R r' R' r b' r b r'
+8c,7.4,B' b B b' B R' B' R r' R r R'
+8c,6.3,r' b B b' B R' B' R r' B
+8d,7.4,b B' b' B R' B R B' R r' R' r
+8d,7.4,B R' B' R r' R r R' r b' r' b
+8d,6.0,r B' b' B R r' R' b
+8d,6.0,R B' r' R r B' R B'
+8d,6.0,R b' r' b B R' B' r
+9a,5.95,R' r' R r R' B R' B' R r' R' r R'
+9a,5.7,R r' R r R' B R B' R r' R' r R
+9a,5.7,R' B R' B' R r' R' r R' B R B' R'
+9a,5.45,R B R' B' R r' R r R' B R B' R
+9a,4.9,B' R r' R' B R B R B' b' B R'
+9b,6.25,b R r' R' B' b' B r
+9b,6.25,r' B' b B R r R' b'
+9b,6.25,r B R' B' b' r' b R
+9b,6.25,B' r' R r b B b' R'
+9b,6.25,B r b' r' R' B' R b
+10a,11.25,B r B r' B' r'
+10a,11.25,r B r B' r' B'
+10a,8.25,R' B R B' r b' r' b
+10a,8.25,r' R r R' b B' b' B
+10a,8.25,B' b B b' R r' R' r
+10b,11.25,B' r' B' r B r
+10b,11.25,r' B' r' B r B
+10b,9.25,b B' b' B r' R r R'
+10b,9.25,B R' B' R b' r b r'
+10b,9.25,r b' r' b R' B R B'
+11a,5.9,B' R r' R' r R r R' r B r' B'
+11a,5.75,R' r b' r' b R' B R' B' R r' R r R
+11a,5.75,B' R r' R' r B' b B' b' B R' B R B
+11a,5.6,B' R' B R B' R B R r' R r
+11a,5.4,R r R' B R' B' R r' R' B R B'
+11b,6.05,r' R r R r' R' r B R' B'
+11b,5.4,R' B R B' R r' R' r b B' b' B
+11b,5.4,B R' B R' B' R r' R r R B' R'
+11b,5.4,R' B' R r' R r R' B R r' R' r
+11b,5.4,r' R r R' r b' r' b B R' B' R
+11c,9.25,r R' r B r' R B
+11c,6.15,B' R r' R' r R' B R B R' B' R
+11c,5.4,B' R r' R' r R B' R' B R B R'
+11c,5.2,r B' r' B R' B' R r' R r' R' r B'
+11c,5.05,R B' R r' b r b r' R' B'
+11d,8.75,B' R B' r' B R' r'
+11d,6.4,b' B R B' R r' R' r b' B R B'
+11d,6.4,B' R r R' r b' r' b B' R r R'
+11d,5.7,B' R B R' B' R B' R' r b' r' b B'
+11d,5.7,R' r R r' R' r R' r' b B' b' B R'
+12a,6.3,r' R' r B' R B R B' R' B
+12a,6.05,r' R' r B R' B' R B R B'
+12a,5.9,B R' B' R r R' B R B' R r' R'
+12a,5.75,B' R' B R B R' B' R B' R r' R' r B
+12a,5.65,r b' r' b B R' B' R r' R r R'
+12b,6.1,B R' B R B' R r R' r B r'
+12b,5.65,r' B' r B R' B R B R' B' R r'
+12b,5.4,r' R r R' B' R r' R' r R' B R
+12b,5.2,R' r B' r' B r b' B R' B' R r' R'
+12b,5.1,B R B' R r R r' R r R' r'
+12c,9.75,B' R' r B' r' R r'
+12c,5.9,r B r' b B' b' B R' B' R B' r
+12c,5.9,B r B' R r' R' r b' r' b r' B
+12c,5.65,R' B R B' R' B' R r' R r R' B
+12c,5.45,r' b B' b' B R' r' R r' R' r R r'
+12d,8.25,r R B' r B R' B
+12d,6.15,R r' R' r R r R' B R' B' R r'
+12d,5.7,r b' r' b B' R B' R r' R' r B' R'
+12d,5.7,B R B' R r R' r' R' r b' r b r
+12d,5.7,b B b' B R B' R' B' R r' R r R
+13a,7.5,r' R' r B' r' R r B
+13a,6.0,R' r B b' B R' r' B
+13a,5.95,R' b B' b' B R' B R' B' R r' R' r
+13a,5.95,r' B R' B' R r' R r' R' r b' r' b
+13a,5.25,R' r R' r R r R' r' b B' b' B R' r
+13b,6.5,B R B' r B R' B' r'
+13b,5.6,B R' r b' r' b B' R' B' R' B
+13b,5.6,R r' b B' b' B R' r' R' r' R
+13b,5.5,B' R r' R r R' B' R B' R r' R r R'
+13b,5.0,B' R B' R r' R r R' r' R r R' B' R
+13c,7.2,B R' B' R r' R' r R' r b' r' b R'
+13c,7.2,b B' b' B R' B' R B' R r' R' r B'
+13c,7.0,r B R B' r' B R' B'
+13c,6.0,r B' R' r b' r B R'
+13c,5.15,B R' r b' r' b B R' B' R B' R
+13d,7.5,B' r' R' r B r' R r
+13d,5.85,R B' R' B' R' r b' r' b B' R
+13d,5.85,r R' r' R' r' b B' b' B R' r
+13d,5.35,r R r R r' b B' b' B r' R
+13d,5.35,R B R B R' r b' r' b R' B
+14a,6.35,R' r' R r' R' r R r' R r' R'
+14a,6.35,r' R r R B R B' R r' R' r
+14a,6.15,r R r' R r R' r' R r' R' r R'
+14a,6.15,r R r R' r' R r' R' r R r' R'
+14a,6.15,B' R B' R r' R' r B' R B R B'
+14b,6.4,r' R' r R' r' R r R' r' R r R
+14b,6.2,R r' R r R' r' R r R r' R' r R
+14b,6.2,R r' R r R r' R' r R' r' R r R
+14b,6.1,R r R' r R' r' R r R' r R
+14b,6.05,R' B' R r' R' r R' B' R' B'
+14c,6.35,r R r' R r R' r' R r' R r
+14c,6.15,r R r R' r' R r R' r' R r' R'
+14c,6.15,R' r' R r' R' r R r' R r R' r
+14c,6.05,r' R' r' R' B R' B' R r' R'
+14c,6.0,r' R B R b' B R' r'
+14d,6.6,B R' B' R r' R r R B R B'
+14d,6.4,r' R' r R' r' R r R r' R' r R
+14d,6.4,r' R' r R r' R' r R' r' R r R
+14d,6.35,r' R' r R' r R r' R' r R' r'
+14d,6.2,R r' R r R r' R' r R r' R' r R
+15a,5.15,R r R' B' R r' R' r R r R' B'
+15a,5.15,R B' R r' R r R B' R B R B
+15a,5.0,b B' b' B' R B' R B R' B' R r' R r
+15a,5.0,B R' B' R' r R' r R r' R' r b' r b
+15a,4.95,R B' R r' R r R' B R B R B' R'
+15b,5.15,r' R' B R B R' B' R r' R' B R
+15b,4.95,R' r' R r R r R' B R B' R r' R
+15b,4.95,r' b B' b' B R' B R B' r' R r' R'
+15b,4.85,R' r R B R B' R' r R r R'
+15b,4.85,B' R b' R' r' R' r R r' b B'
+16,7.0,B' r' R' r B' R' B' R'
+16,6.25,r B R B' r R r R
+16,6.25,R B R B r' R r B
+16,6.0,R' r' R' r' B R' B' r'
+16,4.75,b' B R' B' R r' b' r' b' B R' B' R r'
+17a,5.95,B' R' B' R r' R r R' B' R r' R' r
+17a,5.7,r b' r' b R' B' R B' R r' R' r B'
+17a,5.65,r' B r B' R r' R' r B r' B' r
+17a,5.45,R' r b' r' b R' B R' B' R B R' B'
+17a,5.45,r' b B' b' B r' R r' R' r R r' R'
+17b,5.7,r' R' r R' r b' r' b R' B R' B' R
+17b,5.7,R' B' R B' R r' R' r B' b B' b' B
+17b,5.7,B R' B' R r' R' B R B' R r' R' r'
+17b,5.4,r' b B' b' B r' B' r B R' B R
+17b,5.4,B' R r' R' r B' r' B r b' r b
+18a,6.75,B' R' B' R r' R r R' B'
+18a,6.5,r' R' B R B' R r' R' r'
+18a,6.05,R B' R' B' R r' R r R B'
+18a,5.8,r' R B R B' R r' R' r' R
+18a,5.4,r B' R' B R B' R r' R' r B r'
+18b,6.0,B R r' R' r R' B R B
+18b,6.0,r R r R' B R' B' R r
+18b,5.95,r' R r' R' r B' R r' R' r B' r' B
+18b,5.3,R' r R r R' B R' B' R' r
+18b,5.2,r' R' B R B' R r' R' r' R r' R' r
+18c,7.5,R r' R r B R' B' R'
+18c,6.7,R b' B R' B' R r' R' r R' r b' r'
+18c,6.7,B r' b B' b' B R' B' R B' R r' R'
+18c,5.5,r' b B' b' B' R' B' R r
+18c,5.5,b' B R' B' R' r' R' r b
+18d,8.0,R' B R' B' r' R r R
+18d,6.4,B R B' R B R B' R r' R r R
+18d,5.3,B' r B r' B' r B' r' B r
+18d,5.3,r' B r B' r' B r' B' r B
+18d,5.25,R' B R' B' R r' R' r' R' r R' r' R r'
+18e,7.55,B R' B R B' R r' R' r B'
+18e,6.55,r' B R' B' R r' R r R' r
+18e,6.45,R' B' R B' R r' R' r B' R r' R' r
+18e,6.0,r B R' r B' r' R B'
+18e,6.0,r' R B' r' B R' r B
+18f,8.0,R' B' R B' R r' R' r B'
+18f,6.75,r' B R' B' R r' R r' R'
+18f,6.35,r b' B R' B R r R' r b' B
+18f,6.0,B R' r B r' R B' r'
+18f,5.55,r' R r' R' r R' B R B' r
+18g,7.75,R' r' R' r B R B' R
+18g,5.95,B' b' B R' B R' B' R r' R' r b' R
+18g,5.95,R' B' R r' R r' R' r b' r' b B' r
+18g,5.8,B' r' B r B' r B r' B' r
+18g,5.8,r' B' r B r' B r B' r' B
+18h,7.75,R B R B' r' R' r R'
+18h,6.4,R B R B' R r' R r R r' R r
+18h,5.8,r B r' B' r B' r' B r B'
+18h,5.8,B r B' r' B r' B' r B r'
+18h,5.25,B' R B' R' B R' B' R' B' R r' R' r R'
+19a,5.8,R r' R B R B' R r' R' r'
+19a,5.7,R' B R B R' B' R r' R r R B' R
+19a,5.35,R' B' R' B' R r' R r R B' R'
+19a,5.3,r R r R' B R' B' R' r R'
+19a,4.95,B R' B' R' B' R B' R r' R' r R B'
+19b,6.3,B' R' B' R r' R r R B' R
+19b,5.2,R' B' R r' R' r B' r' B R' r R' r
+19b,5.2,R r' R B R B' R r' R' r R r R'
+19b,5.1,R' r' R B R B' R r' R' r' R'
+19b,5.05,R' B R' r' R' r R' B R B
+19c,10.25,r' R' r B R' B' R'
+19c,10.0,R B R B' r' R r
+19c,8.25,R' r B R' B' r' R'
+19c,7.75,R r B R B' r' R
+19c,5.6,r' R' r R B R B' R B R B'
+19d,10.25,R' r' R' r B R' B'
+19d,10.25,B R B' r' R r R
+19d,8.25,R' B' r' R' r B R'
+19d,7.75,R B' r' R r B R
+19d,5.85,r' R r R r' R r R B R' B'
+19e,6.75,B b' r' b R' B R r'
+19e,6.75,b r' R' r B' b B R'
+19e,6.75,R B' b' B r' R r b'
+19e,6.75,r R' B' R b' r b B'
+19e,6.35,R' B' R B' R r' R' r R' B' R
+19f,6.5,B' R r R' b B' b' r
+19f,6.5,b' B R B' r b' r' R
+19f,6.5,r' b B b' R r' R' B
+19f,6.5,R' r b r' B R' B' b
+19f,6.1,R r' R' B R' B' R r' R r' R'
+19g,6.5,R' r' R r R B R B' R
+19g,6.0,R' B R' B' R' r' R' r R
+19g,6.0,r B r' b B' b' B R' B' R B' R r R'
+19g,5.75,R' B R' B' R r' R' r' R r' R' r R' r'
+19g,5.2,R' B R B' R r' R r R B R B' R'
+19h,6.5,R r' R r R B R B' R'
+19h,5.75,B' R' B R' B' R B' R' B' R r' R' r R'
+19h,5.75,R B R' B' R' r' R' r R'
+19h,5.5,B r' b B' b' B R' B' R B' R r R' r
+19h,5.45,R' r' R r R B R B' R r' R r R'
+20a,11.25,r' R r R B R B'
+20a,5.4,R B' R B R B' R r' R r R B
+20a,5.15,r R B R B' R r' R r R r' R
+20a,4.75,r' R r R' B R B R' B R B' R B R
+20a,4.7,B' R B' r' b B b' B R' B' R r' R'
+20b,8.25,R' B R B' r' R r R'
+20b,7.5,B' r R r' R' r B' r
+20b,6.75,B r' B R' B' R B r'
+20b,5.6,B' R' B' R r' R' B R' r R' r
+20b,5.5,B R' B' R r' R' r B' R B R B' R' B
+20c,10.5,B R' B' R' r' R' r
+20c,5.5,r' b B' b' B R' B' R B' R r R' r B
+20c,5.5,R' B' R' B R' B' R B' R' B' R r' R' r
+20c,5.1,B R' B' r' R r R r' R r R
+20c,4.95,B R' B' R r' R' r' R' r' R r R r'
+20d,8.75,R r' R' r B R' B' R
+20d,6.75,r B' R' B R B' r B'
+20d,6.5,r' B r' R r R' r' B
+20d,5.45,R r' R' r B' R' B R B R' B R B
+20d,5.2,R' r' R r R r' R r R B R' B' R
+20e,9.25,B' R r' R' r R' B R
+20e,9.25,r' R r R' B R' B' R
+20e,5.8,R B' R B' R r' R' r B' R
+20e,5.5,R' r' B R' B' R r' R r'
+20e,5.4,r' R' r B r' R r R r' R' r B'
+20f,10.25,R' B R B' R r' R' r
+20f,9.25,R' B' R r' R r R' B
+20f,6.55,r B R' B' R r' R r R' r'
+20f,5.75,r' R r' R' r B r' b B' b' B R' B R
+20f,5.25,R b' B R' B' R r' R r b' B R' B' R
+20g,10.5,B R' B' R r' R r R'
+20g,9.0,r R' B R B' R r' R'
+20g,7.05,B' R' B R B' R r' R' r B
+20g,5.25,R r' R' r b' B R B' R r' R' r b' R
+20g,5.25,B R' B' R r' b B b' B R' B' R r' B
+20h,9.25,R r R' B R' B' R r'
+20h,9.25,R r' R' r R' B R B'
+20h,6.75,B' R B' R r' R' r B' R'
+20h,5.75,R' B R' B' R r R' r' R' r b' r b r
+20h,5.75,B' b B' b' B R B' R' B' R r' R r R
+21a,6.5,r B' R B r' B' R' B
+21a,6.35,R' B' R r' R' r R' B' R B' R
+21a,6.1,R' r' R r' R' B R' B' R r' R
+21a,5.85,B R' B' R' r' R' r b' r b r'
+21a,5.85,b B' b' B' R' B' R r' R r R'
+21b,6.5,B' R B r B' R' B r'
+21b,6.0,B' R r' R' r' B r B' r'
+21b,5.35,r b' r' b r' R r R B R B'
+21b,5.35,R' r R' B R B' R r R' r R
+21b,5.35,R r' R' r R' B R B b B b'
+21c,6.5,B' r' B r B' R' B' R r'
+21c,5.6,R r R' B R B' R r R' r R'
+21c,5.5,B' r R' r' B r R r'
+21c,5.35,r' R r R B R B' b B' b' B
+21c,5.35,b' r b r R r R' B R' B' R
+21d,6.1,R r' R r' R' B R' B' R r' R'
+21d,6.0,r R' r' B' r R r' B
+21d,5.85,r' B r B' R r' R' B' R r' R'
+21d,5.85,R' B' R r' R r R' B' R' B' R
+21d,5.85,R B' R r' R' r R' B' R B' R'
+21e,5.15,r' R r' R' r B r' B' R' B R B
+21e,4.95,r' R' r b' B r' R' r B' r' B r B'
+21e,4.9,b' R' B R B' R r' R' r B' b B
+21e,4.9,B' r' R r R' r b' r' b R' B R
+21e,4.85,r R' r B' r' R' r R' r B' r'
+21f,5.85,B R' B' R r' R' r B R' B' R'
+21f,5.6,r' R' r B' R r' R' r R' B R'
+21f,5.5,r' B r B' r' B' R r' R'
+21f,5.35,r R' r' R' r B R' B' R r' R'
+21f,5.35,R' B' r' B r B' R B' R r' R'
+21g,5.85,R' r' R' r B R' B' R r' R' r
+21g,5.6,R' B' R r' R' r B R' B' R' B
+21g,5.5,R' B' R r' B' r' B r B'
+21g,5.5,r R' r R B R B' R' r
+21g,5.4,B R' B' R r' R r R' b' r b r'
+21h,5.35,B R' B' R' r R' B R' B' R r'
+21h,5.25,B R' B R B R' B' R r' R r R B R
+21h,5.15,b B b' B R' B' R' r R' r B r'
+21h,5.1,B' b B' b' B r' R r R B R
+21h,5.1,R' B R' B' R b' r b r R r
+22a,7.0,B r R' B' R r' B' r
+22a,5.25,r' B r R' B R r' B'
+22a,5.2,r B' R r' R r' R' r b' r' b B' R'
+22a,5.2,R b' B R' B R' B' R r' R' r b' B'
+22a,5.15,B' r' B r B' R B' R r R' r R'
+22b,7.0,r' B' R r R' B r B'
+22b,7.0,B r' B' R r' R' B r
+22b,5.45,R' r' b B' b' B R' B' R B' R r' B
+22b,5.45,r' b' B R' B' R r' R' r R' r b' R
+22b,5.35,r B' b' B' R r' R' r R' r b'
+22c,7.5,B' R' r' R r R B R'
+22c,7.0,R B' R' r' R' r R B
+22c,6.0,r' B r R' r' B' r R
+22c,6.0,R' r' B r R r' B' r
+22c,5.5,B r B' r' B' R r' R' r'
+22d,7.25,R' r R B R B' R' r'
+22d,7.0,r R B R' B' R' r' R
+22d,6.75,B r' B' R B r B' R'
+22d,6.25,R B r' B' R' B r B'
+22d,5.35,R' r B R' B' R' B R' B' R r'
+23a,8.25,R B R' B' R' r' R r
+23a,7.0,r' B' R B r B' R' B
+23a,5.95,R B R' B' R r' R' r R' r' R' r R'
+23a,5.95,B' R' B R' B' R B' R' B' R r' R r
+23a,5.75,r' B' R r' R' r' B r B'
+23b,8.75,R' r' R r R B R' B'
+23b,6.25,B' R r' R r R' B' R' B'
+23b,6.0,B r R' r' B' r R r'
+23b,5.4,R r R' r b' B r' R' r b' B r'
+23b,5.4,B R B' R r' b R' B' R r' b R'
+23c,8.5,r' R' r R B R B' R'
+23c,6.0,B' R B r' B' R' B r
+23c,6.0,r' R' r' R' B R B' R r'
+23c,5.55,r' R' r B' R' B' R B R B
+23c,5.45,B R' r' b B' b' B R' B' R B' R r'
+23d,8.25,B R B' R' r' R' r R
+23d,6.45,R' B R' B' R' B R' B' R r' R' r R
+23d,5.7,B R B' R r' R' r' R r' R' r R' r'
+23d,5.5,r R' r' B r R r' B'
+23d,5.25,r' B r B' R' B' R r' B'
+23e,6.15,r' R r R' r b' r' b R' B R B'
+23e,6.15,R' B R B' R r' R' r B' b B b'
+23e,5.95,R' B R B R' B R B' R r' R' r B
+23e,5.55,B' R' B' R B R r' R' r B
+23e,5.45,r B R' B' R r' R r R' r R r R'
+23f,5.85,B' R B' R r' R' r B' r' R' r
+23f,5.85,R B' R r' R' r B' r' R' r B'
+23f,5.65,R r' R' r B' R r' R' r R' B R
+23f,5.45,B R' B' R' B' R B' R r' R' r B' R
+23f,5.3,B' r' R r R' B' R' B R B
+23g,6.25,R B r B' R' B r' B'
+23g,6.25,r R' B R B' R r R' r
+23g,6.15,R r' R' r B' b B b' B R' B' R
+23g,6.15,r b' r' b R' B R B' R r' R' r
+23g,6.0,r' B' r R' r' B r R
+23h,7.0,r' R r' R' B R' B' R r'
+23h,7.0,B' R r' R' r R' B' R B'
+23h,6.75,B r B' R B r' B' R'
+23h,6.0,R' r' B' r R r' B r
+23h,5.8,B' r B R' B' R B' R r R'
+24a,6.85,B R B' R' B R B' R r' R r
+24a,6.45,B' R r' R r b' r' b B' b' B R' B'
+24a,6.45,r' b B' b B R' B' R r' R' r b' r'
+24a,6.45,R' r b' r b B' b' B R' B' R r' R'
+24a,6.4,r' R r R' B R' B' R r' R r R'
+24b,6.65,B R B' R' B R B' R r' R' r R'
+24b,6.4,B R' B' R r' R r R' B R' B' R
+24b,6.4,R B' b B b' B R' B' R r' R' r
+24b,6.4,r R' B R B' R r' R' r b' r' b
+24b,5.9,R' r R' r B r' b B' b' B R' B
+24c,6.9,R' B R' B' R r' R r R' r' R r
+24c,6.65,b B' b' B R' B' R r' R r R' B
+24c,6.65,B R' B' R r' R' r b' r b r' R
+24c,6.15,R r' R' r R' B R B' R r' R' r
+24c,5.85,r' R' r R' B R' B' R B R' B'
+24d,6.95,B' b' B R' B' R r' R' r b r' b B'
+24d,6.95,R' B' R r' R' r b' r' b B b' B R'
+24d,6.95,r' R' r b' r' b B' b' B R B' R r'
+24d,6.85,B R B' R r' R r R' r' R r
+24d,6.45,R B R' B' R B R' B' R r' R r R
+25a,6.7,R' B R' B' R r' R' r R r' R' r R'
+25a,6.2,R B R B' R' B R B' R r' R' r R
+25a,5.75,B R B' b B b' B R' B' R r' R' r B'
+25a,5.75,R r R' B R B' R r' R' r b' r' b R'
+25a,5.4,r' R' r R' B R B' R' B R B' R
+25b,6.7,R' B R' B' R B R' B' R r' R' r R'
+25b,6.45,R B R' B' R r' R r R' r' R r R
+25b,5.65,R r' R r R' r' R r R' B R' B'
+25b,5.4,R B R' B' R r R' r R' r' R r'
+25b,5.0,R' b B' b' B R' B' R r' R r R' B R
+25c,6.65,B R B' R r' R' r R r' R' r R'
+25c,5.6,R' r B' b' B R' r B' R r' R'
+25c,5.5,B' R' B R B' R B' R' B' R r' R r R
+25c,5.45,r' R' r B r' R' r R' r b' r' b B'
+25c,5.45,R' B' R b R' B' R B' R r' R' r b'
+25d,6.9,R' B R' B' R B R' B' R r' R r
+25d,5.5,R' B' R B R B' R' B' R B' R r' R r
+25d,5.4,B' R B' R r' R r R' r' R r B'
+25d,5.25,R B R B' R r' R' r' R r' R r R' r'
+25d,5.2,R r' R r R' r' R r R' B R B' R
+26a,6.9,R' B R B' R r' R' r R r' R' r
+26a,6.1,r' R r R B R B' R' B R B'
+26a,5.9,R r' R' r R r' R' r R' B R B'
+26a,5.7,B' R' B' R r' R' B R B R' B' R r'
+26a,5.6,r B R B' R' B R B' R r' R
+26b,7.15,B R' B' R B R' B' R r' R r R'
+26b,6.1,r' R r R' r' R r R B R B'
+26b,5.9,r' R r R' B R' B' R B R' B' R
+26b,5.85,R B' R r' R r R' r' R r B
+26b,5.7,B' R r' R r' b B' b' B R' B' R' r
+26c,6.9,R' B R B' R' B R B' R r' R' r
+26c,5.95,B' R' B R' B' R r' R' r B' R B' R
+26c,5.9,R r' R' r R' B R B' R' B R B'
+26c,5.4,R r' R' r R r' R' r B R' B' R
+26c,5.35,B R' B' R' r' R' r R r' R' r
+26d,7.15,B R' B' R r' R r R' r' R r R'
+26d,5.9,r' R r R' r' R r R' B R' B' R
+26d,5.65,B R' B' R r R' r R' r' R r' R
+26d,5.65,R' r' R r R' r b' r' b B R B'
+26d,5.65,B' R' B R B' R r' R' r b B b'
+27,4.8,R B' r B r' R' r B' r' B
+27,4.8,B' r B r' R' r B' r' B R
+27,4.8,R' r B' r' B R B' r B r'
+27,4.75,b' B R' B' R r R' r b' r B r' B' r
+27,4.75,B r B' r' B b' B R' B' R r R' r b'
+28,6.15,R' r' R r R' B R' B' R r' R r
+28,5.9,r' R' r R' B R B' R r' R' r R
+28,5.9,R B R' B' R r' R r R' B R' B'
+28,5.65,B R B' R r' R' r R' B R B' R'
+28,5.65,r R' r B r' b B' b' B R' B R'
+29a,6.0,B R' B R B' R r' R' r B' R r' R' r
+29a,5.7,r B' R r' R r' b B' b' B R' B' R'
+29a,5.5,r' b B' b' B R' B R B' R' B R B' r
+29a,5.5,b' B R' B' R r' R r R' r' R r R' b
+29a,5.45,R' r' R' r b' r' b B' R B' R r' B
+29b,6.05,B r B' R r' R' B' R r R'
+29b,5.25,B R B' R B' R' B R' B' R r' R' r B
+29b,5.25,B' R r' R' r B' R' B R B' R' B R B
+29b,4.9,r R r' R r' R' B R' B' R r R'
+29b,4.9,b B' b' B R' B R' B' r' R r R
+30a,6.75,B r B' r' R' B' R r
+30a,6.75,R r B' R r' b' B R'
+30a,6.5,r' R' B R r B r' B'
+30a,6.4,r' R' r R r' R' r R r' R' r R
+30a,6.4,R' r' R r R' r' R r R' r' R r
+30b,7.0,r' B' r B R r R' B'
+30b,6.5,R' B' R r B r B' r'
+30b,6.5,B R r' R' B' r' B r
+30b,6.25,r B r' B' r' R' B R
+30b,6.25,R' r b' B' R r' B R
+31a,6.75,B' r' B' r B R r R'
+31a,6.65,r' R r R' r' R r R' r' R r R'
+31a,6.65,R r' R' r R r' R' r R r' R' r
+31a,6.25,R r' R' B' r' B r B
+31a,6.25,r B r B' r' R' B' R
+31b,7.0,B' b' r b r' R' B R
+31b,7.0,R' B' b B b' r' R r
+31b,7.0,R r R' B' b B b' r'
+31b,7.0,b' r' R r R' B' b B
+31b,7.0,r' R' B R B' b' r b
+32,5.5,B' R r' R' r R r' R' r R r' R' r B
+32,5.0,r B R' B' R B R' B' R B R' B' R r'
+32,5.0,R' r b' r' b R' B R B' R' B R B' R
+32,5.0,r' b B' b' B r' R r R' r' R r R' r
+32,4.7,r' R' r B' R r' R r R' B' R B' R'
+33,6.75,r B' R r' b' B R' b
+33,6.75,R b' B R' r' b B' r
+33,6.75,b R' r b' B' R r' B
+33,6.75,B r' b B' R' r b' R
+33,6.25,R' r b' R r B' R r'
+34a,6.0,R' B' R r' R' r b r' b B' R B R B'
+34a,5.5,r' R r R r' b B' b B R' B' R r' R'
+34a,5.3,R' B R' B' R r b' r' b R
+34a,5.3,B' b B' b' B R r' R' r B
+34a,5.3,r' R r' R' r b B' b' B r
+34b,6.0,B' R r' R' r b B' b' B'
+34b,6.0,B' R' B' R r b' r' b B'
+34b,6.0,r' b' r' b B R' B' R r'
+34b,6.0,R' r' R' r b B' b' B R'
+34b,6.0,R' r b' r' b B R' B' R'
+35a,4.9,R r' R' r B r' B' b B b' B r'
+35a,4.9,b B' b' B r B' r' R r R' r B'
+35a,4.75,r' R r R r' R' r B' R B R' B' R' B
+35a,4.65,r b' r b r' B' r B R' B' R B'
+35a,4.65,B R' B R B' r' B r b' r' b r'
+35b,5.15,R r' R' r B r' R r' R' r B r'
+35b,4.9,r' R r' R' r B r' B' b B b' B
+35b,4.9,B' b B' b' B r B' r' R r R' r
+35b,4.65,R' B' R r' R' r R r R B' R' r
+35b,4.6,B R' B' R B' R' r B' r' R r'
+36a,4.9,r' R r R' r B' r' R r R' r B'
+36a,4.7,R' B' R' r R' B' R r' R' r R r R'
+36a,4.4,r B' R r' R r' b B b' B' R B'
+36a,4.25,r' B r b' B R' B' R r R' r b' B r'
+36a,4.2,R' B R B R' B' R r' R' B R' r' R'
+36b,5.5,r b' B R' B' R r R' r b' B r' B' r
+36b,5.35,R' r' R r' R' r B' R B' r' B
+36b,5.15,B' b B b' B r' R r' R' r B r'
+36b,5.15,r' R r R' r B' b B' b' B r B'
+36b,4.7,B' R' r B' R B R' B' R r' R' r' R
+37a,5.25,b' B R' B' R r R' r b' B r' B' r B
+37a,4.65,R r R' r B' b B' b' B r B' r'
+37a,4.65,b B b' B r' R r' R' r B r' B'
+37a,4.6,R B R b' B R' r B' r' B r
+37a,4.4,R r R' r B' r' R r R' r B' r'
+37b,4.9,B' R' r R' B' R r' R' r R r R
+37b,4.9,r' R r' R' r B r' R r' R' r B
+37b,4.9,R B' R' r R' B' R r' R' r R r
+37b,4.75,b' B R' B R r' R' r b' B r B' r' B
+37b,4.5,B' r' B r b' B R' B' R r R' r b' B
+38a,5.65,B' R r' R' B R' B' R B R' B R
+38a,5.5,R r' R' r b' B R B' R B R' B' R b'
+38a,5.5,r b' r' b B' R r R' r R r' R' r B'
+38a,5.4,R r R' r R r' R' r R' B' R r'
+38a,5.4,R r' R' r R' B' R r' b B b' B
+38b,4.7,R B R' B' R r' R' r B' b' B R' b'
+38b,4.7,r R r' R' r b' r' b R' B' R r' B'
+38b,4.45,b' R' r b' r' B R' B' R r' R' r R
+38b,4.45,r' B' R r' R' b B' b' B R' B' R B
+38b,4.2,B' R r' R' B' R r' R' r B b B' b'
+38c,5.85,r' R r R' r' R' r B' b' B R'
+38c,5.4,r b' r' b R' B' R r' R' B R B
+38c,5.4,B R B' R' B' R B R' r B' r' B
+38c,5.2,B R' B' R B R' B R B r B' r' B
+38c,5.15,B' R B R' B R B' R' r B' r' B
+38d,5.1,R' r b' r' B R' B' R' B R B'
+38d,5.0,R B R B b' B r' R' r
+38d,4.85,R' r b' r' B' R B R' B' R' B
+38d,4.8,r' R' r B' b' B R B R B'
+38d,4.7,r' R r R' r' R r' R' r' B' r B r'
+39a,5.45,R r R' r' R' r b' B R' B' R r' R'
+39a,5.25,R B R B' r' b B' b' B R' B' R r' R
+39a,5.25,r R r R' b' B R' B' R r' R' r b' r
+39a,5.0,R' B R r' R' r' R' B R'
+39a,5.0,R B' R r R r R' B' R
+39b,5.75,R' r R' B' R' B' R r R'
+39b,5.7,R' B' R r' R' r b' B R' B' R' B R
+39b,5.25,R r' R' B R B R r' R
+39b,5.1,R' B' R' B' R r R' r' R' r B
+39b,5.0,R B' R r' R' r b' r' b B' r' R r R
+39c,7.75,r R' r b' B R' B' r
+39c,5.8,B' R r' R B R B' R' B' R
+39c,5.65,B' R r' R' B R B R' B R B' R'
+39c,5.6,B' R r' R B' R B R' B R B
+39c,5.5,r' B R B' b r' R r'
+39d,7.75,B r' R' r b' B R' B
+39d,6.3,R r' R' r' R r R B' R r'
+39d,5.65,R' r' R r R' r R r R' B' R r'
+39d,5.5,B' R B' b r' R r B'
+39d,5.5,R' r R r' R' r' B' R r'
+39e,5.65,R r' R' r' R r R' r B r' B' r
+39e,5.2,r R r R' r R r' R' r B r' B' r
+39e,5.15,R' B R B' R' B' R B r B' r' B
+39e,5.0,r' b B b' B R' r R' r R r' R' r R'
+39e,5.0,R' r b r' b B' R B' R B R' B' R B'
+39f,5.65,R' B R B R' B' R B' r' B r B'
+39f,5.4,R r' R' r R r R' r' B' r B r'
+39f,5.3,r R B' R r' R' B' R B' R
+39f,5.3,b' r' b r B r' B' R r R'
+39f,5.3,R' B' R B r B' r' b B b'
+40a,6.65,r' R' r b' B R B' R r' R r R'
+40a,5.95,B' R r' R' r' R r R' B' R r' R' r
+40a,5.9,R' B R B' R r' R r b' B R' B'
+40a,5.7,B R' B' R r' R' B R B' R' B' R r'
+40a,5.4,B' R' B' R r R' B R B R' B' R
+40b,5.9,R' B R B' R' B' R r' R' B R B
+40b,5.9,r R r R' B' R r' R' r' R r R'
+40b,4.9,R' B R' B R B' b' B' R r' R r
+40b,4.6,B' r' B r B' R r' R' b' r' b
+40b,4.6,r' B' r B r' b B' b' R' B' R
+40c,6.7,b' B R' B' R r' R' r b' r' R r R'
+40c,6.7,r' b B' b' B R' B' R r' R' B R B'
+40c,6.3,r R' r' R r R' r B' R r'
+40c,5.9,r' B r B' R r' R' r R r R' r'
+40c,5.85,r b' r' B R' B' R r' R' r b'
+40d,6.85,B' R r' R' r b' r' b R' B' R
+40d,6.85,b' B R' B' R r' R' r B' b' B
+40d,6.7,R' B R B' b' B R' B' R r' R' r b'
+40d,6.7,r' R r R' B' R r' R' r b' r' b B'
+40d,5.85,B R' r b' r' B' R r' R' r R'
+40e,4.8,R' B' R' r R' B' R' B' R r'
+40e,4.8,R' r B r' B' R r R' B' R
+40e,4.65,R' B R' B' R r' R b R' b' R r
+40e,4.65,B' b B' b' B R' B r B' r' B R
+40e,4.65,r' R r' R' r b' r B r' B' r b
+40f,5.55,B' R' B R r' b B b' B r'
+40f,5.55,r' b' r b B' R r R' r B'
+40f,5.55,R' r' R r b' B R B' R b'
+40f,5.0,R B' R r' R r' R' r R r' R' r B' R
+40f,4.95,R B R B' R r' R r R b' B R' B'
+41a,7.25,B' R' B R' r R' B r
+41a,7.0,B r R' B R' r R' r'
+41a,5.6,r' R r R B' R r' b B b' B
+41a,5.55,r R r' R' r B r' B' r B'
+41a,5.45,B R' B' R B' R r' R' r' R r R' B'
+41b,8.0,r' B' R r' R B' R B
+41b,7.25,r R r' R B' R r' B'
+41b,5.8,r B' R r' R' B' R' B R B
+41b,5.3,B' R' B R B' r' B r B' r
+41b,5.2,R' r' R r R' B R' B' R b' B R' B'
+41c,6.0,B' r B' R r' R' r B' r'
+41c,5.95,R' r' R r' b B' b' B R' r B' R r'
+41c,5.45,R' r' B' R r' R' r b' r' b B' R B
+41c,5.15,R' B R' r B' r' B R' r b' r b
+41c,5.0,B' r' B R' B' R r' B r'
+41d,5.2,b' r' b B' R B R' B' R B' R' r B'
+41d,5.2,B' b' B R' r R r' R' r R' r' b R'
+41d,5.1,B' R r' R' r' R' B R' r R' r
+41d,4.9,r' b B' b' B r B' R r' R B' R
+41d,4.85,B R' B R' r R' B' R' B' R r'
+42a,5.7,R' B' R r' R r' R' r b' r b r' B'
+42a,5.7,B' b' B R' B R' B' R r' R r R' b'
+42a,5.5,r' B' r B r' R' B' R B'
+42a,5.4,R B' R r' R' B R B R' B R' B'
+42a,5.0,B R' B R r B' r' B r
+42b,8.0,r B' r' B r R r' R'
+42b,7.0,B r' B' R' B' R B r
+42b,6.75,R' B R' B' r b r' R
+42b,5.3,r' B r B' r' B R' B' R r
+42b,5.1,B R' B R B r B' r' b B b'
+42c,5.75,B r B' r' B R r R' r
+42c,5.7,r' B' b B b' B R' B' R B' R r' R'
+42c,5.7,b' R' B R B' R r' R' r R' r b' r'
+42c,5.65,r' R' r R' r R r R' B' R r' R
+42c,5.4,r R r' R' r R' r B' b' B R' r
+42d,8.75,R' B' R B r B' r' B
+42d,7.25,B r R r' R' r' B' r
+42d,6.75,R B' b B r' R' r R'
+42d,6.05,B R r' R' r B' r' B r B'
+42d,5.55,r B r' B' R' B R' r R' r
+43a,5.75,B' r' R' r b' B r' R' r
+43a,5.1,R' B' R r' R' r' R' r B R' B
+43a,4.85,R' B R B' R' r b' r R r R
+43a,4.75,B r' R' b' r' b B R
+43a,4.75,b R' B' r' R' r b B
+43b,8.25,B' r B r' B' R' B R
+43b,8.0,R r' R r B' b' B R'
+43b,7.0,r' B r R r R' r' B'
+43b,5.35,R r' R' r R' r b' r' B R' B'
+43b,5.2,R r R' B' R r' R' B' R r' R' r B'
+43c,5.5,b' B R' B' R r R' r' R r R r' b R'
+43c,5.5,r' b B' b' B R B' R' B R B R' r B'
+43c,5.1,r R' r B R' B' R' B' R r' R'
+43c,4.95,R B R' B' R B' R r' R' B R B R
+43c,4.85,R' B R' r b' r' B' b' B R B'
+43d,8.5,R r R' r' B' r B r'
+43d,8.0,r' B' R' B R B r B'
+43d,7.75,R' r b' r' B R B' R
+43d,6.1,r' R' r B' b' B R' B R' B' R
+43d,5.55,r R r R' r B' R r' R' B'
+44a,4.95,B' R r' R r b' B R' B' R' B' R B'
+44a,4.85,B R' B' R' r' R r b' B R' B'
+44a,4.7,r' R' r' R r R B' R r' R' r' R' r
+44a,4.7,R' B R' B R B' b' B' R r' R' r R'
+44a,4.65,R' B R' r R' r' R r R' r B' r
+44b,5.4,b' r' b B' R r R' r R' B R B'
+44b,5.1,B R' r R' B R' r R' r R r
+44b,4.95,R B' R r' b B b' B R' r' R r R
+44b,4.9,r' R r R' B R' B R r' b B' b'
+44b,4.9,r B' R r' R' r B' b B' b' B r
+44c,8.5,B' R' B' R r R' B R
+44c,5.75,B' R' B R B R r R' B
+44c,5.3,B b' R' B R B R' r b' r'
+44c,5.3,r' R b' B R' B R' r b' r
+44c,5.3,R B' r' R r R r' b B' b'
+44d,9.5,B' R' B' R' r R' B
+44d,6.95,R r' R' r B' R r' R' r b' r' b B'
+44d,6.95,B R' B' R b' B R' B' R r' R' r b'
+44d,6.25,B r' B' r B R' B R B
+44d,5.95,r' R r' R' r R r' R' r B' R r' R'
+45a,6.15,r R' B' R B' R r' R' r b' r b
+45a,6.15,R B' b' B b' B R' B' R r' R r
+45a,5.65,r' b B' b' B R B' R r R' r R'
+45a,5.65,b B b' B R' B' R r' R r' R' B
+45a,5.65,B R B' R r' R' r b' r b' r' R
+45b,5.35,r' R' r B' R r' R' r' R r B'
+45b,5.35,r B' R r' R' r' R r R B R
+45b,5.25,B' b' B R' B' R r' R r' R' r b' B' b'
+45b,5.25,R' B' R r' R' r b' r b' r' b B' R' B'
+45b,5.0,B' r' B r B' r' R r' R' r b' r b r
+45c,10.5,r R r R B' R r'
+45c,6.7,r' R r R' r' b B' b' B R' B' R r'
+45c,5.75,r' B r B' r' R r' R' r'
+45c,5.6,r' B r B' R r R' r R r R'
+45c,5.3,B r' B' r B' R r' R' r B
+45d,9.25,r R r R' B' R r' R'
+45d,6.0,r R r' R' r' R' B' R r'
+45d,5.5,R' r' R' r' R r B' R r'
+45d,5.4,R B' R r' R' B' R' B R' B R B
+45d,5.35,r' R r R' r R r R B' R r'
+46a,8.75,B' R r' R' r b' r' b B'
+46a,8.75,r' b B' b' B R' B' R r'
+46a,8.75,b' B R' B' R r' R' r b'
+46a,5.45,B r' b' B R' B' R r' R' r b' B r'
+46a,5.0,B b' r b r' R r R' B
+46b,5.75,R' r' R r R r' b B' b' B R B' R r'
+46b,5.55,r' B' r B r B' r' B r B'
+46b,5.55,r B' R B R' B' R B' R' r
+46b,5.55,B r B' r' B' r B r' B' r
+46b,5.55,B' r' B r B r' B' r B r'
+46c,9.0,R B' R r R r B'
+46c,6.75,R' B R' B' b r' R r
+46c,6.4,R r' R r b' B R' B' R r' R' r
+46c,4.95,B' R r' R' r R r R' B R r R' r
+46c,4.9,r R r R' r' R' B' R r' b B b'
+46d,9.0,R' r R' B' R' B' r
+46d,9.0,R r' R r b' B R' B'
+46d,5.5,R' r' R' r b' B' b' B R
+46d,5.5,r' b' r' b B' R' B' R r
+46d,5.5,r' R r' R' b' B R' B' R r' R' r b' r'
+47a,4.95,r R B' R' B R B R' r b' r b r'
+47a,4.7,B' b B b' B R' r R r R' r' R B
+47a,4.5,R' r' R r R b' B R' B' R r' R' r b
+47a,4.5,B b' B R' B' R r R' r' b R' r b' B
+47a,4.5,R B' R r' R' r b r' b' B r' b B' R
+47b,6.0,b' r' b' B R' B' R B' R r' R' r b' r'
+47b,6.0,r' R' r' b B' b' B b' B R' B' R r' R'
+47b,5.0,r' B' R r' R' B b B' b'
+47b,5.0,B' r' b B' b' r R r' R'
+47b,5.0,b' R' r b' r' R B R' B'
+47c,5.25,r' R B r B' r R' r'
+47c,5.15,R' r R' r R r' R' r R B' R r'
+47c,5.0,B' R' B R B' R r R' r' R r R' r B'
+47c,4.9,R B' R r R' r R' B R' B' R B'
+47c,4.9,B R B' R r' R' r b' B R' B' b
+47d,7.0,B' r' B r B' R r' R' r'
+47d,6.0,R r' B r B' r R' r'
+47d,5.75,r' b' B r' R B R b'
+47d,5.75,R' r' b R' B b B r'
+47d,5.75,b' B' R b' r R r B'
+48a,5.45,r' R r' R' r' R' r b' B R B' R r'
+48a,5.35,r' R' r b' B R B' R' r' R' r
+48a,5.0,R' B' R r' R r R r R' B' R B' R r'
+48a,4.85,r B' r' R' r B' R r' R' r' R
+48a,4.5,B' R r' R' r R r' R' r B r' B r B'
+48b,5.45,R' r b r' b B' R B R B' R' B R
+48b,5.45,r' b B b' B R' r R r R' r' R r
+48b,5.35,B R' B R B R' r B' r' B R
+48b,5.0,r' R r' R' r' R' r b' B R' B' R r' R'
+48b,5.0,r B' R' B R' B' R B' R r' R' r R r
+48c,7.75,R r' b B b' R' r B'
+48c,7.75,B R' r b r' B' R b'
+48c,7.75,r b' B R B' r' b R'
+48c,7.75,b B' R r R' b' B r'
+48c,7.25,B R' r B' r' B R r'
+48d,6.0,B R' r' B' r B' R B
+48d,5.8,B' R r' R' r B r B' r' B
+48d,5.4,R' r R' B' R B' R r' R r R' r
+48d,5.05,R r' R r R b' B R' B' b'
+48d,5.05,B R' B R B r' b B' b' r'
+49a,5.4,B r B' R r' R' r B' R r R' r'
+49a,5.05,r' R b' B R B' R r' b r'
+49a,5.05,R' B r' b B b' B R' r R'
+49a,4.9,R r' R r R B R' B' b' B R' B'
+49a,4.85,B' b B' R B' R' r' R r' b r'
+49b,5.5,b' B' R r' R' r b' r' b' B R' B' R B'
+49b,5.5,B' R' r b' r' b B' b' B' R r' R' r R'
+49b,5.4,B R' r R' r' R r' R' r R' r B
+49b,5.15,R B' R r' R r' R' r R' B R' B
+49b,5.1,B r R r R' r' R r' R' r B
+49c,6.5,r' R' B R B' R' B' R r'
+49c,5.65,B' R r' R' B R' B R B' R' B R
+49c,5.45,r' R' r R r R' b' B R' B' R r' R'
+49c,5.25,r' R' r R' b' B R' B' b
+49c,5.25,R' B' R B' r' b B' b' r
+49d,6.0,B R' r R r R' r' R B
+49d,5.75,B R r' R' r R r R' B
+49d,5.4,r' B' R B' R B R' B R B' R r'
+49d,5.35,B R' B' R B' b' B R' r b' r'
+49d,5.35,R r' R' r R' B' R r' b B' b'
+50a,8.0,b R' r b' B R B' r'
+50a,8.0,R b' B R' r b r' B'
+50a,8.0,B r' b B' R r R' b'
+50a,8.0,r B' R r' b B b' R'
+50a,6.3,r R' r b' B R' B' R r R'
+50b,10.25,r B' R r R' r B
+50b,8.75,r B R' B R r' B
+50b,7.5,B r' B' r R' B' R B
+50b,7.25,r R r' R' B r' B' r
+50b,6.75,B R' B R B r B' r' B
+50c,5.4,B R' B R B' r' B r B' R r' R'
+50c,5.25,r R r' B r' B' R' r
+50c,5.2,R' r' R r' R' r B' R r' b B b' B'
+50c,5.15,B R' B R B' R r' R r' R' B R'
+50c,4.9,R r B r' B' r R' r b' r' b B'
+50d,6.5,B' R r B' r' B R' r
+50d,6.0,r R r' B r' B' r R'
+50d,5.5,B r' R' r' b R' B b
+50d,5.5,R b' r' b' B r' R B
+50d,5.5,r' B R' b' r b B' R
+51a,9.0,R B' b B r' R r
+51a,9.0,B R B' r b r' R
+51a,5.5,R r' b B' b' B R' B' R r' R r' R r
+51a,5.5,B R B' R B' R r' R' r b' r' b B' R
+51a,5.15,R' r R' r R B R' B' R B' R r'
+51b,6.25,r R r R' B' R r R' r
+51b,5.55,B' R r R' r B' b B b' B'
+51b,5.55,r' b B b' B r' R r R' r'
+51b,5.55,R' r b r' b R' B R B' R'
+51b,5.2,B' R' B' R r' R' r b' B' R r' R r
+51c,9.5,R' B' R r' R' B R B
+51c,6.25,B' R r' R' B' R' B' R B
+51c,5.8,r R r' R' r B' R r' R' B
+51c,5.7,r' b' B R' B' R r' R' r' b B' b B
+51c,5.7,b' B' R r' R' r b' r' b' B R' B R
+51d,10.5,B' R r' R B R B
+51d,6.45,B' R r' R' r b' r' b B' R' B R B'
+51d,6.25,B' R' B' R B' r' B r B'
+51d,5.8,R' B' R r R' B R' r R' r
+51d,5.15,r' R' r b' r' R r R B R' B' R
+52a,5.5,R' r' R r R r' R' r b' B R B' R b'
+52a,5.5,B' R' B R B R' B' R r' b B b' B r'
+52a,5.4,R r R r' b B' b' B r' B' R r'
+52a,4.9,B' R r' B' r b' r' b B' R B R
+52a,4.9,r B' R r' R' r R' r B r' B' R
+52b,6.5,R' r B r' B' R r B'
+52b,5.25,B r' R' B r B' r' R
+52b,4.95,R' B R' r B' r' B R' r b' r' b r'
+52b,4.8,B' r' R' r b' B R B R B'
+52b,4.75,r' R r' R' r b' r' b B' R' B R B r
+52c,9.5,r' R' r b' B R B' R
+52c,9.0,B r' R' r' R' B R'
+52c,5.75,r b B' b' B' R r' R' r'
+52c,5.75,B R r' R' r' b B' b' B'
+52c,5.75,R r b' r' b' B R' B' R'
+52d,6.55,B' R r R' r R r' R' r B'
+52d,6.0,r R' B R B R' B' R r
+52d,6.0,r R B' R' B R B R' r
+52d,5.35,B' r' R r' R' r' R r R' r B'
+52d,5.35,B' b' B R' r b' r' R r' R' r
+53a,8.75,B' r R' B' R B' r'
+53a,8.75,B' r' R r' R' B r'
+53a,8.5,r' B r B' R r R' r'
+53a,7.5,B' R' B R r' B r B'
+53a,6.25,r' R r' R' r' B' r B r'
+53b,6.0,B R' B R r' R' B R B
+53b,5.15,R' r b r' b B' R' B R' B' R B
+53b,5.15,r' b B b' B R' r' R r' R' r R
+53b,5.0,B r B' r' B' R' B' R r'
+53b,5.0,R' b r' R B' b' B r
+53c,9.0,r R' B R' r' R' r'
+53c,6.75,r R r R' r B r' B' r
+53c,5.45,b' B R' B' R r' R' r b' R r' R' r
+53c,5.45,r' b B' b' B R' B' R r' B R' B' R
+53c,5.3,R r R' B' R r' R B' R B'
+53d,7.75,R r R' B R r' R' r'
+53d,5.3,B' b' B R' r R r R' b' r
+53d,5.3,b' r' b B' R B R B' r' R
+53d,5.25,B R' B' R' B' R r' R' r b' r' b R' B'
+53d,5.05,R B' R r' b r' b B' r R'
+54a,6.75,B' r' R r b' B R' b
+54a,6.75,b' R' B R r' b B' r
+54a,6.75,R' b' r b B' R r' B
+54a,6.75,r' B' b B R' r b' R
+54a,6.25,B' R' B' R r R' B' R B'
+54b,11.25,r' R' r B' b' B R'
+54b,10.25,R' r b' r' B R' B'
+54b,5.55,B b' r b B' R r' R' r B'
+54b,5.55,r R' B R r' b B' b' B r'
+54b,5.3,B' r b' r' b B' R r R' B
+54c,6.75,B' R' B r' B r B' R
+54c,6.0,B' R' B' R r' B r B' r'
+54c,6.0,B' R' r R' B' R B' R r'
+54c,5.6,B' R' r B' b' B R' B' R r R'
+54c,5.25,r R' B' r B r' R B'
+54d,5.45,R' B' R r' R' B' R B' R r' R' r B
+54d,5.15,b r' R' r b' B R' B' R r' R r
+54d,5.15,r R' B' R r' b B' b' B R' B R
+54d,5.0,B' R' B r' B r R B'
+54d,5.0,R B' R' B R B R' r B' R r' R' r B'
+55a,5.6,r' b B' b' B r B' R r' R' B'
+55a,5.6,B' R r' R' r B r' b B' b' r'
+55a,5.55,r B R' B' R r R' B' R r'
+55a,5.3,B' R r' R' B R r' R' r B
+55a,5.1,B' R' B b B b B' R r' R r
+55b,5.25,r' B R r' B' r B R'
+55b,5.25,R B' r' B r R' B' r
+55b,5.05,r' R r R r b' B R' B' r'
+55b,4.95,B' b B' b' B R' r B' r' B R' r R'
+55b,4.8,r B' R r' R' B' b B b' B
+55c,8.75,r' B R B R r' R
+55c,6.9,B R' B' R r' R' r b' B R B' R
+55c,6.75,B R B' b r' R' r R'
+55c,5.2,B R' B R r R' B R B R' B' R r'
+55c,5.0,b R' r b' B R B' R' B R B' R r' R'
+55d,6.75,B' R r' R' r' R r R' B'
+55d,5.4,R r R' r' R r R' r R' B' R r'
+55d,5.35,B' r' R r' R' r b' r' b r B'
+55d,5.35,r' B' b B' b' B R' B' R B r'
+55d,5.35,b' R' B R' B' R r' R' r R b'
+56a,6.15,r' R' r b' B R B' R B R' B' R
+56a,5.65,B' R r' R' r' b B' b' B' R r' R'
+56a,5.65,R r' R' r R r' R r b' B R' B'
+56a,5.4,r R r' R' r R' B' R r' b B b'
+56a,5.4,R B R' B' R B' b' B R' r b r'
+56b,11.25,r' R' r b' B R' B'
+56b,9.0,B R B' b r' R r
+56b,6.3,B' R r' R' r' R r R B' R
+56b,5.8,R r' R B R B' R' B' R r'
+56b,5.65,B' R' B R B' R b' B R' r b r'
+56c,6.0,R r b' r' B' b' B R
+56c,6.0,B R r' R' b' r' b B
+56c,6.0,r b B' b' R' B' R r
+56c,6.0,b B R' B' r' R' r b
+56c,5.95,B' R r' R' r B' r' B r B' R r' R'
+56d,6.45,B' R r' R' r b' r' b B' R r' R' r
+56d,6.45,R r' R' r b' B R' B' R r' R' r b'
+56d,6.45,B R' B' R r' b B' b' B R' B' R r'
+56d,6.45,b' B R' B' R r' R' r b' B R' B' R
+56d,5.95,r' R r R' b' B R' B' R r' R' r b'
+57a,5.3,r' R r' R' B' R r' R B R
+57a,4.95,r' b B' b' B' R r' R' r R r R' B'
+57a,4.9,B R B R' r R' r' R' r R' r B'
+57a,4.85,b' R r' R' r B' r' R' r b' B
+57a,4.85,r' B R' B' R b' R' B' R r' b
+57b,5.45,R' B R' B' R r' R' r R b' B R' B'
+57b,5.0,r b' R' B' R b r' B
+57b,5.0,B R' b' r' b R B' r
+57b,5.0,b B' r' R' r B b' R
+57b,5.0,R r' B' b' B r R' b
+57c,6.0,b' r B R B' r' b R'
+57c,6.0,r' R b B b' R' r B'
+57c,6.0,R' B r b r' B' R b'
+57c,6.0,B' b R r R' b' B r'
+57c,5.35,b B' R r' R' b' R r' R' r B'
+57d,5.5,B' b' B R B' R r' R' r b r' b B' R
+57d,5.5,R' B' R r R' r b' r' b B b' B R' r
+57d,5.05,r' R' r B b' B R B' R B'
+57d,5.0,R b' r B R' B' r' b
+57d,5.0,r B' b R r' R' b' B
+58a,7.5,R r R' B' R' B' R r
+58a,5.9,R r R' r' R' r b' B R B' R r'
+58a,5.55,R' B' R B R' r B' r' B R
+58a,5.05,r B r' R' r R' r B' R' B
+58a,4.9,r' R' r R B R' B' R b R' b' R
+58b,7.5,r' R' B R B R r' R'
+58b,5.15,R r R' r R' r' R' r B' R r' R
+58b,5.1,r B r' B' b B' b' B' R r' R'
+58b,5.1,B r B' r' R r' R' r' b B' b'
+58b,4.95,b' B R' r R' r B r' b B' R B R
+58c,7.25,B R r' R' r' R' B R
+58c,5.65,B' R r' R r b' B R' B' R' B R
+58c,4.9,B' R' B R B R' r b r' b B' R'
+58c,4.9,R B' R' B' R B R' r B' r' B r
+58c,4.9,R' r' R r R r' b B b' B R' r'
+58d,7.25,R' B' R r R r R' B'
+58d,4.7,r R' r B r' R' r' R' r b' r' b B'
+58d,4.7,R B' R b R' B' R' B' R r' R' r b'
+58d,4.65,r' B' r B r' R' B R B R' B' R
+58d,4.65,r R' B' R r' R' B' R B R' B R
+59a,7.75,r B r' B' R r R' B'
+59a,6.5,R r' B' r B r' R' B
+59a,6.15,R' B' R r' R' B R B R' B R B'
+59a,5.5,R' B' R r' B' R' B' R B
+59a,5.25,R B' R r' R' r' R r R' B' R r' R r
+59b,5.25,B' R B R B' r' B R B
+59b,5.2,r B' R r' R' r B' r' B R' B' R r'
+59b,5.0,r R r B' r' R r R r'
+59b,4.95,B R' B' R r' R r' R' r' B' r B r'
+59b,4.9,B R' B' R r' R' B R B R r' R'
+59c,7.75,B r B' r' B R r' R'
+59c,5.45,R' r' R' r b' r' b B' R B R B' r'
+59c,5.3,b' B r' R' r b' B R' B R
+59c,5.3,B' R b' r' b B' R r' R r
+59c,5.2,R B R' B' R r' R' r R' b' B R' B'
+59d,5.65,B r B' R r R' r' R r' R' r B'
+59d,5.45,r' B R' B' R B R' B' R B' R r' R'
+59d,5.2,r' B' R B' R B R' B R' B' R r' R'
+59d,5.2,R' r B' R r' R' r b' r' b R' B R'
+59d,5.2,B' R b' B R' B' R r' R' r B' b B'
+60a,5.6,r' B' R r' R' B' R r' R' r B
+60a,5.6,b' r' b R' B' R r' R' B R B'
+60a,5.6,B' b' B r' R' r b' r' R r R'
+60a,5.55,R' B R B b' B r' R' r b'
+60a,5.55,r' R r R B' R b' r' b B'
+60b,5.35,R r R' B R' r R r R' r' R
+60b,5.35,R r R' B R r' R' r R r R'
+60b,5.0,R' B' R' r R' r' B' r B
+60b,4.7,r' R r R r' b B' b B' R r' R B
+60b,4.7,r' R r R' B' R r' R' r' R r R' B'
+60c,5.4,R b' R' b R B R' B' R r' R' r
+60c,5.4,r B' r' B r R r' R' r b' r' b
+60c,5.4,B r' B' r B b B' b' B R' B' R
+60c,5.25,B' R r' R' B R B' R' B' R r' R r R
+60c,5.0,B' b B' b' B R' B' R B r B' r' B r
+60d,10.0,R' r b' B R' B' r'
+60d,7.75,r B R B' b r' R
+60d,5.45,B' R r' R' r' b B' b' B r' B' r B
+60d,5.45,r' b B' b' B' R r' R' r B' r' B r
+60d,5.3,B' R r R' r B R' B' R B'
+61a,6.6,B b' B R' B' R r' R' r B' b'
+61a,6.6,R B' R r' R' r b' r' b R' B'
+61a,6.3,R B' R r' R' B' R B' R B
+61a,5.9,r' b B' b' B R' B' R r R r R'
+61a,5.4,R' B R B r B' R r' R' r B' r'
+61b,4.85,r' B b B b' B R' B R B r'
+61b,4.85,B' r R r R' r b' r b r B'
+61b,4.85,b' R B R B' R r' R r R b'
+61b,4.7,R B' R r' R' r b' r b' r' B' R B'
+61b,4.65,b' B R' B R B' b B' r' B r B'
+61c,5.5,r' R' r' R' B r' R' r'
+61c,5.35,r' R' r B' b' B R' r' R r R'
+61c,5.3,r R r' R' r R' B' R r' B
+61c,5.1,R' r' R' r B' b' B R' B' b B
+61c,5.1,r' b' r' b R' B' R r' R' B R
+61d,6.85,B R' B' R r' R' r B' b' B R'
+61d,5.65,R' B R B R' B' R r R' B' R B'
+61d,5.35,R r' R' r B' b' B R' r b' r'
+61d,5.35,B R' B' R b' r' b B' R r' R'
+61d,5.3,b' r' b B' R r' R B R B'
+62a,7.0,r R' B' R' B' R r R
+62a,7.0,R B R r' R' r' R' B
+62a,5.9,r' R r R' r' R' r b' B R B' R
+62a,5.65,R r' R r b' B R' B' R' B R B'
+62a,5.2,r' R' r' b B' b' B b' B R B' R r'
+62b,6.1,R' B R B R' B' R r R' B R
+62b,5.4,B R' B' R b' r' b B' R r R' r
+62b,5.35,R B' R' B R B R' r R' B R
+62b,4.95,r R B' R r' b r' b B' R B R B'
+62b,4.9,R r R' B' R r' R' r' R r R' B
+62c,6.35,r' B' r B r' B' R r' R' r B'
+62c,5.45,r' B' r B r' b B' b' B' R r' R' r
+62c,5.45,B' r' B r B' R r' R' r' b B' b' B
+62c,5.45,r' B' R r' R' r b' r' b R' B' R B
+62c,5.3,R' r R' B' R B R B' r' B
+62d,5.4,R B' R r' R' B R' B' R B R' B
+62d,5.2,B' R r' R' r R r R' B' R' B' R r'
+62d,5.2,R' r R' r R r' R' r R' B' R r' R'
+62d,4.95,r B' r' B r B' R r' R' r' b B' b'
+62d,4.95,B r' B' r B r' b B' b' B' R r' R'
+63a,6.5,r' R' B R r' B' r B
+63a,6.5,r R' B' r B r' B' R
+63a,5.9,r' R r R' r R r R' B' R r' R'
+63a,5.75,r R r' R' r' B' R r' R'
+63a,5.6,R' r' R' r' R r R B' R r' R'
+63b,8.5,r' B' r B' r B' r'
+63b,5.15,r' R' r b r' b B' R B' R r' B
+63b,5.05,B' R r R' B R' B R B' r'
+63b,5.0,R' B' R r R' B R' r' R'
+63b,4.9,r B' R r' R r' b B' b B R' B'
+63c,7.25,R r R' B' r B r' B'
+63c,6.05,r' R' r' R r R B' R r' R
+63c,5.6,R' r R' B' R B' R r' R r' R'
+63c,5.4,B R B' R' B' R r' R' B R B R'
+63c,5.25,B r' b B' b' B R' B' R B R' B' R r
+63d,6.9,B R' B' R r' R' r b' r' R r R
+63d,5.9,R r R' r' R r R' r B' R r' R'
+63d,5.7,B' b B' b' B R' B' R r' R r' R' B
+63d,5.7,R' B R' B' R r' R' r b' r b' r' R
+63d,5.6,B' b' B R' r R' r b' B' R r'
+64a,5.6,B R' B' R B' R r' R B R B
+64a,5.35,r R r R B' R r' R r' R' r
+64a,5.2,r' B' b' B R' B R B' R' B' R r' b
+64a,5.2,b' R' B' R r' R r R' r' R' r b' B
+64a,5.2,b B' R r' R' r' R r R' r b' r' B'
+64b,6.15,R' B R B R r' R' r b' r' b B'
+64b,5.9,r B' R r' R' r b' r' b R' B R
+64b,5.9,R b' B R' B' R r' R' r B' b B
+64b,5.8,r R r' R r' R' B' R r' R
+64b,5.7,B' r' B r B' R r' R' r' R r' R' r
+64c,6.85,r' R' r b' B R' B' R r' R' r
+64c,5.85,r' R r R' r' R' r b' B R' B'
+64c,5.65,R' B' R B' R r' R r b' B R' B
+64c,5.45,R' B' R r' R' r b' r' b B' r' R r
+64c,5.45,B' b B b' B R' B R B r B' r' B
+64d,6.25,r R r B' R r R r
+64d,5.1,B r' b B' b' B R B' R r R
+64d,5.1,R b' B R' B' R r R' r b r
+64d,5.05,r R r R' r R' B' R r' B'
+64d,4.9,r' R r R r' R' r b' B' b' B R
+65a,6.1,R' B' R r' R' B R B' R' B' R
+65a,5.9,R' B' R r' R' B' R B R' B R B
+65a,5.7,r R' r b' B R B' R r' R r R' r
+65a,5.65,B' R' B R B' R r' R r b' B R'
+65a,5.15,B' R r' R' r R r R' B R r' R'
+65b,5.75,B r R r B' R r R
+65b,5.15,r R r R' r' R' r B' b' B R' r
+65b,5.0,R B R r' B R B r
+65b,4.85,B R' r b' r' B' R B R' B' R'
+65b,4.7,r b' B R' B' R r R' r' R' r' b R'
+65c,6.65,R B R B' b' B R' B' R r' R' r
+65c,5.95,r R' B' R B' R r' R' r b' r' b r'
+65c,5.95,R B' b' B b' B R' B' R r' R' r R'
+65c,5.35,B' R r' b' B R' B R' r b' r'
+65c,5.3,r' R B' R r' R' B' R B R
+65d,7.75,r' B' r B r' R' B R
+65d,5.65,R' r R r R' B' R r' R' r' R r
+65d,5.6,R' B' R B' R r' R r' R' B R'
+65d,5.6,R' B' R B' r' B r B' R r' R'
+65d,5.55,R B' R r' R B R B' R' B'
+66a,6.0,R r' R r b' B R B' R
+66a,5.6,B' R r' R' r B' r' b B' b' r
+66a,5.6,r' b B' b' B r' B' R r' R' B
+66a,5.5,b' r b B' R r R' r B
+66a,5.5,R' B R r' b B b' B r
+66b,6.75,B' r' B r R' B' R r
+66b,6.5,R' B r B' r' B R r'
+66b,5.15,r B r' B' R r R' B' R r' R' r
+66b,4.9,R r R' r B' b B b' B' R r' R'
+66b,4.9,R' r b' r' R' B R B' R r' R r
+66c,10.0,B' r' R' r b' B R'
+66c,7.75,R B' b r' R r B
+66c,5.3,r' b' B R' B R' r b' r R
+66c,5.3,R' r' b B' b B' R r' R B
+66c,5.1,B R' B R r R' B R' r R' r
+66d,6.15,R r' R' r b' r' b r B r' B' r
+66d,6.15,b B' b' B R' B' R B r B' r' B
+66d,6.15,B R' B' R r' R' r R b R' b' R
+66d,5.0,R B R B' R r' R' r' R r R' B' R r'
+66d,4.95,r' R' B' R r' b B' b' B R' B' R B
+67a,5.3,B' R' r R' B' R' B' R r' R'
+67a,5.05,b B b' r B' R r' R' r B'
+67a,5.05,R r R' B r' b B' b' B r'
+67a,4.95,R' r B' r' B R' r R' r b' r' b r'
+67a,4.95,B' R b' R' b B' R B' R r' R' r R'
+67b,7.2,r' b B' b' B R' B' R r' R r' R' r
+67b,6.4,B' r' B r B' R r' R' r R r R'
+67b,6.05,R B' R r' R r R' b' B R'
+67b,5.65,b B R' B' R r' R' r b' r' R r
+67b,5.65,r b B' b' B R' B' R r' R' B R
+67c,5.85,R' r b' r' B R' B' R r' R' r
+67c,5.75,r' R' r B' b' B r' R' r
+67c,5.55,R' r' R r R' r B' R r' B
+67c,5.55,B' R' B R' r R' B R r R'
+67c,5.55,R' B R B b' B R' r b' r'
+67d,6.05,r' B' R r' R' B R' B R B
+67d,5.4,R' B' R r' b B b' B r' R r R'
+67d,5.25,B R B R r' B R B
+67d,5.15,R r b' r' b' B R' B' R B R B'
+67d,5.15,r b B' b' B' R r' R' r R r R'
+68a,8.5,r B r' B r' B r
+68a,6.05,B' R' r b r' b B' R B' R
+68a,6.05,R' r' b B b' B R' r R' r
+68a,5.9,R r R' r R r' R' r B' R r' R'
+68a,5.8,r R' r B R' B' R B' R r'
+68b,6.5,B R r' R' B r B' r'
+68b,6.25,B' R r B' r' B r R'
+68b,5.15,B R' B' R B' R' B' R r R' B R
+68b,4.95,R r' R' r B' R r' R' r' R r R' B'
+68b,4.9,R' B R B' R r R' r' B' r B r'
+68c,6.2,R' B' R r' R r' R' r R r' R' r B'
+68c,6.15,R' B' R r' R' r b' r' b R' B' R'
+68c,6.15,B' b' B R' B' R r' R' r B' b' B'
+68c,5.5,B' R r R' r B R' B R
+68c,5.35,r B' R r' R' r B' r' R r' R'
+68d,7.5,R' B' R r B' r' B r
+68d,5.45,B' r' R r R r' b B' b' B R' B' R'
+68d,5.4,r' R' B' R r' b B b' B R' B R
+68d,5.4,b' r' R' r b' B R B' R r' R r
+68d,5.2,R' B' R r' R r' R' r B' b B b' B'
+69a,6.35,R r' R' r' R r R' B' R r' R'
+69a,6.15,R' r b' B R B' R r' R r R' r'
+69a,5.9,R' B' R r R' B R B R' B' R r'
+69a,5.4,r R r R' r R r' R' B' R r' R'
+69a,5.35,R' r R r' R' r' R B' R r' R'
+69b,7.0,R' r' R' B R B R r'
+69b,6.75,B' R r R r R' B' R'
+69b,4.95,R' r b' r' R' B R' B' R r' R' r R
+69b,4.7,R B R' B' R r' R' r R' B' b' B R'
+69b,4.6,r R' B' R' B' R r R' r' R' r
+69c,5.4,r R' r R r' R' r R' B' R r' R
+69c,5.25,B r' b B' b' r' R r' R'
+69c,5.25,r B' R r' R' B' b B' b'
+69c,5.25,b R' r b' r' R' B R' B'
+69c,5.2,B' R r' R' r' R' B R B R' B' R r'
+69d,6.05,R B' R r R' r' R' r B r'
+69d,5.65,R B R b' B R' B' R r' R' r B'
+69d,5.2,r' B' R B' R r' R' r B' R B' R r'
+69d,5.15,r B r' B' r b B' b' B R' B' R
+69d,5.15,B r B' r' B R r' R' r b' r' b
+70a,4.9,r' R' r b' B r' R' r R' B R B
+70a,4.9,r B' r' B R r R' r b' r' b r'
+70a,4.9,R b' R' b B R B' R r' R' r R'
+70a,4.9,B r' B' r b B b' B R' B' R B'
+70a,4.65,B' b B' b' B R' B R r B' r' B
+70b,7.45,B R' B' R B' R r' R' r b' r' b B'
+70b,6.05,B' R r R' r b' r b r' B'
+70b,6.05,r' b B b' B R' B R B' r'
+70b,6.05,b' B R B' R r' R r R' b'
+70b,5.95,r b' B R' B' R r' R' r B' b' B r'
+70c,6.05,r B' R r' R' B R' B' R B
+70c,5.5,B' R' B' r R' B' R' B'
+70c,4.9,B' R' B R B' r' B r B' R r R'
+70c,4.75,b' B' R r' R r R' B R B R' B' R b'
+70c,4.75,B' R' r b' r b r' R r R r' R' r B'
+70d,6.85,B R' B' R r' R' r b' B R' B'
+70d,6.1,r' R' r b' B R' B' R' B R B'
+70d,5.95,B R B' r' b B' b' B R' B' R r' R'
+70d,5.95,R r R' b' B R' B' R r' R' r b' r'
+70d,5.9,r R' r b' B R B' R r' R r' R'

@@ -60,15 +60,9 @@ public class AlgCaseElement extends BorderPane implements Initializable {
             algLabel.setText(a.getAlgorithm());
             Label time = new Label();
             time.setFont(new Font(14));
-            if (a.getTimesTimed() == 0) {
-                time.setText("-.--");
-            } else {
-                time.setText(String.format("%.2f", (double) a.getAverage() / 100));
-            }
+            time.setText(String.format("%.2f", a.getRating()));
             algTable.addRow(algTable.getRowCount(), button, algLabel, time);
         }
-
-        //Provided algs should not be able to be deleted, self made algs should
     }
 
     @Override

@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static Settings.Settings.AUTO_REMOVE_FOCUS;
@@ -44,10 +45,31 @@ public class AlgSetElement extends TitledPane implements Initializable {
             });
         }
 
-        this.setText(this.algSet.getId() + ": " + this.algSet.getName());
         for (Case c : this.algSet.getCases()) {
             this.caseContainer.getChildren().add(new AlgCaseElement(c, co));
         }
+
+        float bestRating = 0;
+        float worstBestRating = 30;
+        float averageBestRating = 0;
+
+        List<Case> caseList = this.algSet.getCases();
+
+        for (int i = 0; i < caseList.size(); i++) {
+            Case c = caseList.get(i);
+            float rating = c.getProvidedAlgs().get(0).getRating(); //Get best alg
+
+            if (rating > bestRating) bestRating = rating;
+            if (rating < worstBestRating) worstBestRating = rating;
+            averageBestRating += rating / caseList.size();
+        }
+
+
+        this.setText(this.algSet.getId() + ": " + this.algSet.getName() + "        ("
+                + String.format("%.2f", bestRating) + " / "
+                + String.format("%.2f", worstBestRating) + " / "
+                + String.format("%.2f", averageBestRating) + ")");
+
     }
 
     public VBox getCaseContainer() {

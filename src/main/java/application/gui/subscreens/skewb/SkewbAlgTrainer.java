@@ -126,9 +126,15 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
             }
             algVBox.getChildren().add(ase);
             Platform.runLater(() -> skewbScreenController.getScreen().requestFocus());
-
-
         }
+
+//        try {
+//            AllSetAlgGenerator asag = new AllSetAlgGenerator(sets, null);
+//            Thread t = new Thread(asag);
+//            t.start();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void backToHome() {

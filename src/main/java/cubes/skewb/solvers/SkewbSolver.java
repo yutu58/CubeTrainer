@@ -242,4 +242,8 @@ public class SkewbSolver extends SkewbMover implements Runnable {
         LinkedHashSet<String> set = new LinkedHashSet<>(list);
         return new ArrayList<>(set);
     }
+
+    public List<String> getFinalAlgs() {
+        return finalAlgs;
+    }
 }
