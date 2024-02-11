@@ -41,7 +41,6 @@ public class SkewbScreen {
     //Event listeners
     private static void initEvents(Scene scene, SkewbScreenController controller) {
         AtomicBoolean spacePressed = new AtomicBoolean(false);
-
         scene.addEventFilter(KeyEvent.KEY_PRESSED, ke -> {
             Pane subMenu = controller.getSubMenu();
 
@@ -71,6 +70,47 @@ public class SkewbScreen {
                         s.startTimer();
                     } else {
                         s.setTimerRunning(false);
+                    }
+                }
+            }
+        });
+
+        scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
+            Pane subMenu = controller.getSubMenu();
+
+            if (subMenu instanceof SkewbAlgTrainer) {
+                if (ke.getCode() == KeyCode.P) {
+                    SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+                    if (!s.isInExamMode()) {
+                        s.startExamMode();
+                    } else {
+                        s.setInExamMode(false);
+                    }
+                }
+            }
+        });
+
+        scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
+            Pane subMenu = controller.getSubMenu();
+
+            if (subMenu instanceof SkewbAlgTrainer) {
+                if (ke.getCode() == KeyCode.LEFT) {
+                    SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+                    if (s.isInExamMode()) {
+                        s.passExamQuestion();
+                    }
+                }
+            }
+        });
+
+        scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
+            Pane subMenu = controller.getSubMenu();
+
+            if (subMenu instanceof SkewbAlgTrainer) {
+                if (ke.getCode() == KeyCode.RIGHT) {
+                    SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+                    if (s.isInExamMode()) {
+                        s.failExamQuestion();
                     }
                 }
             }

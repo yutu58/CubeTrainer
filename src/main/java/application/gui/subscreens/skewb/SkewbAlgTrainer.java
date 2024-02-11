@@ -53,6 +53,11 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
 
     private List<Label> menus;
 
+    private List<Case> examModeCasesLeft;
+
+    private boolean inExamMode;
+    public int lastRandIndex = 0;
+
     public SkewbAlgTrainer(SkewbScreenController skewbScreenController) {
         this.skewbScreenController = skewbScreenController;
         try {
@@ -69,6 +74,7 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         selectedCases = new ArrayList<>();
         timerRunning = false;
+        inExamMode = false;
 
         SkewbL2LReader reader = new SkewbL2LReader();
         List<L2LSet> sets;
@@ -161,11 +167,11 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
         String newScramble = "Select a set";
 
         if (selectedCases.size() > 0) {
-            newScramble = generateNewScramble();
+            newScramble = generateNewScramble(selectedCases);
             if (PREVENT_SAME_SCRAMBLE) {
                 int tries = 0;              //To prevent infinite loops for some reason
                 while (newScramble.equals(scramble.getText()) && tries < 100) {
-                    newScramble = generateNewScramble();
+                    newScramble = generateNewScramble(selectedCases);
                     tries++;
                 }
             }
@@ -173,14 +179,37 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
         scramble.setText(newScramble);
     }
 
-    private String generateNewScramble() {
+    public void startExamMode() {
+        this.setInExamMode(true);
+
+        this.examModeCasesLeft = new ArrayList<>(this.selectedCases);
+        timer.setText("Cases left: " + examModeCasesLeft.size());
+        scramble.setText(generateNewScramble(examModeCasesLeft));
+    }
+
+    public void passExamQuestion() {
+        if (!examModeCasesLeft.isEmpty()) {
+            this.examModeCasesLeft.remove(lastRandIndex);
+            timer.setText("Cases left: " + examModeCasesLeft.size());
+            scramble.setText(generateNewScramble(examModeCasesLeft));
+        }
+    }
+
+    public void failExamQuestion() {
+        scramble.setText(generateNewScramble(examModeCasesLeft));
+    }
+
+    private String generateNewScramble(List<Case> cases) {
         //Select random case
-        if (selectedCases.size() == 0) {
+        if (cases.size() == 0) {
             return "Select a set";
         }
-        int randomIndex = ThreadLocalRandom.current().nextInt(0, selectedCases.size());
+        int randomIndex = ThreadLocalRandom.current().nextInt(0, cases.size());
         int randomAmount = ThreadLocalRandom.current().nextInt(1, AMOUNT_RANDOM_SCRAMBLES + 1);
-        return SkewbScrambler.stateToScrambler(new SkewbState(selectedCases.get(randomIndex).getPattern()), randomAmount);
+
+        lastRandIndex = randomIndex;
+
+        return SkewbScrambler.stateToScrambler(new SkewbState(cases.get(randomIndex).getPattern()), randomAmount);
     }
 
     public boolean isTimerRunning() {
@@ -191,5 +220,11 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
         this.timerRunning = timerRunning;
     }
 
+    public boolean isInExamMode() {
+        return inExamMode;
+    }
 
+    public void setInExamMode(boolean inExamMode) {
+        this.inExamMode = inExamMode;
+    }
 }
