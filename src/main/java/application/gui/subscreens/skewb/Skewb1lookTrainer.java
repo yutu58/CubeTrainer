@@ -111,7 +111,9 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
 
         if (sets != null) {
             for (L2LSet s : sets) {
-                allCases.addAll(s.getCases());
+                if (s.getId() < 38) {
+                    allCases.addAll(s.getCases());
+                }
             }
         }
     }
