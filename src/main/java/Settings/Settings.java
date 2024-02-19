@@ -23,4 +23,6 @@ public class Settings {
 
     public static String IMAGE_DOWNLOAD_LOCATION = "images/";
 
+    public static String DATA_STORAGE_LOCATION = "data/";
+
 }

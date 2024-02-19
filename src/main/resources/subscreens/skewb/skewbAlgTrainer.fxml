@@ -8,31 +8,6 @@
 <fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.00" prefWidth="900.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <BorderPane prefHeight="200.0" prefWidth="440.0" BorderPane.alignment="CENTER">
-            <top>
-                <GridPane fx:id="checkBoxPane" prefHeight="500.0" prefWidth="365.0" BorderPane.alignment="CENTER">
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
-                        <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
-                    </rowConstraints>
-                    <children>
-                        <Label text="Select sets:" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                            <font>
-                                <Font name="System Bold" size="15.0" />
-                            </font></Label>
-                    </children>
-                    <padding>
-                        <Insets left="10.0" />
-                    </padding>
-                </GridPane>
-            </top>
             <center>
                 <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                     <top>
@@ -71,6 +46,88 @@
                     </children>
                 </GridPane>
             </bottom>
+         <top>
+            <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab text="L2L">
+                     <content>
+                            <GridPane fx:id="checkBoxPane" prefHeight="500.0" prefWidth="365.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                                    <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                                </rowConstraints>
+                                <children>
+                                    <Label text="Select sets:" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <font>
+                                            <Font name="System Bold" size="15.0" />
+                                        </font>
+                              </Label>
+                                </children>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </GridPane>
+                     </content>
+                  </Tab>
+                   <Tab text="EG-2">
+                       <content>
+                           <GridPane fx:id="checkBoxPane2" prefHeight="500.0" prefWidth="365.0">
+                               <columnConstraints>
+                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
+                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
+                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="10.0" prefWidth="30.0" />
+                                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="150.0" />
+                               </columnConstraints>
+                               <rowConstraints>
+                                   <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                                   <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+                               </rowConstraints>
+                               <children>
+                                   <Label text="Select sets:" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                       <font>
+                                           <Font name="System Bold" size="15.0" />
+                                       </font>
+                                   </Label>
+                               </children>
+                               <padding>
+                                   <Insets left="10.0" />
+                               </padding>
+                           </GridPane>
+                       </content>
+                   </Tab>
+                   <Tab text="Pools">
+                       <content>
+                           <BorderPane>
+                           <bottom>
+                              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="poolTextInput" prefWidth="600.0" />
+                                    <Button fx:id="addWithSelectionButton" mnemonicParsing="false" text="Add with selection" />
+                                    <Button fx:id="addEmptyButton" mnemonicParsing="false" text="Add empty" />
+                                 </children>
+                                 <BorderPane.margin>
+                                    <Insets left="30.0" />
+                                 </BorderPane.margin>
+                              </HBox>
+                           </bottom>
+                           <center>
+                              <ListView fx:id="poolList" prefHeight="400.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center></BorderPane>
+                       </content>
+                   </Tab>
+               </tabs>
+            </TabPane>
+         </top>
         </BorderPane>
     </center>
     <right>

@@ -180,6 +180,16 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
             String rotatedSetup = "x " + setup + " x' z2";
             //Forced reverse setup
             String pattern = SkewbL2LImageGenerator.drawImageFromSetup(n, rotatedSetup, gc, scale, true, state);
+
+            //Put pattern on clipboard?
+            //TODO: make optional with a button or smth
+//            Clipboard clipboard = Clipboard.getSystemClipboard();
+//            ClipboardContent content = new ClipboardContent();
+//            content.putString(pattern);
+//            clipboard.setContent(content);
+
+            //If copy to clipboard button:
+            //Moet via event listener en niet hier
         } catch (RuntimeException e) {
             promptError(e.getMessage());
         }
@@ -188,5 +198,33 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
     private void promptError(String err) {
         imageErrorLabel.setText(err);
         imageErrorLabel.setTextFill(Color.RED);
+    }
+
+
+    private void reloadPools() {
+        //Read from file ofzo
+    }
+
+    private void addToPool() {
+        //Write to file or settings?
+
+        reloadPools();
+    }
+
+
+    private void removeFromPool() {
+        //Write to file or settings?
+
+        reloadPools();
+    }
+
+    private void newPool() {
+        //Write fo file or settings
+
+        reloadPools();
+    }
+
+    private void changePoolName() {
+        //Write to file or settings?
     }
 }

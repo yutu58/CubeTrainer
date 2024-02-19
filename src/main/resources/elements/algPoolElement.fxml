@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="50" minWidth="100"
+         prefHeight="40.0"
+         prefWidth="440.0" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/11.0.2"
+         xmlns:fx="http://javafx.com/fxml/1">
+    <Label fx:id="poolName" text="Label"/>
+    <Label fx:id="numberSets" text="Label"/>
+    <Label fx:id="numberCases" text="Label"/>
+    <Button fx:id="setActivePool" mnemonicParsing="false" text="Set Active"/>
+    <Button fx:id="updatePoolSelection" mnemonicParsing="false" text="Update Selection"/>
+    <Button fx:id="runPoolAnalytics" disable="true" mnemonicParsing="false" text="Run Analytics"/>
+    <Button fx:id="deletePool" mnemonicParsing="false" text="Delete"/>
+</fx:root>
