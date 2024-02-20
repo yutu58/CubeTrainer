@@ -165,7 +165,7 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
             state.applyWCAMoves(new int[]{(int) (Math.random() * SkewbNotations.N_WCA_MOVES_WITHOUT_ROTATIONS)});
         }
 
-        return SkewbScrambler.stateToScrambler(state, (int) (Math.random() * 10));
+        return SkewbScrambler.stateToScrambler(state, (int) (Math.random() * 10) + 1);
     }
 
     private void display1lookImage() {
