@@ -1,20 +1,15 @@
 package cubes.skewb.data;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
-public class OneLookPool {
+public class OneLookPool implements Serializable {
     String name;
     List<String> setups;
 
     public OneLookPool(String name, List<String> setups) {
         this.name = name;
         this.setups = setups;
-    }
-
-    public OneLookPool() {
-        this.name = "--";
-        this.setups = new ArrayList<>();
     }
 
     public void addSetup(String s) {
@@ -29,6 +24,10 @@ public class OneLookPool {
 
     public String getName() {
         return name;
+    }
+
+    public List<String> getSetups() {
+        return setups;
     }
 
     public void setName(String name) {

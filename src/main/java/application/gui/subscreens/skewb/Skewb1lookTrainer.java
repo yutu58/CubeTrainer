@@ -1,10 +1,12 @@
 package application.gui.subscreens.skewb;
 
 import application.controllers.SkewbScreenController;
+import application.gui.elements.OneLookPoolElement;
 import cubes.Case;
 import cubes.skewb.SkewbNotations;
 import cubes.skewb.SkewbState;
 import cubes.skewb.data.L2LSet;
+import cubes.skewb.data.OneLookPool;
 import cubes.skewb.data.SkewbL2LReader;
 import cubes.skewb.imageGenerators.SkewbL2LImageGenerator;
 import cubes.skewb.imageGenerators.UnknownMoveException;
@@ -18,11 +20,15 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
+
+import static Settings.Settings.DATA_STORAGE_LOCATION;
 
 public class Skewb1lookTrainer extends GridPane implements Initializable {
     @FXML
@@ -33,24 +39,6 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
 
     @FXML
     private Canvas imageCanvas;
-
-    @FXML
-    private RadioButton rubikSkewbButton;
-
-    @FXML
-    private RadioButton wcaSkewbButton;
-
-    @FXML
-    private RadioButton codeSkewbButton;
-
-    @FXML
-    private Label copyImageButton;
-
-    @FXML
-    private Label downloadPNGButton;
-
-    @FXML
-    private Label copyLithiumCodeButton;
 
     @FXML
     private TextField setupMoves;
@@ -64,7 +52,24 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
     @FXML
     private CheckBox reverseBox;
 
+    @FXML
+    private Button addToPool;
+
+    @FXML
+    private TextField newPoolNameField;
+
+    @FXML
+    private Button createPool;
+
     List<Case> allCases;
+
+    private List<String> activeSetups;
+
+    private OneLookPoolElement activeOneLookPoolElement;
+
+    //TODO: Convert to ScrollView
+    @FXML
+    private ListView<OneLookPoolElement> oneLookPoolList;
     private boolean timerRunning;
     private SkewbScreenController controller;
 
@@ -90,9 +95,14 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
         applyButton.setOnAction(event -> {
             controller.getScreen().requestFocus();
 
+            promptSucces("");
+
             if (!setupMoves.getText().isEmpty()) {
-                display1lookImage();
-                scramble.setText(generateNewScramble());
+                activeSetups = new ArrayList<>();
+                activeSetups.add(setupMoves.getText());
+
+                display1lookImage(setupMoves.getText());
+                scramble.setText(generateNewScramble(setupMoves.getText()));
             }
         });
 
@@ -111,20 +121,54 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
 
         if (sets != null) {
             for (L2LSet s : sets) {
+                //Only add NS cases (no EG-2)
+                //TODO: Add option for EG-2
                 if (s.getId() < 38) {
                     allCases.addAll(s.getCases());
                 }
             }
         }
+
+        createPool.setOnMouseClicked(mouseEvent -> {
+            String name = newPoolNameField.getText();
+
+            if (name.equals("")) {
+                return;
+            }
+
+            OneLookPoolElement element = new OneLookPoolElement(new OneLookPool(name, new ArrayList<>()), this);
+            oneLookPoolList.getItems().add(element);
+
+            updatePools(false);
+        });
+
+        addToPool.setOnMouseClicked(mouseEvent -> {
+            if (activeOneLookPoolElement == null) {
+                return;
+            }
+
+            //TODO: Fix having to activate pool again after deleting setup and wanting to re-add it
+            String setup = setupMoves.getText();
+            if (!setup.isEmpty() && !activeOneLookPoolElement.getOneLookPool().getSetups().contains(setup)) {
+                activeOneLookPoolElement.getOneLookPool().addSetup(setup);
+            }
+
+            updatePools(false);
+        });
+
+        updatePools(true);
     }
 
     public void updateScramble() {
-        scramble.setText(generateNewScramble());
+        if (activeSetups == null || activeSetups.isEmpty()) return;
+
+        //Generate random
+        int index = ThreadLocalRandom.current().nextInt(0, activeSetups.size());
+        scramble.setText(generateNewScramble(activeSetups.get(index)));
     }
 
-    //Setupmove slider
-    private String generateNewScramble() {
-        if(setupMoves.isFocused()) {
+    public String generateNewScramble(String setup) {
+        if(setupMoves.isFocused() || newPoolNameField.isFocused()) {
             return scramble.getText();
         }
 
@@ -144,7 +188,7 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
 
         //Apply layer setup
         List<Integer> intMoves = new ArrayList<>();
-        String[] moves = setupMoves.getText().trim().split(" ");
+        String[] moves = setup.trim().split(" ");
         for (String m : moves) {
             if (m.equals("")) {
                 continue;
@@ -168,8 +212,7 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
         return SkewbScrambler.stateToScrambler(state, (int) (Math.random() * 10) + 1);
     }
 
-    private void display1lookImage() {
-        String setup = setupMoves.getText();
+    private void display1lookImage(String setup) {
         GraphicsContext gc = imageCanvas.getGraphicsContext2D();
         double scale = 0.9;
 
@@ -200,31 +243,96 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
         imageErrorLabel.setTextFill(Color.RED);
     }
 
+    private void promptSucces(String succes) {
+        imageErrorLabel.setText(succes);
 
-    private void reloadPools() {
-        //Read from file ofzo
+        //TODO: Set color back to default, or just use a different label than the image error one
+        imageErrorLabel.setTextFill(Color.WHITE);
     }
 
-    private void addToPool() {
-        //Write to file or settings?
+    public void updatePools(boolean readOnly) {
+        if (!readOnly) {
+            writeOneLookPoolFile();
+        }
 
-        reloadPools();
+        List<OneLookPool> l = readOneLookPoolFile();
+        oneLookPoolList.getItems().clear();
+
+        for (OneLookPool pool : l) {
+            OneLookPoolElement element = new OneLookPoolElement(pool, this);
+            oneLookPoolList.getItems().add(element);
+        }
     }
 
-
-    private void removeFromPool() {
-        //Write to file or settings?
-
-        reloadPools();
+    public void deletePool(String name) {
+        for (int i = 0; i < oneLookPoolList.getItems().size(); i++) {
+            if (oneLookPoolList.getItems().get(i).getOneLookPool().getName().equals(name)) {
+                oneLookPoolList.getItems().remove(i);
+                updatePools(false);
+                return;
+            }
+        }
     }
 
-    private void newPool() {
-        //Write fo file or settings
+    private List<OneLookPool> readOneLookPoolFile() {
+        try {
+            //TODO: Properly check if file exists, otherwhise, create or skip
+            FileInputStream fi = new FileInputStream(DATA_STORAGE_LOCATION + "oneLookPools");
+            ObjectInputStream oi = new ObjectInputStream(fi);
 
-        reloadPools();
+            List<OneLookPool> oneLookPoolList = (List<OneLookPool>) oi.readObject();
+
+            return oneLookPoolList;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 
-    private void changePoolName() {
-        //Write to file or settings?
+    public void setActiveSetups(List<String> activeSetups) {
+        this.activeSetups = activeSetups;
+    }
+
+    private void writeOneLookPoolFile() {
+        try {
+            //TODO: Automatically create data_storage_location directory if it doesn't exist
+            File file = new File(DATA_STORAGE_LOCATION + "oneLookPools");
+            file.delete();
+            file.createNewFile();
+
+            FileOutputStream f = new FileOutputStream(file, false);
+            ObjectOutputStream o = new ObjectOutputStream(f);
+
+            o.writeObject(this.oneLookPoolList.getItems().stream()
+                    .map(OneLookPoolElement::getOneLookPool).collect(Collectors.toList()));
+
+            o.close();
+            f.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public TextField getSetupMoves() {
+        return setupMoves;
+    }
+
+    public TextField getNewPoolNameField() {
+        return newPoolNameField;
+    }
+
+    public OneLookPoolElement getActiveOneLookPoolElement() {
+        return activeOneLookPoolElement;
+    }
+
+    public void setActiveOneLookPoolElement(OneLookPoolElement activeOneLookPoolElement) {
+        this.activeOneLookPoolElement = activeOneLookPoolElement;
+
+        promptSucces("Active pool: " + activeOneLookPoolElement.getOneLookPool().getName());
+
+    }
+
+    public Canvas getImageCanvas() {
+        return imageCanvas;
     }
 }

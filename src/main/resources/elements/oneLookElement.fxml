@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="100" minWidth="100" prefWidth="440.0" type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label text="Layer solution" BorderPane.alignment="CENTER" fx:id="oneLookLayerSolution" />
+   </top>
+   <center>
+      <Canvas height="200.0" width="200.0" BorderPane.alignment="CENTER" fx:id="oneLookCaseCanvas"/>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Setup" fx:id="setupOneLookCaseButton">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" text="Remove from Pool" fx:id="removeFromPoolButton">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</fx:root>

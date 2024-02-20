@@ -53,7 +53,10 @@ public class AlgPoolElement extends HBox {
 
         this.poolName.setText(algPool.getName());
         this.numberSets.setText(String.valueOf(algPool.getSetIds().size()));
-        this.numberCases.setText("-1");
+
+        //This assumes the parent.getCases() (Gets all loaded cases) are ordered by ID
+        this.numberCases.setText(String.valueOf(algPool.getSetIds().
+                stream().map(x -> parent.getAllSets().get(x-1).getCases().size()).reduce(0, Integer::sum)));
 
         setActivePool.setOnMouseClicked(mouseEvent -> {
             parent.setSelection(algPool.getSetIds(), true);

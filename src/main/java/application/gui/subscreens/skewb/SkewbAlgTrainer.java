@@ -66,12 +66,14 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
 
     private List<Case> selectedCases;
 
+    private List<L2LSet> allSets;
+
     private List<Label> menus;
 
     private List<Case> examModeCasesLeft;
 
     private boolean inExamMode;
-    public int lastRandIndex = 0;
+    private int lastRandIndex = 0;
 
     private Map<Integer, CheckBox> setToCheckboxMap;
 
@@ -107,6 +109,8 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
             System.out.println("No sets could be found");
             return;
         }
+
+        allSets = sets;
 
         int x = 0;
         int y = 1; //y=0 is reserved for the labels
@@ -363,6 +367,14 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
             e.printStackTrace();
             return new ArrayList<>();
         }
+    }
+
+    public TextField getPoolTextInput() {
+        return poolTextInput;
+    }
+
+    public List<L2LSet> getAllSets() {
+        return allSets;
     }
 
     //TODO: move to util class

@@ -46,15 +46,22 @@ public class SkewbScreen {
 
             if (subMenu instanceof SkewbAlgTrainer) {
                 SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+
+                if (s.getPoolTextInput().isFocused()) return;
+
                 if (ke.getCode() == KeyCode.SPACE && !spacePressed.get()) {
                     if (s.isTimerRunning()) {
                         s.stopTimer();
                     }
                     spacePressed.set(true);
+                    ke.consume();
                 }
             } else if (subMenu instanceof Skewb1lookTrainer) {
                 Skewb1lookTrainer s = (Skewb1lookTrainer) subMenu;
-                s.updateScramble();
+                if (!s.getSetupMoves().isFocused() && !s.getNewPoolNameField().isFocused()) {
+                    s.updateScramble();
+                    ke.consume();
+                }
             }
         });
 
@@ -63,16 +70,21 @@ public class SkewbScreen {
 
             if (subMenu instanceof SkewbAlgTrainer) {
                 if (ke.getCode() == KeyCode.SPACE) {
-                    spacePressed.set(false);
                     SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+                    if (s.getPoolTextInput().isFocused()) return;
+
+                    spacePressed.set(false);
+
                     if (!s.isTimerRunning()) {
                         s.setTimerRunning(true);
                         s.startTimer();
                     } else {
                         s.setTimerRunning(false);
                     }
+                    ke.consume();
                 }
             }
+
         });
 
         scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
@@ -81,13 +93,19 @@ public class SkewbScreen {
             if (subMenu instanceof SkewbAlgTrainer) {
                 if (ke.getCode() == KeyCode.P) {
                     SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+
+                    if (s.getPoolTextInput().isFocused()) return;
+
+
                     if (!s.isInExamMode()) {
                         s.startExamMode();
                     } else {
                         s.setInExamMode(false);
                     }
+                    ke.consume();
                 }
             }
+
         });
 
         scene.addEventFilter(KeyEvent.KEY_RELEASED, ke ->{
@@ -96,9 +114,12 @@ public class SkewbScreen {
             if (subMenu instanceof SkewbAlgTrainer) {
                 if (ke.getCode() == KeyCode.LEFT) {
                     SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+
                     if (s.isInExamMode()) {
                         s.passExamQuestion();
                     }
+
+                    ke.consume();
                 }
             }
         });
@@ -109,9 +130,13 @@ public class SkewbScreen {
             if (subMenu instanceof SkewbAlgTrainer) {
                 if (ke.getCode() == KeyCode.RIGHT) {
                     SkewbAlgTrainer s = (SkewbAlgTrainer) subMenu;
+
+                    if (s.getPoolTextInput().isFocused()) return;
+
                     if (s.isInExamMode()) {
                         s.failExamQuestion();
                     }
+                    ke.consume();
                 }
             }
         });

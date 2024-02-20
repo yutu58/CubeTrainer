@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root maxHeight="1000" maxWidth="1000" minHeight="-Infinity" minWidth="-Infinity" prefWidth="440.0" style="-fx-background-color: #ffffff;" type="javafx.scene.control.TitledPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <VBox fx:id="oneLookElementContainer" maxHeight="Infinity">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                <Button fx:id="setActivePool" text="Set Active">
+                  <HBox.margin>
+                     <Insets right="10.0" />
+                  </HBox.margin></Button>
+                <Button fx:id="deletePool" text="Delete Pool">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin></Button>
+            </HBox>
+         </children></VBox>
+    </content>
+</fx:root>
