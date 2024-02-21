@@ -24,6 +24,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
@@ -147,13 +148,28 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
                 return;
             }
 
-            //TODO: Fix having to activate pool again after deleting setup and wanting to re-add it
             String setup = setupMoves.getText();
-            if (!setup.isEmpty() && !activeOneLookPoolElement.getOneLookPool().getSetups().contains(setup)) {
-                activeOneLookPoolElement.getOneLookPool().addSetup(setup);
+
+            //Try if it's possible to draw an image, if not there's probably an unknown move / wrong notation used
+            try {
+                SkewbState c = new SkewbState("00000 11111 22222 33333 44444 55555");
+                SkewbL2LImageGenerator.drawImageFromSetup(SkewbNotations.notationEnum.RubikSkewbNotation,
+                        setup, null, 0, true, c);
+            } catch (Exception e) {
+                promptError("Couldn't add to pool, wrong notation?");
+                return;
             }
 
-            updatePools(false);
+            if (activeOneLookPoolElement.getOneLookPool().getSetups().contains(setup)) {
+                promptError("Case already in pool");
+                return;
+            }
+
+            if (!setup.isEmpty()) {
+                activeOneLookPoolElement.getOneLookPool().addSetup(setup);
+                updatePools(false);
+            }
+
         });
 
         updatePools(true);
@@ -238,7 +254,7 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
         }
     }
 
-    private void promptError(String err) {
+    public void promptError(String err) {
         imageErrorLabel.setText(err);
         imageErrorLabel.setTextFill(Color.RED);
     }
@@ -261,6 +277,27 @@ public class Skewb1lookTrainer extends GridPane implements Initializable {
         for (OneLookPool pool : l) {
             OneLookPoolElement element = new OneLookPoolElement(pool, this);
             oneLookPoolList.getItems().add(element);
+        }
+
+        //Update activePoolElement
+        if (activeOneLookPoolElement != null) {
+            String activeName = activeOneLookPoolElement.getOneLookPool().getName();
+            Optional<OneLookPoolElement> oolpe = oneLookPoolList.getItems().stream()
+                    .filter(x -> x.getOneLookPool().getName().equals(activeName)).findFirst();
+
+            if (oolpe.isPresent()) {
+                activeOneLookPoolElement = oolpe.get();
+                promptSucces("Active pool: " + activeName);
+            } else {
+                activeOneLookPoolElement = null;
+                promptSucces("");
+            }
+        }
+
+        for (OneLookPoolElement e : oneLookPoolList.getItems()) {
+            if (activeOneLookPoolElement != e) {
+                e.setExpanded(false);
+            }
         }
     }
 

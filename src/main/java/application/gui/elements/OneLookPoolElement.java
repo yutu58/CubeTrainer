@@ -43,7 +43,12 @@ public class OneLookPoolElement extends TitledPane {
         }
 
         for (String setup : this.oneLookPool.getSetups()) {
-            this.oneLookElementContainer.getChildren().add(new OneLookElement(setup, oneLookPool, parent));
+            try {
+                this.oneLookElementContainer.getChildren().add(new OneLookElement(setup, oneLookPool, parent));
+            } catch (Exception e) {
+                parent.promptError("Couldn't create pool element, is your notation correct?");
+                return;
+            }
         }
 
         setActivePool.setOnMouseClicked(mouseEvent -> {
