@@ -3,7 +3,7 @@ Training software that can be used to practice specific steps of solving variant
 
 ## Main to-do List
 - [x] Support for skewb L2L (Main purpose)
-- [ ] Support for skewb EG2
+- [x] Support for skewb EG2
 - [x] Support for 2x2x2 (EG, TCLL, LS)
 - [x] On the spot generated scrambles for cases (brute-forcing for smaller cubes)
 - [x] Timer to train algs
@@ -11,8 +11,9 @@ Training software that can be used to practice specific steps of solving variant
 - [x] Image generator for skewb
 - [ ] Image generator for 2x2
 - [x] Alg generator for 2x2
-- [ ] Allow for saving presets of set-combinations for the algtrainer
-- [ ] Alg-train in elimination mode (discard seen cases until sets are empty)
+- [x] Allow for saving presets of set-combinations for the algtrainer
+- [x] Alg-train in elimination mode (discard seen cases until sets are empty)
+- [ ] Add extra skewb sets (TCLL, TTCLL, etc.)
 
 ## Postponed to later
 - [ ] Dynamic visualizer for the cases
