@@ -25,4 +25,6 @@ public class Settings {
 
     public static String DATA_STORAGE_LOCATION = "data/";
 
+    public static String VERSION = "0.1.3";
+
 }

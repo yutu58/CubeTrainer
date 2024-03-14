@@ -41,6 +41,9 @@ public class Tx2AlgTrainer extends BorderPane implements Initializable {
     @FXML
     private VBox algVBox;
 
+    @FXML
+    private Label versionNo;
+
     private Tx2ScreenController tx2ScreenController;
 
     private boolean timerRunning;
@@ -65,6 +68,8 @@ public class Tx2AlgTrainer extends BorderPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        versionNo.setText("Lithium version " + VERSION);
+
         selectedCases = new ArrayList<>();
         timerRunning = false;
 

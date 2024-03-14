@@ -58,6 +58,9 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
     @FXML
     private ListView<AlgPoolElement> poolList;
 
+    @FXML
+    private Label versionNo;
+
     private SkewbScreenController skewbScreenController;
 
     private boolean timerRunning;
@@ -91,6 +94,8 @@ public class SkewbAlgTrainer extends BorderPane implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        versionNo.setText("Lithium version " + VERSION);
+
         selectedCases = new ArrayList<>();
         timerRunning = false;
         inExamMode = false;

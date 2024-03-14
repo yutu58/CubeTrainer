@@ -1,5 +1,6 @@
 package application.gui;
 
+import Settings.Settings;
 import application.gui.screens.HomeScreen;
 import javafx.application.Application;
 import javafx.scene.image.Image;
@@ -12,7 +13,7 @@ public class MainAppWindow extends Application {
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
         stage.getIcons().add(new Image(getClass().getClassLoader().getResourceAsStream("pictures/LithiumLogo.png")));
-        stage.setTitle("Lithium version 0.1.2");
+        stage.setTitle("Lithium version " + Settings.VERSION);
 
         HomeScreen.setup(primaryStage);
     }

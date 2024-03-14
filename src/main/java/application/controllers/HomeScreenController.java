@@ -1,10 +1,12 @@
 package application.controllers;
 
+import Settings.Settings;
 import application.gui.MainAppWindow;
 import application.gui.screens.SkewbScreen;
 import application.gui.screens.Tx2Screen;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -21,8 +23,13 @@ public class HomeScreenController {
     public ImageView homescreenImage;
 
     @FXML
+    public Label versionCopyright;
+
+    @FXML
     public void initialize() {
         homescreenImage.setImage(new Image("/pictures/LithiumLogo.png"));
+        versionCopyright.setText("Lithium version " + Settings.VERSION +
+                "\n\n\u00A9 Mattheo de Wit\n2022 - 2024");
     }
 
     public void gotoSkewb() throws IOException {

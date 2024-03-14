@@ -86,7 +86,7 @@
     </left>
     <top>
         <HBox fx:id="subMenuSAT" maxHeight="30.0" prefHeight="30.0">
-            <Label text="Test Version 0.1.2" />
+            <Label fx:id="versionNo" text="Lithium version x.x.x" />
         </HBox>
     </top>
 </fx:root>
